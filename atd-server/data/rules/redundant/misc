@@ -1,0 +1,50 @@
+returned|returning|returns back::word=\0, \1
+agree|disagree with the fact that::word=\0 that
+first be start(ed|ing) by|in|with::word=\2 \3
+first start(ed|ing) by|in|with::word=\1 \2
+repeated|repeating|repeats it again::word=\0, \2
+repeated|repeating|repeats again::word=\0, \1
+is such that it is::word=is
+already has been::word=has been
+#joined|joining together::word=\0
+might perhaps|possibly::word=\0, \1
+previous|prior experiences::word=\1
+will in the future::word=will
+work colleague::word=colleague
+
+#
+# redundant expressions
+#
+current flowing::word=current
+current passing::word=current
+originally born in::word=born in
+
+electrical current::word=electric current::pivots=electrical,electric::options=electrical,electric
+
+close proximity::word=close, closeness, proximity
+current flow::word=current, flow
+
+price point::word=price
+
+my own .*/NN::word=my \2::filter=none
+
+modern .* of today::word=\0 \1
+&selfwords yourself::word=\0
+number-one leader in::word=leader in
+
+
+green|blue|red|yellow|grey|gray|orange|white|black in color::word=\0
+
+one-year anniversary::word=first anniversary::filter=none
+two-year anniversary::word=second anniversary::filter=none
+three-year anniversary::word=third anniversary::filter=none
+four-year anniversary::word=fourth anniversary::filter=none
+five-year anniversary::word=fifth anniversary::filter=none
+six-year anniversary::word=sixth anniversary::filter=none
+seven-year anniversary::word=seventh anniversary::filter=none
+eight-year anniversary::word=eighth anniversary::filter=none
+nine-year anniversary::word=ninth anniversary::filter=none
+ten-year anniversary::word=tenth anniversary::filter=none
+twenty-year anniversary::word=twentieth anniversary::filter=none
+fifty-year anniversary::word=fiftieth anniversary::filter=none
+hundred-year anniversary::word=hundredth anniversary::filter=none
