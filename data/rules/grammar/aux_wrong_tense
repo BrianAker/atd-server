@@ -1,0 +1,74 @@
+# auxiliary verb tenses and pronouns (I think these are pronouns... goes to show what I know)
+
+# shall, was, were, will, would, has, do, does, did, can, could, may, might, must, ought
+
+# past tense misused -> participle :: have
+# have you saw => have you seen
+have we|I|you|they &irregular_verb_past::word=\0 \1 \2:participle::pivots=\2,\2:participle
+Have we|I|you|they &irregular_verb_past::word=\0 \1 \2:participle::pivots=\2,\2:participle
+
+# past tense misused -> base :: are, can, did, should, will
+# could you knew => could you know
+do|might|may|must|could|should|can|will we|I|you|they &irregular_verb_past::word=\0 \1 \2:base::pivots=\2,\2:base
+Do|Might|May|Must|Could|Should|Can|Will we|I|you|they &irregular_verb_past::word=\0 \1 \2:base::pivots=\2,\2:base
+
+# are we know, are we knew => are we known
+Are|are we|they|you &irregular_verb_past::word=\0 \1 \2:base::pivots=\2,\2:base
+
+# present tense misused -> past, particple :: had
+# had I know => had I known, had I knew
+Had|had we|I|you|they &irregular_verb_base::word=\0 \1 \2:participle, \0 \1 \2:past::pivots=\2,\2:participle,\2:past
+
+#
+# wrong tense (past) used with not form... expects base form
+#
+shouldn't|couldn't|wouldn't|didn't put|come|become|run|set::filter=kill
+should|could|would|did not put|come|become|run|set::filter=kill
+
+shouldn't|couldn't|wouldn't|didn't .*/VBN::word=\0 \1:base::pivots=\1,\1:base
+should|could|would|did not .*/VBN::word=\0 \1 \2:base::pivots=\2,\2:base
+
+# 
+# wrong tense with an infinitive (I have to gone vs. I have to be gone or I have to go)
+#
+have to put|come|become|run|set::filter=kill
+have to .*/VBN::word=\0 \1 \2:base, \0 \1 be \2::pivots=\2,\2:base,be \2
+
+# mislead/misled
+
+are|is being lead::word=\0 being led::pivots=lead,led::options=lead,led
+are|is being mislead::word=\0 being misled::pivots=mislead,misled::options=mislead,misled
+
+is|are mislead to|by::word=\0 misled \2::pivots=mislead,misled::options=mislead,misled
+was|were mislead by|to::word=\0 misled \2::pivots=mislead,misled::options=mislead,misled
+
+of|the|The .*/NNS|NNP mislead by::word=\0 \1 misled by::pivots=mislead,misled::options=mislead,misled
+
+#
+# wrong tense lead/led
+#
+are lead by::word=are led by::pivots=lead,led::options=lead,led
+is lead by::word=is led by::pivots=lead,led::options=lead,led
+it lead to::word=it led to::pivots=lead,led::options=lead,led
+of|the|The .*/NNS|NNP lead by::word=\0 \1 led by::pivots=lead,led::options=lead,led
+
+this lead to .*/NNS|NNP::word=this led to::pivots=lead,led::options=lead,led
+was lead by::word=was led by::pivots=lead,led::options=lead,led
+were lead by::word=were led by::pivots=lead,led::options=lead,led
+
+#
+# wrong tense ran/run
+#
+are ran by::word=are run by::pivots=ran,run::options=ran,run
+are being ran by::word=are run by::pivots=ran,run::options=ran,run
+got ran::word=got run::pivots=ran,run::options=ran,run
+had ran::word=had run::pivots=ran,run::options=ran,run
+has ran::word=has run::pivots=ran,run::options=ran,run
+have ran::word=have run::pivots=ran,run::options=ran,run
+is ran by::word=is run by::pivots=ran,run::options=ran,run
+
+# wrong verb is/has,have
+is been::word=has been, have been::pivots=is,has,have
+
+# contractions are not always my friend, eh
+I'd|She'd|You'd|We'd|He'd|she'd|you'd|we'd|he'd &irregular_verb_past::word=\0 \1:participle::pivots=\1,\1:participle

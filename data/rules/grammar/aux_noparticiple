@@ -1,0 +1,15 @@
+has &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+have &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+had &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+were &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+could've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+would've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+should've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+you've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+You've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+I've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+we've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+We've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+they've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+They've &irregular_verb::word=\0 \1:participle::pivots=\1,\1:participle
+

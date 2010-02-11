@@ -1,0 +1,89 @@
+#
+# words that should be combined
+#
+
+# every day (daily) vs. everyday (common)
+
+an|in|for|the|to every day::word=\0 everyday::pivots=\1 \2,everyday
+
+# before hand -> beforehand
+
+before hand::word=beforehand
+
+# an other -> another
+
+an other::word=another
+
+# all ways -> always (unless refering to everything) like she is better than him in all ways. <- this is ok
+in all ways::filter=kill
+all ways::word=always
+
+# every where -> everywhere
+
+every where::word=everywhere
+
+#
+# more words to combine
+#
+eye sight::word=eyesight
+eye sore::word=eyesore
+figure head::word=figurehead
+flag ship::word=flagship
+head gear::word=headgear
+head quarters::word=headquarters
+head stone::word=headstone
+head wear::word=headwear
+how ever::word=however
+in stead of::word=instead of
+in tact::word=intact
+it self::word=itself
+key note::word=keynote
+laughing stock::word=laughingstock
+life time::word=lifetime
+mean while::word=meanwhile
+nation wide::word=nationwide
+near by::word=nearby
+new comer::word=newcomer
+no where to::word=nowhere to
+note worthy::word=noteworthy
+now a days::word=nowadays
+on going::word=ongoing
+out grow::word=outgrow
+out side::word=outside
+over looked::word=overlooked
+over looking::word=overlooking
+over rated::word=overrated
+over seas::word=overseas
+short coming::word=shortcoming
+short cut::word=shortcut
+side kick::word=sidekick
+sky diving::word=skydiving
+some how::word=somehow
+some what::word=somewhat
+stale mate::word=stalemate
+them selves::word=themselves
+back fire::word=backfire
+world wide::word=worldwide
+worth while::word=worthwhile
+where as::word=whereas
+where by::word=whereby
+where upon::word=whereupon
+with in::word=within
+with out::word=without
+way side::word=wayside
+along side::word=alongside
+be cause::word=because
+be ware::word=beware
+before hand::word=beforehand
+down side::word=downside
+eye brow::word=eyebrow
+eye lash::word=eyelash
+eye lid::word=eyelid
+through out::word=throughout
+on-going::word=ongoing
+light weight::word=lightweight
+heavy weight::word=heavyweight
+free lance::word=freelance
+free lancer::word=freelancer
+free lances::word=freelances
+free lancing::word=freelancing

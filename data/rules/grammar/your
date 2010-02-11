@@ -1,0 +1,23 @@
+your .*ing/VBG::word=you're \1::pivots=your,you're
+if your .*/DT::word=if you're \2::pivots=your,you're
+your the|a|an::word=you're \1::filter=none
+Your .*ing/VBG::word=You're \1::pivots=Your,You're
+If your .*/DT::word=If you're \2::pivots=your,you're
+Your the|a|an::word=You're \1::filter=none
+
+about|around|at|by|for|from|in|near|of|on|over|through|to|towards|under|with|without you're::word=\0 your::pivots=you're,your
+
+you're [a-z].*/NN|NNS are|is::word=your \1 \2::pivots=you're,your
+to .*/VB you're .*/NN::word=\0 \1 your \3::pivots=you're,your
+Your right::word=You're right::pivots=Your,You're::options=your,you're
+
+you're .* could|would|should|did|may|will|has|have|can|couldn't|wouldn't|shouldn't|didn't|won't|hasn't|haven't|can't::word=your \1 \2::pivots=you're,your
+
+to you're::word=to your::pivots=you're, your
+
+your welcome::word=you're welcome::pivots=your,you're
+Your welcome::word=You're welcome::pivots=Your,You're::options=your,you're
+
+you're are::word=you are::filter=none
+your are::word=you're::filter=none           
+your are .*ing::word=you are \2::filter=none
