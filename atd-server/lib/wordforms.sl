@@ -109,6 +109,10 @@ sub baseVerb
       {
          return $1;
       }
+      else if ($1 eq "created")
+      {
+         return left($1, -1);
+      }
       else if (left($1, -2) in $dictionary)
       {
          return left($1, -2);
@@ -172,6 +176,12 @@ sub simplePastVerb
 sub presentParticipleVerb
 {
    local('$base');
+
+   if ([$1 endsWith: "ed"] && (substr($1, -2) . "ing") in $dictionary) 
+   {
+      return substr($1, -2) . "ing";
+   } 
+
    $base = baseVerb($1);
 
    if ($base in $verbs['base'])

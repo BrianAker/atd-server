@@ -13,15 +13,8 @@ sub hotest::init
 
 sub hotest::process
 {
-   local('$correct $wrong $wrongs $pre2 $pre1 $next @temp');
-   ($correct, $wrong, $wrongs, $pre2, $pre1, $next) = @_;
-
-   local('$all');
-   $all = tagAll($pre2[1], $pre1[1], $pre1[0], $wrongs);
-   if (!isDifferent($all))
-   {
-       return;
-   }
+   local('$correct $wrong $wrongs $pre2 $pre1 $next $next2 @temp');
+   ($correct, $wrong, $wrongs, $pre2, $pre1, $next, $next2) = @_;
 
    if (size($criteria) == 0)
    {
@@ -29,7 +22,7 @@ sub hotest::process
    }
    else
    {
-      @temp = checkAnyHomophone($network, $wrong, copy($wrongs), $pre1[0], $next[0], @($pre2[1], $pre1[1]), $pre2[0], $criteriaf => $criterf);
+      @temp = checkAnyHomophone($network, $wrong, copy($wrongs), $pre1[0], $next[0], @($pre2[1], $pre1[1]), $pre2[0], $next2[0], $criteriaf => $criterf);
    #   println(join(', ', @($network, $wrong, copy($wrongs), $pre1[0], $next[0], @($pre2[1], $pre1[1]))) . ' = ' . @temp);
    }
 

@@ -43,12 +43,12 @@ sub testCorrectionsContext
 
 sub loopHomophonesPOS
 {
-   local('$entry $sentence $correct $wrongs $pre2 $pre1 $next $object $wrong'); 
+   local('$entry $sentence $correct $wrongs $pre2 $pre1 $next $object $wrong $next2'); 
 
    while $entry (sentences($1))
    {
       ($sentence, $correct, $wrongs) = $entry;
-      ($pre2, $pre1, $null, $next) = toTaggerForm(split(' ', $sentence));
+      ($pre2, $pre1, $null, $next, $next2) = toTaggerForm(split(' ', $sentence));
 
       if ($pre2[1] eq "UNK") { $pre2[1] = ""; }
       if ($pre1[1] eq "UNK") { $pre1[1] = ""; }
@@ -59,7 +59,7 @@ sub loopHomophonesPOS
 
       foreach $wrong ($wrongs)
       {
-         [$2 process: $correct, $wrong, $wrongs, $pre2, $pre1, $next];
+         [$2 process: $correct, $wrong, $wrongs, $pre2, $pre1, $next, $next2];
       }
 
 #      [$2 process: $correct, $correct, $wrongs, $pre2, $pre1, $next];

@@ -1,16 +1,16 @@
 import org.dashnine.preditor.* from: lib/spellutils.jar;
 use(^SpellingUtils);
 
-# misc junk
-include("lib/dictionary.sl");
-global('$__SCRIPT__ $model $rules $dictionary $network $dsize %edits $hnetwork $account $usage $endings $lexdb $trigrams $verbs');
-$model      = get_language_model();
-$dictionary = dictionary();
-$dsize      = size($dictionary);
-
+if (getFileName($__SCRIPT__) eq 'rules.sl') 
+{
+   # misc junk
+   include("lib/dictionary.sl");
+   global('$__SCRIPT__ $model $rules $dictionary $network $dsize %edits $hnetwork $account $usage $endings $lexdb $trigrams $verbs');
+   $model      = get_language_model();
+   $dictionary = dictionary();
+   $dsize      = size($dictionary);
+}
 include("lib/fsm.sl");
-
-
 
 #
 # create our FSM rule engine.
@@ -163,7 +163,7 @@ sub irregular_noun_plural
 
 sub irregular_verb_past
 {
-   return 'arose|ate|awoke|bade|beat|became|befell|began|begot|bespoke|bestrode|betook|bit|blew|bode|bore|broke|came|chose|cowrote|crew|did|dove|drank|drew|drove|fell|flew|forbade|forbore|foresaw|forewent|forgave|forgot|forsook|froze|gave|grew|hewed|hid|hight|knew|lay|misgave|misspoke|mistook|mowed|outdid|outgrew|outran|overbore|overcame|overlay|overran|overrode|oversaw|overthrew|overtook|partook|ran|rang|reawoke|redid|redrew|retook|rewrote|rived|rode|rose|sang|sank|saw|shook|shore|showed|shrank|slew|smote|sowed|span|spoke|sprang|stank|stole|strewed|strode|strove|swam|swelled|swore|threw|took|tore|trod|underlay|undertook|underwent|underwrote|undid|uprose|was|went|withdrew|woke|wore|wove|wrote';
+   return 'arose|ate|awoke|bade|beat|became|befell|began|begot|bespoke|bestrode|betook|bit|blew|bode|bore|broke|built|came|chose|cowrote|crew|did|dove|drank|drew|drove|fell|flew|forbade|forbore|foresaw|forewent|forgave|forgot|forsook|froze|gave|grew|hewed|hid|hight|knew|lay|misgave|misspoke|mistook|mowed|outdid|outgrew|outran|overbore|overcame|overlay|overran|overrode|oversaw|overthrew|overtook|partook|ran|rang|reawoke|redid|redrew|retook|rewrote|rived|rode|rose|sang|sank|saw|shook|shore|showed|shrank|slew|smote|sowed|span|spoke|sprang|stank|stole|strewed|strode|strove|swam|swelled|swore|threw|took|tore|trod|underlay|undertook|underwent|underwrote|undid|uprose|was|went|withdrew|woke|wore|wove|wrote';
 }
 
 sub irregular_verb_base
@@ -305,6 +305,10 @@ sub grammar
 sub loadGrammarRules
 {
    local('$template');
+
+   # missing prepositions
+   $template = grammar("Missing Preposition", "", "A preposition indicates the relationship a noun has to another word. It's important that your writing has the right prepositions so your reader knows what you're talking about.");
+   loadRules($rules, "data/rules/grammar/prepositions", $template);
 
    # a vs. an
 
@@ -504,6 +508,8 @@ sub loadHomophoneRules
       $words = split(', ', $text);
       foreach $word ($words)
       {
+         $word = [$word trim];
+
          if ($word !in %donotuse)
          {
             addPath($rules, homophone($word, $text), @($word));
@@ -609,11 +615,23 @@ sub redundant_header
    return "Revise <em> $+ $suggestion $+ </em>"; 
 }
 
+sub applyChanges 
+{
+   local('$remove $c');
+   $c = $1;
+   foreach $remove (split('\s*,\s*', $2))
+   {
+      $c = strrep($c, $remove, '');
+   }
+#   warn("Rule is: $1 : $2 -> '" . [$c trim] . "'");
+   return [$c trim];
+}
+
 sub redundant
 {
-   return %(recommendation => &redundant_header,
+   return %(recommendation => tryThisSuggestion(),
             view => "view/rules/empty.slp",
-            word => $1,
+            word => applyChanges($2, $1),
             rule => "Redundant Expression",
             description => "You should avoid redundant expressions when possible.  A redundant expression has extra words that add no new meaning to the phrase.  By eliminating redundant expressions you will make your writing more clear and concise.",
             style => 'blue',

@@ -1,35 +1,20 @@
 #
-# generates the probability of the context file
+# a tool to inspect the language model
 #
 
-debug(debug() | 7 | 34);
+import org.dashnine.preditor.* from: lib/spellutils.jar;
+use(^SpellingUtils);
 
-global('$stream $entry $handle $data $count $key $value $key1 $value1 %value $enum');
-$count = 0L;
+# misc junk
+include("lib/dictionary.sl");
+global('$__SCRIPT__ $model $rules $dictionary $network $dsize %edits $hnetwork $account $usage $endings $lexdb $trigrams $verbs');
+$model      = get_language_model();
+$dictionary = dictionary();
+$dsize      = size($dictionary);
 
-import java.util.zip.*;
-import java.io.*;
-
-$stream = [new ZipFile: "models/corpus.zip"];
-$enum   = [$stream entries];
-
-while ([$enum hasMoreElements] == 1)
-{
-   $entry = [$enum nextElement];
-
-   if ([$entry isDirectory])
-   {
-   }
-   else
-   {
-      $handle = [SleepUtils getIOHandle: [$stream getInputStream: $entry], $null];
-      $data   = readObject($handle);
-      closef($handle);
-
-      foreach $key => $value ($data)
-      {
-         $count += $value;       
-      }
-   }
+$total = 0L;
+foreach $word ($dictionary) {
+	$total += count($word);
 }
-println($count);
+
+println($total);

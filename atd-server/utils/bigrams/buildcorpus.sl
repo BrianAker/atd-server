@@ -10,22 +10,26 @@ sub loadHomophones
 {
    local('$handle $text $word $words %homophones');
 
-   $handle = openf("data/rules/homophonedb.txt");
+   $handle = openf($1);
    while $text (readln($handle))
    {
       $words = split(', ', $text);
       foreach $word ($words)
       {
+         $word = [$word trim];
          %homophones[$word] = 1;
       }
    }
  
-   local('@special');
-   @special = @('their', 'there', 'they\'re', 'it\'s', 'its', 'where', 'were', 'then', 'than');
-
-   foreach $word (@special)
+   if ($1 eq "data/rules/homophonedb.txt")
    {
-      %homophones[$word] = 1;
+      local('@special');
+      @special = @('their', 'there', 'they\'re', 'it\'s', 'its', 'where', 'were', 'then', 'than');
+
+      foreach $word (@special)
+      {
+         %homophones[$word] = 1;
+      }
    }
 
    return %homophones;
@@ -98,6 +102,10 @@ sub process
          [$model addBigram: $head, $next];
 
          if ($next in %homophones && $previous !is $null && $previous in %dictionary)
+         {
+            [$model addTrigram: $previous, $head, $next];
+         }
+         else if ($previous in %homophones && $next !is $null)
          {
             [$model addTrigram: $previous, $head, $next];
          }
@@ -176,7 +184,7 @@ sub main
 
    if ($4 !is $null && -exists $4)
    {
-      %homophones = loadHomophones();
+      %homophones = loadHomophones($4);
    }
 
    # collect list of files.

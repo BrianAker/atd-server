@@ -33,7 +33,7 @@ accordingly	so
 accounted for by the fact that	because
 accrue	add, gain
 accurate	correct, exact, right
-achieve	do, make
+achieve	do, make, meet
 acquiesce	agree
 actual	real
 added bonus	bonus
@@ -69,7 +69,9 @@ altercation	argument
 along the lines of	like
 amongst	among
 an actual investigation	an investigation
+An attempt to	Trying to
 an attempt to	trying to
+made an attempt to	tried to
 an essential condition	a condition
 an example of this fact that	for example
 an order of magnitude	much, ten times
@@ -628,7 +630,7 @@ modify	change
 moment in time	time
 monitor	check, watch
 month of	(omit)
-more or less	about
+more or less	about, (omit)
 more preferable	preferable
 mutual agreement	agreement
 natural instinct	instinct

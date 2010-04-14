@@ -50,6 +50,7 @@ band, banned
 bard, barred
 bare, bear
 bark, barque
+barely, barley
 baron, barren
 Barry, berry, bury
 basal, basil
@@ -96,6 +97,7 @@ brake, break
 brakes, breaks
 breach, breech
 bread, bred
+breathe, breath
 brewed, brood
 brews, bruise
 bridal, bridle
@@ -134,7 +136,7 @@ cellar, seller
 censer, censor, sensor
 census, senses
 cent, scent, sent
-cents, scents, sense
+cents, scents, sense, since
 cere, sear, seer, sere
 cereal, serial
 Ceres, series
@@ -177,7 +179,7 @@ complacence, complaisance
 complacent, complaisant
 complement, compliment
 conch, conk
-conscious, conscience 
+conscious, conscience
 coo, coup
 copes, copse
 copped, copt
@@ -226,7 +228,7 @@ earl, URL
 earn, urn
 edition, addition
 elicit, illicit
-elude, illude
+allude, elude, illude
 ensure, insure
 ensured, insured
 emit, omit
@@ -248,6 +250,7 @@ fay, Faye, fey
 fays, faze, phase
 fazed, phased
 feat, feet
+feel, fell
 ferrate, ferret
 feted, fetid
 few, phew
@@ -267,7 +270,7 @@ flocks, phlox
 floes, flows
 floor, fluor
 flour, flower
-for, fore, four
+for, fore, four, fro
 forego, forgo
 foreword, forward
 fort, forte
@@ -275,6 +278,7 @@ forth, fourth
 foul, fowl
 frees, freeze, frieze
 friar, fryer
+from, form
 gaff, gaffe
 gaffs, gaffes
 gage, gauge
@@ -363,7 +367,7 @@ knits, nits
 knob, nob
 knock, nock
 knot, naught, not
-know, no
+know, no, now
 knows, noes, nose
 lacks, lax
 lain, lane
@@ -499,6 +503,7 @@ pone, pony
 poor, pore, pour
 popery, potpourri
 pored, poured
+portrait, portray
 praise, prays, preys
 pray, prey
 precedence, precedents, presidents

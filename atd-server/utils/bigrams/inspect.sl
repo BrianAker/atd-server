@@ -17,9 +17,15 @@ print("> ");
 while $command (readln())
 {
    @temp = split('\s+', $command);
-   if (size(@temp) == 3)
+   if (size(@temp) == 5)
    {
-      println("Trigram " . @temp . " = " . Ptrigram(@temp[0], @temp[1], @temp[2]));
+      println("Trigram 1: " . sublist(@temp, 0, 3) . " = " . Ptrigram(@temp[0], @temp[1], @temp[2]));
+      println("Trigram 2: " . sublist(@temp, 2, 5) . " = " . Ptrigram2(@temp[2], @temp[3], @temp[4]));
+   }
+   else if (size(@temp) == 3)
+   {
+      println("Trigram 1: " . @temp . " = " . Ptrigram(@temp[0], @temp[1], @temp[2]));
+      println("Trigram 2: " . @temp . " = " . Ptrigram2(@temp[0], @temp[1], @temp[2]));
    }
    else if (size(@temp) == 2)
    {

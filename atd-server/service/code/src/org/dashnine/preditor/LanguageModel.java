@@ -219,6 +219,38 @@ public class LanguageModel implements Serializable
       }
    }
 
+   /* P(a|b,c) */
+   public double Ptrigram2(String a, String b, String c)
+   {
+      double Pnext = Pword(b + " " + c);
+      if (Pnext == 0.0) 
+         return 0.0;
+
+      return Ptrigram3(a, b, c) * Pword(a) / Pnext;
+   }
+
+   /* P(a, b| c) */
+   public double Ptrigram3(String a, String b, String c)
+   {
+      /* calculate count(a, b, c) */
+
+      Value v_first  = getStringValue(model, a, false);
+      if (v_first == null || v_first.next == null)
+         return 0.0;
+
+      Value v_second = getStringValue(v_first.next, b, false);
+      if (v_second == null || v_second.next == null || v_second.count == 0)
+         return 0.0;
+
+      Value v_third  = getStringValue(v_second.next, c, false);
+      if (v_third == null)
+         return 0.0;
+
+      /* return count(a, b, c) / count(a) */
+
+      return (double)v_third.count / (double)v_first.count;
+   }
+
    /* check if these two words have a trigram or not */
    public boolean hasTrigram(String a, String b)
    {

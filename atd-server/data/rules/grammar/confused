@@ -8,11 +8,16 @@ writing|political|science|cultural|grammatical gaff::word=\0 gaffe::pivots=gaff,
 #
 # statistical grammar checking?!? :)
 #
-their::word=their, there, they're::filter=stats
-there::word=their, there::filter=stats
-it's::word=it's, its::filter=stats
-were::word=were, where::filter=stats
-then::word=then, than::filter=stats
+their::word=their, there, they're::options=their,there,they're::filter=stats
+there::word=their, there::options=their,there::filter=stats
+it's::word=it's, its::options=it's,its::filter=stats
+were::word=were, where::options=were,where::filter=stats
+then::word=then, than::options=then,than::filter=stats
+
+# were vs. where
+
+were .*/MD::word=where \1::pivots=were,where::filter=none::options=were,where
+Were .*/MD::word=Where \1::pivots=Were,Where::filter=none::options=were,where
 
 #
 # other rules
@@ -73,10 +78,6 @@ hit the breaks::word=hit the brakes::pivots=breaks,brakes::options=breaks,brakes
 # chord vs. cord
 
 spinal chord::word=spinal cord::pivots=chord,cord::options=chord,cord
-
-# choose vs. chose
-
-to chose::word=to choose::pivots=chose,choose
 
 # compliment vs. complement
 
@@ -246,3 +247,9 @@ over who to::word=over whom to::pivots=who,whom::options=who,whom
 # yoke vs. yolk
 
 egg yoke::word=egg yolk::pivots=yoke,yolk::options=yoke,yolk
+
+#
+they're|there own::word=their \1::pivots=\0,their::options=they're,there,their
+.*/VBG they're::word=\0 their::pivots=they're,their::options=they're,their
+.*/VBG you're::word=\0 your::pivots=you're,your::options=you're,your
+

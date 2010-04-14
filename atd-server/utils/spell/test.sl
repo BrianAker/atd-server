@@ -226,6 +226,9 @@ sub runHomophoneTests
 
    testHomophonesPOS("hnetwork3.bin", @("postf", "probability", "trigram"), "ho_test_gutenberg_pos_context.txt", "postf/prob/trigram (Gutenberg)");
    testHomophonesPOS("hnetwork3.bin", @("postf", "probability", "trigram"), "ho_test_wp_pos_context.txt", "postf/prob/trigram (Wikipedia)");
+
+   testHomophonesPOS("hnetwork4.bin", @("pref", "postf", "probability", "trigram", "trigram2"), "ho_test_gutenberg_pos_context.txt", "pref/postf/prob/trigram/trigram2 (Gutenberg)");
+   testHomophonesPOS("hnetwork4.bin", @("pref", "postf", "probability", "trigram", "trigram2"), "ho_test_wp_pos_context.txt", "pref/postf/prob/trigram/trigram2 (Wikipedia)");
 }
 
 #testHomophonesPOS("hnetwork2.bin", @("pref", "postf", "probability", "pos"), "ho_test_wp_pos_context.txt", "pref/postf/prob");

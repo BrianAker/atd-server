@@ -20,3 +20,8 @@ in there|they're .*/NN|JJ .*/NN::word=\0 their \2 \3::pivots=\1,their
 in there|they're .*/NN::word=\0 their \2::pivots=\1,their
 they're are::word=there are, they are::pivots=they're,there,they
 They're are::word=There are, They are::pivots=They're,There,They
+.*/VB there .*/NNS::word=\0 their \2::pivots=\1,their
+.*/VB there .*/JJ .*/NNS::word=\0 their \2 \3::pivots=\1,their
+.*/IN there .*/NNS::word=\0 their \2::pivots=\1,their
+.*/IN there .*/JJ .*/NNS::word=\0 their \2 3::pivots=\1,their
+

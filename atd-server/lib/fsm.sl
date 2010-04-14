@@ -145,17 +145,17 @@ sub check
 
    if (size($2) > 0)
    {
-      # use the first word as a trigger...  see which rules are associated with it
-      if ($2[0][0] in $1) # $1[$2[0][0]] !is $null) # if $2[0] in $1 plz
-      {
-         $start = $1[$2[0][0]];
-         $result = transition($start, $2, 0, '0BEGIN.0', '0END.0');
-      }
-
       # use the first tag as a trigger... so long as there is no other result.
       if ($result is $null && $2[0][1] in $1)
       {
          $start = $1[$2[0][1]];
+         $result = transition($start, $2, 0, '0BEGIN.0', '0END.0');
+      }
+
+      # use the first word as a trigger...  see which rules are associated with it
+      if ($result is $null && $2[0][0] in $1) # $1[$2[0][0]] !is $null) # if $2[0] in $1 plz
+      {
+         $start = $1[$2[0][0]];
          $result = transition($start, $2, 0, '0BEGIN.0', '0END.0');
       }
    }
