@@ -68,6 +68,7 @@ worth while::word=worthwhile
 where as::word=whereas
 where by::word=whereby
 where upon::word=whereupon
+#with in an|a|the second|minute|hour|year|decade|century|day::word=within \2 \3::filter=none
 with in::word=within
 with out::word=without
 way side::word=wayside
@@ -87,3 +88,6 @@ free lance::word=freelance
 free lancer::word=freelancer
 free lances::word=freelances
 free lancing::word=freelancing
+
+# awhile is an adverb, should be used after a verb
+.*/VB a while::word=\0 awhile::pivots=a while,awhile

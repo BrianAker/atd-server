@@ -336,6 +336,57 @@ public class SpellingUtils implements Loadable, Function
       return temp > c ? c : temp;
    }
 
+   public int scoreDifference(char s, char t)
+   {
+      switch (s) 
+      {
+         case 'î':
+         case 'í': 
+         case 'ï':
+         case 'ì':
+            return t == 'i' ? 0 : 1;
+         case 'i':
+            return t == 'í' || t == 'î' || t == 'ï' || t == 'ì' ? 0 : 1;
+         case 'á':
+         case 'à':
+         case 'ä':
+         case 'â':
+            return t == 'a' ? 0 : 1;
+         case 'a':
+            return t == 'á' || t == 'à' || t == 'ä' || t == 'â' ? 0 : 1;
+         case 'é':
+         case 'è':
+         case 'ê':
+         case 'ë':
+            return t == 'e' ? 0 : 1;
+         case 'e':
+            return t == 'é' || t == 'ê' || t == 'ë' || t == 'è' ? 0 : 1;
+         case 'ñ':
+            return t == 'n' ? 0 : 1;
+         case 'n':
+            return t == 'ñ' ? 0 : 1;
+         case 'ç':
+            return t == 'c' ? 0 : 1;
+         case 'c':
+            return t == 'ç' ? 0 : 1;
+         case 'ú':
+         case 'ù':
+         case 'û':
+         case 'ü':
+            return t == 'u' ? 0 : 1;
+         case 'u':
+            return t == 'ú' || t == 'û' || t == 'ù' || t == 'ü' ? 0 : 1;
+         case 'ö':
+         case 'ò':
+         case 'ó':
+         case 'ô':
+           return t == 'o' ? 0 : 1;
+         case 'o':
+           return t == 'ö' || t == 'ò' || t == 'ó' || t == 'ô' ? 0 : 1;
+      }
+      return 1;
+   }
+
    public int editDistance(String s, String t)
    {
       int m = s.length();
@@ -513,6 +564,12 @@ public class SpellingUtils implements Loadable, Function
          double result = model.Ptrigram(BridgeUtilities.getString(args, " "), BridgeUtilities.getString(args, " "), BridgeUtilities.getString(args, " "));
          return SleepUtils.getScalar(result);
       }
+      else if (name.equals("&Ptrigram2"))
+      {
+         LanguageModel model = (LanguageModel)(script.getScriptVariables().getScalar("$model").objectValue());
+         double result = model.Ptrigram2(BridgeUtilities.getString(args, " "), BridgeUtilities.getString(args, " "), BridgeUtilities.getString(args, " "));
+         return SleepUtils.getScalar(result);
+      }
       else if (name.equals("&count"))
       {
          LanguageModel model = (LanguageModel)(script.getScriptVariables().getScalar("$model").objectValue());
@@ -522,6 +579,10 @@ public class SpellingUtils implements Loadable, Function
       {
          LanguageModel model = (LanguageModel)(script.getScriptVariables().getScalar("$model").objectValue());
          return SleepUtils.getScalar(model.hasTrigram(BridgeUtilities.getString(args, ""), BridgeUtilities.getString(args, "")));
+      }
+      else if (name.equals("&scoreDistance"))
+      {
+         return SleepUtils.getScalar(scoreDifference(BridgeUtilities.getString(args, " ").charAt(0), BridgeUtilities.getString(args, " ").charAt(0)));
       }
 
       return SleepUtils.getEmptyScalar();
@@ -541,8 +602,10 @@ public class SpellingUtils implements Loadable, Function
       script.getScriptEnvironment().getEnvironment().put("&Pbigram1", this);
       script.getScriptEnvironment().getEnvironment().put("&Pbigram2", this);
       script.getScriptEnvironment().getEnvironment().put("&Ptrigram", this);
+      script.getScriptEnvironment().getEnvironment().put("&Ptrigram2", this);
       script.getScriptEnvironment().getEnvironment().put("&count", this);
       script.getScriptEnvironment().getEnvironment().put("&hasTrigram", this);
+      script.getScriptEnvironment().getEnvironment().put("&scoreDistance", this);
    }
 
    public void scriptUnloaded(ScriptInstance script)

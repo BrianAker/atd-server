@@ -165,7 +165,7 @@ sub trainHomophonesByWord
 
 sub trainHomophonesPOS
 {
-   local('$x $entry $sentence $correct $wrongs $criterf $network $pre2 $pre1 $next $wrong $c $x $all $4');
+   local('$x $entry $sentence $correct $wrongs $criterf $network $pre2 $pre1 $next $next2 $wrong $c $x $all $4');
 
    $criterf = criteria($2);
    $network = newObject("nn", @("result"), $2);
@@ -175,21 +175,21 @@ sub trainHomophonesPOS
       while $entry (sentences(iff($4, $4, "ho_train_gutenberg_pos_context.txt")))
       {
          ($sentence, $correct, $wrongs) = $entry;
-         ($pre2, $pre1, $null, $next) = toTaggerForm(split(' ', $sentence));       
+         ($pre2, $pre1, $null, $next, $next2) = toTaggerForm(split(' ', $sentence));       
 
          if ($pre2[1] eq "UNK") { $pre2[1] = ""; }
          if ($pre1[1] eq "UNK") { $pre1[1] = ""; }
 
          foreach $wrong ($wrongs)
          {
-             $c = [$criterf: $wrong, $wrong, $wrongs, $pre1[0], $next[0], @($pre2[1], $pre1[1]), $pre2[0]];
+             $c = [$criterf: $wrong, $wrong, $wrongs, $pre1[0], $next[0], @($pre2[1], $pre1[1]), $pre2[0], $next2[0]];
     #        warn("B: " . join(", ", @($wrong, $wrong, @(), $pre1[0], $next[0], @($pre2[1], $pre1[1]))) . " = " . $c);
 
             [$network trainquery: $c, %(result => 0.0)];
          }
 
          $correct = split('/', $correct);    
-         $c = [$criterf: $correct[0], $correct[0], $wrongs, $pre1[0], $next[0], @($pre2[1], $pre1[1]), $pre2[0]];
+         $c = [$criterf: $correct[0], $correct[0], $wrongs, $pre1[0], $next[0], @($pre2[1], $pre1[1]), $pre2[0], $next2[0]];
    #      warn("G: " . join(", ", @($correct[0], $correct[0], @(), $pre1[0], $next[0], @($pre2[1], $pre1[1]))) . " = " . $c);
 
          [$network trainquery: $c, %(result => 1.0)];
@@ -287,6 +287,7 @@ sub trainHomophoneModels
    trainHomophones("hnetwork.bin", @("pref", "postf", "probability"));
    trainHomophonesPOS("hnetwork2.bin", @("pref", "postf", "probability", "trigram"), 1);
    trainHomophonesPOS("hnetwork3.bin", @("postf", "probability", "trigram"), 1);
+   trainHomophonesPOS("hnetwork4.bin", @("pref", "postf", "probability", "trigram", "trigram2"), 1);
 
    #trainHomophonesPOS("hnetwork4.bin", @("pref", "postf", "pos"), 1);
    #trainHomophonesPOS("hnetwork5.bin", @("pos", "assoc"), 1);

@@ -28,11 +28,20 @@ should|could|would|did not put|come|become|run|set::filter=kill
 shouldn't|couldn't|wouldn't|didn't .*/VBN::word=\0 \1:base::pivots=\1,\1:base
 should|could|would|did not .*/VBN::word=\0 \1 \2:base::pivots=\2,\2:base
 
+need|must|should found::filter=kill
+must|should .*/VBN::word=\0 \1:base, \0 be \1::pivots=\1,\1:base,be \1
+
 # 
 # wrong tense with an infinitive (I have to gone vs. I have to be gone or I have to go)
 #
 have to put|come|become|run|set::filter=kill
 have to .*/VBN::word=\0 \1 \2:base, \0 \1 be \2::pivots=\2,\2:base,be \2
+
+used|going|ought to put|come|become|run|set::filter=kill
+
+    # you're not used to embedded systems are you?
+used|going|ought to .*/VBN .*/NN::filter=kill
+used|going|ought to .*/VBN::word=\0 \1 \2:base, \0 \1 be \2::pivots=\2,\2:base,be \2
 
 # mislead/misled
 
@@ -72,3 +81,16 @@ is been::word=has been, have been::pivots=is,has,have
 
 # contractions are not always my friend, eh
 I'd|She'd|You'd|We'd|He'd|she'd|you'd|we'd|he'd &irregular_verb_past::word=\0 \1:participle::pivots=\1,\1:participle
+
+# if this rules goes away, add back to chose::word=to choose as this is a common mistake
+to crew|span|was|came|shore|saw|beat|lay|bore::filter=kill
+to &irregular_verb_past::word=to \1:base::pivots=\1,\1:base
+
+# some more modal verb agreement errors
+
+can't|couldn't|shouldn't|wouldn't was|bore|span::filter=kill
+can't|couldn't|shouldn't|wouldn't &irregular_verb_past::word=\0 \1:base::pivots=\1,\1:base
+.*/MD was|bore|span::filter=kill
+.*/MD not was|bore|span::filter=kill
+.*/MD &irregular_verb_past::word=\0 \1:base::pivots=\1,\1:base
+.*/MD not &irregular_verb_past::word=\0 not \2:base::pivots=\2,\2:base

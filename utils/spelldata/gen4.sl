@@ -15,16 +15,16 @@ sub getnext
    add(@words, @('0BEGIN.0', 'UNK'));
    push(@words, @('0END.0', 'UNK'));
 
-   while (size(@words) >= 4)
+   while (size(@words) >= 5)
    {
-      yield sublist(@words, 0, 4);
+      yield sublist(@words, 0, 5);
       @words = sublist(@words, 1);
    }
 }
 
 sub process
 {
-   local('@words $entry $previous $current $next $pre2 $pre1');
+   local('@words $entry $previous $current $next $pre2 $pre1 $next1 $next2');
 
    $1 = [$1 trim];
    if ($1 !ismatch '[A-Z][A-Za-z\'\,\- ]*?[\.\?\!]{0,1}')
@@ -36,13 +36,13 @@ sub process
 
    while $entry (getnext(@words))
    {
-      ($pre2, $pre1, $current, $next) = map({ return $1[0]; }, $entry);
+      ($pre2, $pre1, $current, $next1, $next2) = map({ return $1[0]; }, $entry);
 
-      if (%words[$current] !is $null && %dictionary[$pre2] !is $null && %dictionary[$pre1] !is $null && %dictionary[$next] !is $null && %counts[$current] < $max)
+      if (%words[$current] !is $null && %dictionary[$pre2] !is $null && %dictionary[$pre1] !is $null && %dictionary[$next1] !is $null && %dictionary[$next2] !is $null && %counts[$current] < $max)
       {
-         ($pre2, $pre1, $current, $next) = map({ return join('/', $1); }, $entry);
+         ($pre2, $pre1, $current, $next1, $next2) = map({ return join('/', $1); }, $entry);
 
-         println($output, "$pre2 $pre1 * $next $+ |" . join("; ", concat($current, %dataset[$entry[2][0]])) );
+         println($output, "$pre2 $pre1 * $next1 $next2 $+ |" . join("; ", concat($current, %dataset[$entry[2][0]])) );
          %counts[$entry[2][0]] += 1;
       }
    }

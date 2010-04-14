@@ -2,6 +2,7 @@ been .*/VB|VBP .*/IN::word=\0 \1:participle \2::pivots=\1,\1:participle
 been .*/RB .*/VB|VBP .*/IN::word=\0 \1 \2:participle \3::pivots=\2,\2:participle
 been .*/VB|VBP|VBD .*/VBN|VB::word=\0 \1:present \2::pivots=\1,\1:present
 been .*/RB .*/VB|VBP|VBD .*/VBN|VB::word=\0 \1 \2:present \3::pivots=\2,\2:present
+was .*/VB 0END.0::word=\0 \1:participle::pivots=\1,\1:participle
 was .*/VB|VBP .*/IN::word=\0 \1:participle \2::pivots=\1,\1:participle
 was .*/RB .*/VB|VBP .*/IN::word=\0 \1 \2:participle \3::pivots=\2,\2:participle
 was .*/VB|VBP|VBD .*/VBN|VB::word=\0 \1:present \2::pivots=\1,\1:present

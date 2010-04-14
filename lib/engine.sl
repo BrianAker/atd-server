@@ -15,7 +15,7 @@ sub initAllModels
                                                                         # to be suggested but not considered misspelled to the dictionary
    $rules      = get_rules();
    $network    = get_network("cnetwork.bin");
-   $hnetwork   = get_network("hnetwork2.bin");
+   $hnetwork   = get_network("hnetwork4.bin");
    %edits      = initEdits();
    $dsize      = size($dictionary);
    $verbs      = loadVerbData();
@@ -59,13 +59,21 @@ sub processSingle
    @result = check($rules, @tags);
    if (@result is $null)
    {
-      add(@list, '0BEGIN.0');
-      push(@list, '0END.0');
-
       add(@tags, @('0BEGIN.0', 'UNK'));
-      push(@tags, @('0END.0', 'UNK'));
-
       @result = check($rules, @tags);
+
+      if (@result is $null)
+      {
+         @tags = sublist(@tags, 1);
+         push(@tags, @('0END.0', 'UNK'));
+         @result = check($rules, @tags);
+
+         if (@result is $null)
+         {
+            add(@tags, @('0BEGIN.0', 'UNK'));
+            @result = check($rules, @tags);
+         }
+      }
    }
 
    return iff(@result !is $null && size(@result) > 0, @result[0], $null);
@@ -107,6 +115,10 @@ sub suggestions
              else if ([$1 endsWith: ":possessive"])
              {
                 return pluralToSingular(left($1, -11)) . '\'s';      
+             }
+             else if ([$1 endsWith: ":nonposs"])
+             {
+                return singularToPlural(left($1, -10));
              }
              else if ([$1 endsWith: ":present"])
              {
@@ -150,12 +162,20 @@ sub suggestions
 
 sub filterSuggestion
 {
-   local('$error $rule $text $path $context $sentence $next @tagsp @tagsn @temp $pre2');
+   local('$error $rule $text $path $context $sentence $next @tagsp @tagsn @temp $pre2 $next2');
    $error = $1;
    ($rule, $text, $path, $context, $next, @tagsp, @tagsn) = $1;
 
    if ($rule["word"] eq "")
    {
+      local('$word');
+      foreach $word (split('\s+', $path))
+      {
+         if ($word !in $dictionary && $rule['rule'] ne 'Spelling')
+         {
+            return;
+         }
+      }
       $error[4] = @();
    }
    else if ($rule["filter"] eq "none")
@@ -165,7 +185,8 @@ sub filterSuggestion
    else if ($rule["filter"] eq "homophone")
    {
       $pre2 = iff(size(@tagsp) >= 3, @tagsp[-2][0], iff(strlen($context) > 0 && -isupper charAt($context, 0) && -isletter charAt($context, 0), '0BEGIN.0',"")); # $pre2 $context $text
-      $error[4] = checkHomophone($hnetwork, $text, split(', ', $rule["word"]), $context, $next, @('UNK', 'UNK'), $pre2, $bias1 => 30.0, $bias2 => 10.0);
+      $next2 = iff(size(@tagsn) >= 3, @tagsn[2][0], '0END.0');
+      $error[4] = checkHomophone($hnetwork, $text, split(', ', $rule["word"]), $context, $next, @('UNK', 'UNK'), $pre2, $next2, $bias1 => 30.0, $bias2 => 10.0);
       if (size($error[4]) == 0)
       {
          return;
@@ -174,6 +195,7 @@ sub filterSuggestion
    else if ($rule["filter"] eq "stats")
    {
       $pre2 = iff(size(@tagsp) >= 3, @tagsp[-2][0], iff(strlen($context) > 0 && -isupper charAt($context, 0) && -isletter charAt($context, 0), '0BEGIN.0',"")); # $pre2 $context $text
+      $next2 = iff(size(@tagsn) >= 3, @tagsn[2][0], '0END.0');
       $error[4] = checkHomophone($hnetwork, $text, split(', ', $rule["word"]), $context, $next, @('UNK', 'UNK'), $pre2, $bias1 => 100.0, $bias2 => 15.0);
       if (size($error[4]) == 0)
       {
@@ -266,12 +288,6 @@ sub filterSuggestion
 
       foreach $s (suggestions(split(', ', $rule["word"]), @tagsn))
       {
-         if ($rule["rule"] eq "Redundant Expression" && $rule["filter"] ne "normal")
-         {
-            $s = strrep($text, $s, "");
-            $s = [replace($s, '\s{2,}', ' ') trim];
-         }
-
          $n = score($context, $s, $next);
 
          if ($n >= $score && $s ne $text)

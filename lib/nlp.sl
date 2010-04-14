@@ -24,7 +24,7 @@ sub stripHTML
    # certain tags (like bold) are replaced by newlines to force AtD to treat them as new sentences.  This is important to make sure they don't carry context information with them
 
    $1 = strrep($1, '&nbsp;', ' ', '&quote;', '"', '&amp;', '&', '&eacute;', "\xe9", '&egrave;', "\xe8");
-   $1 = replace(replace($1, '<[/]{0,1}(?i:p|b|br|span|strong|u|li|em|i|a).*?>', "\n"), '(<[^>]*?>)', '');
+   $1 = replace(replace($1, '<[/]{0,1}(?i:p|b|br|span|strong|u|li|em|i|a|h\d|div).*?>', "\n"), '(<[^>]*?>)', '');
    #      $data = replace($data, '(\\&[^\\;]*?\\;)', '');
    return $1;
 }
@@ -145,7 +145,7 @@ sub splitIntoWords
 {
    local('@list $x @prop $value');
  
-   @list = split('\s+', replace(replace($1, '([,\(\)\[\]\:\;\/]|https{0,1}\:\/\/|-{2})', ' $1 '), '[^0-9a-zA-Z\p{Ll}\p{Lu}\\,\(\)\[\]\;\:\'\\\\\\-\\/ ]', ""));
+   @list = split('\s+', replace(replace($1, '([,\(\)\[\]\:\;\/]|https{0,1}\:\/\/[0-9a-zA-Z\/\:\~\-\.\_\?\%\&\=]*|-{2})', ' $1 '), '[^0-9a-zA-Z\p{Ll}\p{Lu}\\,\(\)\[\]\;\:\'\\\\\\-\\/ ]', ""));
 
    if (size(@list) > 0 && strlen(@list[0]) == 0)
    {

@@ -38,6 +38,7 @@ WACs	female soldiers
 Wales	SW Great Britain
 Wayne	male name
 a	the first letter of the alphabet
+accept	to approve
 acts	How someone does something as in "He acts crazy"
 ad	advertisement
 ads	advertisements
@@ -121,6 +122,8 @@ band	a group, usually musical
 banned	No longer welcome or allowed in a given area
 bard	musical poet
 bare	without covering
+barely	almost not enough
+barley	a plant whose grain is used in beer
 bark	Formerly, any small sailing vessel, as a pinnace, fishing smack, etc.; also, a rowing boat; a barge. Now applied poetically to a sailing vessel or boat of any kind. --Byron.
 baron	lowest grade of nobility
 barque	A boat or sailing vessel
@@ -222,6 +225,8 @@ bread	a common food item made from flour or meal, usually combined with yeast an
 break	shatter
 breaks	shatters into pieces easily
 bred	having mated
+breath	the air you inhale and exhale
+breathe the act of consuming air to survive
 breech	the lower part of anything
 brewed	to make or prepare
 brews	makes a drink, often alcoholic but also tea or coffee
@@ -477,6 +482,7 @@ err	to mess up
 eunuchs	a man not considered a 'real man'
 ewe	the female counterpart of a sheep
 ewes	plural of ewe, the word for a female sheep or related animal
+except	to leave out
 eye	body part
 eyelet	small enclosed circle to hold laces in place
 facts	things known to be true
@@ -499,9 +505,11 @@ fays	Middle English for fairy
 faze	To surprise and worry someone.
 fazed	(often as fazed adj.) colloq. disconcert, disorientate
 feat	an accomplishment,neat,suitable
+feel	to sense something by touch
 feet	bi-pedal extremities
 feign	pretend, act as if
 feint	an action to fake out an opponent
+fell	dropped
 ferrate	a compund of hydrogen, oxygen, and iron
 ferret	a small polecat pet
 ferry	A place where persons or things are carried across a river, arm of the sea, etc., in a ferryboat.
@@ -544,6 +552,7 @@ fore	not behind
 forego	to come before
 foreword	early section in book, usually describing the backstory of creating the story
 forgo	The act of giving up something
+form	shape
 fort	a permanent post
 forte	a person's strength or special ability
 forth	bring out in the open in a certain way
@@ -557,6 +566,8 @@ frees	lets one out of bondage
 freeze	unable to move or or to stop moving due to ice or severe cold
 friar	A Roman Catholic monk
 frieze	Decoration along the top of a wall
+fro	backwards, as in to and fro
+from	the starting point of something
 fryer	a chick
 fur	the thick hairy coat of an animal's skin
 furr	brace apart using wood
@@ -936,12 +947,16 @@ nob	the head
 nock	the ridge in an arrow
 nod	gesture of the head
 noes	plural of no
+non	a prefix to a word meaning not
 none	zero
 nose	the smelling orifice of the face
 not	A word used to express negation, prohibition, denial, or refusal.
+now	this moment in time
 nun	A female member of a religious order, usually bound by vows of chastity, poverty, etc.
 oar	a wooden paddle used to manually propel or steer a boat.
 odd	unordinary
+of	from something
+off	the opposite of on
 offal	cut up innards
 oh	exclamation of surprise
 ohs	an expression in conversation
@@ -1052,6 +1067,8 @@ populace	the people who live here
 populous	many people live here
 pore	to look over carefully; a very small hole
 pored	to look over carefully
+portrait	a picture
+portray	to make a likeness of
 potpourri	collection of various unrelated items.
 pour	flowing or falling of any liquid
 poured	to serve a glass of lemonade (or something else)
@@ -1227,6 +1244,7 @@ sell	exchanged for monetary gain
 seller	opposite of buyer
 semen	fluid coming from the man's reproductive organs
 sense	any of the faculties
+since	from that time
 senses	feelings and perceptions
 sensor	a detector
 sent	a smell

@@ -48,8 +48,8 @@ sub checkAnyHomophone
 
 sub checkAnyHomophone2
 {
-   local('$current $options $pre $next %scores $criteriaf @results $option $hnetwork $tags $pre2');
-   ($hnetwork, $current, $options, $pre, $next, $tags, $pre2) = @_;
+   local('$current $options $pre $next %scores $criteriaf @results $option $hnetwork $tags $pre2 $next2');
+   ($hnetwork, $current, $options, $pre, $next, $tags, $pre2, $next2) = @_;
 
    # setup the criteria function
 #   $criteriaf = criteria(@("pref", "postf", "probability"));
@@ -60,7 +60,7 @@ sub checkAnyHomophone2
    foreach $option ($options)    
    {
 #      warn(@_ . " -> " . [$criteriaf: $current, $option, $options, $pre, $next, $tags]);
-      %scores[$option] = [$hnetwork getresult: [$criteriaf: $current, $option, $options, $pre, $next, $tags, $pre2]]["result"];
+      %scores[$option] = [$hnetwork getresult: [$criteriaf: $current, $option, $options, $pre, $next, $tags, $pre2, $next2]]["result"];
       if ($option eq $current)              
       {
 #         warn(Pword($current));

@@ -21,3 +21,8 @@ Your welcome::word=You're welcome::pivots=Your,You're::options=your,you're
 you're are::word=you are::filter=none
 your are::word=you're::filter=none           
 your are .*ing::word=you are \2::filter=none
+
+Your not::word=You're not::pivots=Your,You're
+your not::word=you're not::pivots=your,you're
+your in|at::word=you're \1::filter=none
+Your in|at::word=You're \1::filter=none

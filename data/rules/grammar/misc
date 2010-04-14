@@ -61,8 +61,8 @@ different than::word=different from::pivots=than,from
 
 # wrong verb tense
 
-He|She &irregular_verb_base::word=\0 \1:past::pivots=\1,\1:past::description=You have used the wrong verb tense with the subject of this sentence.  Revise your sentence with a past form for it to make sense.::info=1::rule::Wrong Verb Tense
-he|she|He|She .*/VBP with|for::word=\0 \1:past \2::pivots=\1,\1:past::description=You have used the wrong verb tense with the subject of this sentence.  Revise your sentence with a past form for it to make sense.::info=1::rule::Wrong Verb Tense
+He|She &irregular_verb_base::word=\0 \1:past::pivots=\1,\1:past::description=You have used the wrong verb tense with the subject of this sentence.  Revise your sentence with a past form for it to make sense.::info=1::rule=Wrong Verb Tense
+he|she|He|She .*/VBP with|for::word=\0 \1:past \2::pivots=\1,\1:past::description=You have used the wrong verb tense with the subject of this sentence.  Revise your sentence with a past form for it to make sense.::info=1::rule=Wrong Verb Tense
 
 # more misc rules...
 
@@ -84,7 +84,6 @@ afraid of .*/JJ .*/NN .*/NNS::filter=kill
 afraid of .*/NN::word=afraid of \2:plural::pivots=\2,\2:plural
 afraid of .*/JJ .*/NN::word=afraid of \2 \3:plural::pivots=\3,\3:plural
 afraid of dark|wind|rain::word=afraid of the \3::filter=none
-
 
 # Revise... (phrases/names heard wrong)
 
@@ -124,11 +123,12 @@ de factor::word=de facto::pivots=factor,facto
 worse-case scenario::word=worst-case scenario::pivots=worse-case,worst-case
 worst comes to worst::word=worse comes to worst::pivots=worse-case,worst-case
 to bath::word=to bathe::pivots=bath,bathe
+treasure trough::word=treasure trove::pivots=trough,trove
 
 # ...
 
-was|is suppose to::is supposed to::filter=none
-was|is based off::word=is based on::filter=none
+was|is suppose to::word=\0 supposed to::filter=none
+was|is based off::word=\0 based on::filter=none
 alma matter::word=alma mater::pivots=matter,mater
 
 #
@@ -166,3 +166,6 @@ now days::word=nowadays
 Now days::word=Nowadays
 
 stock and trade::word=stock in trade::filter=none
+
+# common typo
+your have|are::word=you \1::pivots=your,you

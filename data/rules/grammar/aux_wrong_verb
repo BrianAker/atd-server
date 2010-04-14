@@ -26,6 +26,7 @@ This [a-z].*/NNS of [a-z].*/NN was::word=These \1 \2 \3 were, \0 \1:singular \2 
 This [a-z].*/NNS of [a-z].*/NN has::word=These \1 \2 \3 have, \0 \1:singular \2 \3 \4::pivots=\1 \2 \3,\1 \2 \3,\1:singular \2 \3
 
 # determiner agreement rules for a/an
+an eagerness to::filter=kill
 
 a .*/NNS has::word=\1 have, \0 \1:singular has::filter=none
 an .*/NNS has::word=\1 have, \0 \1:singular has::filter=none

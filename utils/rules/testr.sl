@@ -31,7 +31,7 @@ sub initAll
    $model      = get_language_model();
    $dictionary = dictionary();
    $dsize      = size($dictionary);
-   $hnetwork   = get_network("hnetwork2.bin");
+   $hnetwork   = get_network("hnetwork4.bin");
    $verbs      = loadVerbData();
    initTaggerModels();
 }

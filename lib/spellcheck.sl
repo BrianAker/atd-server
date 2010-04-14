@@ -127,15 +127,17 @@ sub CompareSuggestions
 
 sub spellcheckerFeatures
 {
-   local('$checka $checkb');
-   $checka = iff(strlen($1) > 2, charAt($1, 1) . charAt($1, 0) . substr($1, 2));
-   $checkb = charAt($1, 0) . charAt($2, 0);
+   local('$checka $checkb $a $b');
+   $a = charAt($1, 0);
+   $b = charAt($2, 0);
+   $checka = iff(strlen($1) > 2, charAt($1, 1) . $a . substr($1, 2));
+   $checkb = $a . $b;
 
    return %(
       distance    => iff( editDistance($2, $1) == 1, 1.0, 0.0 ),
       postf       => Pbigram2($2, $5),
       pref        => Pbigram1($4, $2),
-      firstLetter => iff(uc(charAt($1, 0)) eq uc(charAt($2, 0)) || $checka eq $2 || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck", 1.0, 0.0)
+      firstLetter => iff(uc($a) eq uc($b) || $checka eq $2 || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck" || scoreDistance($a, $b) == 0, 1.0, 0.0)
    );
 }
 
@@ -145,11 +147,12 @@ sub misuseFeatures
       postf       => Pbigram2($2, $5),
       pref        => Pbigram1($4, $2),
       probability => Pword($2),
-      trigram     => Ptrigram($7, $4, $2)
+      trigram     => Ptrigram($7, $4, $2),
+      trigram2    => Ptrigram2($2, $5, $8)
    );
 }
 
-# features("mispelled word", "suggestion", @suggestions, "previous", "next", @(trigram2, trigram1)), "prepre"
+# features("mispelled word", "suggestion", @suggestions, "previous", "next", @(trigram2, trigram1)), "prepre", "nextnext"
 sub features
 {
    local('%r');
@@ -179,7 +182,8 @@ sub features
 #      %r["firstLetter"] = iff(uc(charAt($1, 0)) eq uc(charAt($2, 0)), 1.0, iff($checka eq $2 || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck", 0.50, 0.0));
 #      %r["firstLetter"] = iff(uc(charAt($1, 0)) eq uc(charAt($2, 0)) || $checka eq $2); # || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck", 1.0, 0.0);
 #      %r["firstLetter"] = iff(uc(charAt($1, 0)) eq uc(charAt($2, 0))); # || $checka eq $2); # || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck", 1.0, 0.0);
-       %r["firstLetter"] = iff(uc(charAt($1, 0)) eq uc(charAt($2, 0)) || $checka eq $2 || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck", 1.0, 0.0);
+       %r["firstLetter"] = iff(uc(charAt($1, 0)) eq uc(charAt($2, 0)) || $checka eq $2 || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck" || scoreDistance(charAt($1, 0), charAt($2, 0)) == 0, 1.0, 0.0);
+#       %r["firstLetter"] = iff(uc(charAt($1, 0)) eq uc(charAt($2, 0)) || $checka eq $2 || $checkb eq "gx" || $checkb eq "fp" || $checkb eq "ck", 1.0, 0.0);
    }
 
    if (%features["transpose"] == 1)
@@ -201,6 +205,11 @@ sub features
    if (%features["trigram"] == 1)
    {
       %r["trigram"] = Ptrigram($7, $4, $2);
+   }
+
+   if (%features["trigram2"] == 1)
+   {
+      %r["trigram2"] = Ptrigram2($2, $5, $8);
    }
 
    if (%features["pos"] == 1)
@@ -302,12 +311,16 @@ sub checkSentenceSpelling
    foreach $index => $word (removeShortCodes($1))
    {
       $next = iff(($index + 1) < size($1), $1[$index + 1], '0END.0');
-
+      
       if ($word ne "" && $word !in $dictionary && lc($word) !in $dictionary)
       {
+         if (charAt($word, 0) eq "'")
+         {
+            $previous = "";
+         }
          $word = fixWord($word);
 
-         if ($word in $dictionary || lc($word) in $dictionary || $previous eq 'http://' || $previous eq 'https://')
+         if ($word in $dictionary || lc($word) in $dictionary || [$word startsWith: 'http//'] || [$word startsWith: 'https//'])
          {
             # make sure $previous doesn't get set to the modified $word in these cases
             # 1. if the word was changed then the previous tag won't match up
@@ -393,7 +406,7 @@ sub checkSentenceSpelling
                 push(@results, filterSuggestion( @($rule, $word, $word, $previous) ));
             }
          }
-         else if ($word ismatch '\w+[-\w]+')
+         else if ($word ismatch '\w+(-\w+)+')
          {
             local('@tempw @tempx');
             @tempx = split('-', $word);
@@ -455,7 +468,7 @@ sub checkSentenceSpelling
          # TinyMCE plugin isn't aware of commas so make the previous word ""
          $word = "";
       }
-      else if ($word eq $next && "$word $+ - $+ $next" !in $dictionary && $word ne 'Boing')
+      else if ($word eq $next && "$word $+ - $+ $next" !in $dictionary && $word ne 'Boing' && $word ne "Johnson" && $word ne "Mahi")
       {
          $rule = %(word => $word, 
                    rule => "Repeated Word",
@@ -473,19 +486,19 @@ sub checkSentenceSpelling
 
 sub checkHomophone
 {
-   local('$current $options $pre $next %scores $criteriaf @results $option $hnetwork $tags $pre2');
-   ($hnetwork, $current, $options, $pre, $next, $tags, $pre2) = @_;
+   local('$current $options $pre $next %scores $criteriaf @results $option $hnetwork $tags $pre2 $next2');
+   ($hnetwork, $current, $options, $pre, $next, $tags, $pre2, $next2) = @_;
 
    # score the options
    foreach $option ($options)
    {
-      %scores[$option] = [$hnetwork getresult: misuseFeatures($current, $option, $options, $pre, $next, $tags, $pre2)]["result"];
+      %scores[$option] = [$hnetwork getresult: misuseFeatures($current, $option, $options, $pre, $next, $tags, $pre2, $next2)]["result"];
       if ($option eq $current)
       {
          %scores[$option] *= iff($pre2 eq "" || !hasTrigram($pre2, $pre), $bias1, $bias2); # bias factor
-#         warn("$pre2 $+ . $+ $pre $+ _ $+ $option $+ _ $+ $next - " . iff($pre2 eq "" || !hasTrigram($pre2, $pre), $bias1, $bias2) . " = " . %scores);
       }
    }
+#   warn("$pre2 $+ . $+ $pre $+ _ $+ $current $+ _ $+ $next $+ . $+ $next2 - " . iff($pre2 eq "" || !hasTrigram($pre2, $pre), $bias1, $bias2) . " = " . %scores);
 
 #   warn("Looking at $pre $current $+ / $+ $options $next " . %scores);
 

@@ -4,6 +4,9 @@
     foreach $error ($1)
     {
        ($rule, $text, $path, $context, @suggestions, $unk, $tags) = $error;
-       display("view/error.slp", $text, $rule, $context, @suggestions, $tags);
+       if ($rule !is $null)
+       {
+          display("view/error.slp", $text, $rule, $context, @suggestions, $tags);
+       }
     }
 ?></results>
