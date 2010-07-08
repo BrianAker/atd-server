@@ -94,6 +94,7 @@ Eotvos::word=Eötvös::filter=none
 Esme::word=Esmé::filter=none
 Espirito Santo::word=Espírito Santo::filter=none
 Etain::word=Étaín::filter=none
+Eyjafjallajokull::word=Eyjafjallajökull::filter=none
 Fachtna Fathach::word=Fachtna Fáthach::filter=none
 Fahrvergnugen::word=Fahrvergnügen::filter=none
 Fedelm Noichrothach::word=Fedelm Noíchrothach::filter=none
@@ -215,6 +216,7 @@ Mulleran mimicry::word=Mülleran mimicry::filter=none
 Mullerian duct::word=Müllerian duct::filter=none
 Munchausen syndrome::word=Münchausen syndrome::filter=none
 Munster::word=Münster::filter=none
+Myrdalsjokull::word=Mýrdalsjökull::filter=none
 Naga::word=Nāga::filter=none
 Neuchatel::word=Neuchâtel::filter=none
 Nicoise salad::word=Niçoise salad::filter=none

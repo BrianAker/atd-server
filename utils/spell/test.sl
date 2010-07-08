@@ -17,14 +17,18 @@ include("lib/object.sl");
 include("lib/tagger.sl");
 
 # preamble to set all this up
-global('$__SCRIPT__ $model $rules $dictionary $dsize $biasdb $trie');
+global('$__SCRIPT__ $model $rules $dictionary $dsize $biasdb $trie %edits');
 $model      = get_language_model();
 $rules      = get_rules();
 $dictionary = dictionary();
 $trie       = trie($dictionary);
 $dsize      = size($dictionary);
 #$biasdb     = [{ local('$handle $o'); $handle = openf("models/homobias.bin"); $o = readObject($handle); closef($handle); return $o; }];
+%edits      = initEdits(ohasha());
 initTaggerModels();
+
+import org.dashnine.preditor.SpellingUtils from: lib/spellutils.jar;
+setField(^SpellingUtils, noWordSeparation => 1);
 
 # makeTest("network file", "criteria", "desc")
 inline makeNTest

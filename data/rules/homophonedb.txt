@@ -1,8 +1,13 @@
 a, eh
+access, assess
+accessed, assessed
 acts, ax
 ad, add
 ads, adds
 adapt, adopt
+adapted, adopted
+adapter, adopter
+adapting, adopting
 adds, ads, adze
 ade, aid, aide
 aerie, airy
@@ -24,6 +29,7 @@ ant, aunt
 ante, anti, auntie
 appraise, apprise
 arc, ark
+assay, essay
 ascent, assent
 ate, eight
 auger, augur
@@ -98,7 +104,7 @@ brakes, breaks
 breach, breech
 bread, bred
 breathe, breath
-brewed, brood
+brewed, brood, broad
 brews, bruise
 bridal, bridle
 broach, brooch
@@ -127,10 +133,12 @@ cast, caste
 caster, castor
 cause, caws
 cay, key, quay
+cease, seize
 cedar, seeder
 cede, seed
 ceding, seeding
 ceiling, sealing
+celebrate, celibate
 cell, sell
 cellar, seller
 censer, censor, sensor
@@ -159,6 +167,7 @@ cited, sighted, sited
 cites, sights, sites
 clack, claque
 Claus, clause, claws
+clench, clinch
 clew, clue
 click, clique
 climb, clime
@@ -206,6 +215,8 @@ dammed, damned
 darn, darne
 days, daze
 dear, deer
+deducible, deductible
+desert, dessert
 dew, do, due
 die, dye
 died, dyed
@@ -214,6 +225,7 @@ diffuse, defuse
 diffused, defused
 dine, dyne
 dire, dyer
+disburse, disperse
 disc, disk
 discreet, discrete
 discussed, disgust
@@ -224,6 +236,7 @@ done, dun
 dos, dues
 draft, draught
 dual, duel
+dying, dyeing
 earl, URL
 earn, urn
 edition, addition
@@ -232,10 +245,12 @@ allude, elude, illude
 ensure, insure
 ensured, insured
 emit, omit
+envelop, envelope
 epic, epoch
 eunuchs, Unix
 ewe, yew, you
 ewes, use, yews
+extent, extant
 eyelet, islet
 facts, fax
 fain, feign
@@ -257,10 +272,12 @@ few, phew
 file, phial
 fills, fils
 filter, philter
-find, fined
+find, fined, fine
+finds, fines
 finish, Finnish
 fir, fur, furr
 fisher, fissure
+fission, fusion
 flair, flare
 flea, flee
 flecks, flex
@@ -346,6 +363,7 @@ holey, holy, wholly
 hostel, hostile
 hours, ours
 humerus, humorous
+hypercritical, hypocritical
 idle, idol, idyl
 imminent, eminent
 imminently, eminently
@@ -412,7 +430,9 @@ mail, male
 main, mane
 maize, maze
 mall, maul, moll
+manager, manger
 manner, manor
+mantle, mantel
 marc, mark, marque
 marquee, marquis
 marry, merry
@@ -441,7 +461,7 @@ moire, moray
 mood, mooed
 moor, more
 moose, mousse
-moral, morel
+moral, morel, morale
 morn, mourn
 morning, mourning
 muscle, mussel
@@ -459,8 +479,10 @@ oh, owe
 ohs, owes
 one, won
 oohs, ooze
+opposition, apposition
 ordinance, ordnance
 overdo, overdue
+overhead, overheard
 paced, paste
 packed, pact
 pail, pale
@@ -469,11 +491,13 @@ pair, pare, pear
 palate, pallet, pallette
 pall, Paul, pawl
 passed, past
+passable, possible
 patience, patients
 pause, paws
 pea, pee
 peace, piece
 peak, peek, pique
+peaked, peeked, piqued
 peal, peel
 pealed, peeled
 pearl, purl, perl
@@ -481,6 +505,7 @@ pedal, peddle
 peer, pier
 pencil, pensil
 per, purr
+pursue, peruse
 phrase, frays
 pi, pie
 picnic, pyknic
@@ -503,10 +528,12 @@ pone, pony
 poor, pore, pour
 popery, potpourri
 pored, poured
+portable, potable
 portrait, portray
 praise, prays, preys
 pray, prey
 precedence, precedents, presidents
+preposition, proposition
 presence, presents
 pride, pryed
 pries, prize
@@ -535,6 +562,7 @@ real, reel
 recede, reseed
 reck, wreck
 reek, wreak
+register, registrar
 resinate, resonate
 resisters, resistors
 rest, wrest
@@ -574,7 +602,7 @@ sane, seine
 saner, seiner
 saver, savor
 sawed, sod
-scene, seen, saw
+scene, seen
 scull, skull
 sea, see
 seal, seel
@@ -624,6 +652,8 @@ stable, stabile
 staid, stayed
 stair, stare
 stake, steak
+stared, starred
+staring, starring
 statice, status
 stationary, stationery
 steal, steel
@@ -632,6 +662,8 @@ stile, style
 stoop, stoup
 storey, story
 straight, strait
+subsided, subsidized
+subside, subsidize
 succor, sucker
 suede, swayed
 suite, sweet
@@ -645,7 +677,7 @@ tails, tales
 tailer, tailor
 taper, tapir
 tare, tear
-taught, taut
+taught, taunt, taut
 tea, tee, ti
 team, teem
 teaming, teeming
@@ -666,6 +698,7 @@ tide, tied
 tighten, titan
 timber, timbre
 tire, tyer
+tired, tried
 toad, toed, towed
 tocsin, toxin
 tocsins, toxins
@@ -689,6 +722,7 @@ vary, very
 verses, versus
 vial, vile, viol
 vice, vise
+vicious, viscous
 WACs, wax, whacks
 wade, weighed
 wail, wale, whale
@@ -731,9 +765,7 @@ whit, wit, with
 whither, wither
 whoa, woe
 why, wye
-women, woman
 wondered, wandered
-wood, would
 worst, wurst
 y'all, yawl
 yack, yak

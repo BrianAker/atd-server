@@ -121,6 +121,7 @@ brain dump
 brass tacks
 bring home the bacon
 brothers keeper
+brouhaha
 bull by the horns
 bull in a china shop
 bull in a china shop
@@ -185,6 +186,7 @@ disgraced and dishonored
 divisive quarrel
 dog days
 dog in the manger
+donnybrook
 doubting Thomas
 down and dirty
 down in the dumps
@@ -289,6 +291,8 @@ hook or by crook
 horse of a different color
 hot knife through butter
 if the shoe fits
+imbroglio
+imbroglios
 implement
 in a nutshell
 in a pinch
@@ -445,6 +449,8 @@ older and wiser
 on the bandwagon
 on the nose
 on the wagon
+on steroids
+on Steroids
 one born every minute
 one foot in the grave
 one in a million
@@ -544,6 +550,7 @@ significant other
 silence is golden
 slept like a log
 small world
+smell blood in the water
 smooth and silk
 snow job
 snug as a bug
@@ -562,6 +569,7 @@ spreading like wildfire
 spring to life
 squeaky wheel gets the grease|oil
 start from scratch
+stayed on message
 steaming jungle
 stick in the mud
 sticks out like a sore thumb
@@ -586,6 +594,7 @@ take one for the team
 take the plunge
 takes one to know one
 talk turkey
+talking points
 ten foot pole
 tender mercies
 terror-stricken

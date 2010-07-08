@@ -52,6 +52,9 @@ sub main
       $rules = loadRules(machine(), $1, %());
    }
 
+   # processSentence now expects $rules to be an array of rule packages
+   $rules = @( $rules );
+
    $handle = openf($2);
    while $sentence (readln($handle))
    {
@@ -86,6 +89,7 @@ sub main
       }
       else
       {
+#          println("NOT FOUND");
 #          println($sentence);
 #          println(taggerToString(taggerWithTrigrams(splitIntoWords($sentence))));
       }

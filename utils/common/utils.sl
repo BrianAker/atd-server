@@ -1,30 +1,7 @@
-global('%edits');
-
 sub toTaggerForm
 {
    return map({ return split('/', $1); }, $1);
 }
-
-%edits = [{
-  if (-exists "models/edits.bin")
-  {
-     local('$handle $r');
-     $handle = openf("models/edits.bin");
-     $r = readObject($handle);
-     closef($handle);
-     return $r;
-  }
-  else
-  {
-     return ohasha();
-  }
-}];
-
-setMissPolicy(%edits,
-{
-#   warn("Miss: $2");
-   return filterByDictionary($2, $dictionary);
-});
 
 sub sentences
 {

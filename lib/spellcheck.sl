@@ -68,10 +68,20 @@ sub initEdits
       }
    }: $1];
 
-   setMissPolicy(%edits,
+   if (islowmem() eq "true") 
    {
-      return editst($dictionary, $trie, $2);
-   });
+      setMissPolicy(%edits,
+      {
+         return filterByDictionary($2, $dictionary);
+      });
+   }
+   else
+   {
+      setMissPolicy(%edits,
+      {
+         return editst($dictionary, $trie, $2);
+      });
+   }
 
    setRemovalPolicy(%edits,
    {
@@ -466,6 +476,37 @@ sub checkSentenceSpelling
       else if ($word isin ',-()[]:;/--')
       {
          # TinyMCE plugin isn't aware of commas so make the previous word ""
+         $word = "";
+      }
+      else if ($word eq $next && "$word $+ - $+ $next" !in $dictionary && $word ne 'Boing' && $word ne "Johnson" && $word ne "Mahi")
+      {
+         $rule = %(word => $word, 
+                   rule => "Repeated Word",
+                   style => "green",
+                   category => "Grammar",
+                   filter => "none",
+                   info => "none");
+
+         push(@results, filterSuggestion(@($rule, "$word $next", "$word $next", $previous)));
+      }
+
+      $previous = $word;
+   }
+}
+
+# check a sentence for a mispelled word
+sub checkRepeatedWords
+{
+   local('$index $word $previous $next $rule $suggestf');
+
+   $previous = '0BEGIN.0';
+
+   foreach $index => $word (removeShortCodes($1))
+   {
+      $next = iff(($index + 1) < size($1), $1[$index + 1], '0END.0');
+
+      if ($word isin ',-()[]:;/--')
+      {
          $word = "";
       }
       else if ($word eq $next && "$word $+ - $+ $next" !in $dictionary && $word ne 'Boing' && $word ne "Johnson" && $word ne "Mahi")

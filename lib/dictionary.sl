@@ -64,6 +64,10 @@ sub dictionary
 sub trie
 {
    local('%trie $word $whocares $x $root $prefix');
+   if (islowmem() eq "true") 
+   {
+      return %();
+   }
 
    %trie = %(word => '', prefix => '', branches => %());
 
@@ -163,12 +167,30 @@ sub editst2
    return keys($3);
 }
 
+sub islowmem 
+{
+   return systemProperties()["atd.lowmem"];
+}
+
 sub get_language_model
 {
-   local('$handle $data $1');
-   $handle = openf(    iff($1 !is $null, $1, "models/model.bin")  );
-   $data = readObject($handle);
-   closef($handle);
+   local('$handle $data $1 $pool $count');
+
+   if (islowmem() eq "true" && $1 is $null) 
+   { 
+      $handle = openf("models/stringpool.bin");
+      $pool   = readObject($handle);
+      $count  = readObject($handle);
+      closef($handle);
+
+      $data = [new org.dashnine.preditor.LanguageModelSmall: $pool, $count, [new java.io.File: "models/model.zip"]];
+   }
+   else   
+   {
+      $handle = openf(    iff($1 !is $null, $1, "models/model.bin")  );
+      $data = readObject($handle);
+      closef($handle);
+   }
 
    [System gc];
 

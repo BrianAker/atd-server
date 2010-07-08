@@ -65,6 +65,25 @@ sub positiveWord
    }
 }
 
+sub determiner
+{
+   local('@determiners @top');
+   @determiners = @('a', 'an', 'either', 'every', 'his', 'her', 'its', 'my', 'neither', 'one', 'our', 'that', 'the', 'their', 'this', 'your');
+   @top = sort(lambda({ return Pbigram2($2, $word) <=> Pbigram2($1, $word); }, $word => $1), @determiners);
+   return @top[$2];
+}
+
+sub determiner-u
+{
+   local('$value $w');
+   if (lc($1) in $dictionary) { $w = lc($1); }
+   else { $w = $1; }
+
+   $value = determiner($w);
+   if (strlen($value) == 1) { return uc($value); }
+   return uc(charAt($value, 0)) . substr($value, 1);
+}
+
 #
 # convert a verb to its base form
 #
@@ -121,6 +140,21 @@ sub baseVerb
       {
          return left($1, -1);
       }
+   }
+   else if ([$1 endsWith: "es"]) 
+   {
+      if ($1 in @('uses', 'changes', 'continues')) 
+      {
+         return left($1, -1);
+      }
+      else if (left($1, -2) in $dictionary)
+      {
+         return left($1, -2);
+      }
+   }
+   else if ([$1 endsWith: "s"]) 
+   {
+      return pluralToSingular($1);
    }
 
    return $1;   
@@ -329,6 +363,7 @@ sub getWordMappings
          people          => 'person',
          phenomena       => 'phenomenon',
          potatoes        => 'potato',
+         prices          => 'price',
          radii           => 'radius',
          scarfs          => 'scarf',
          selves          => 'self',
@@ -393,8 +428,10 @@ sub getWordMappings
          data      => 'data',
          bachelors => 'bachelors',
          masters   => 'masters',
+         tuna      => 'tuna',
 
          # words that are always plural
+         none       => 'none',
          pants      => 'pants',
          shorts     => 'shorts',
          police     => 'police',
@@ -403,7 +440,12 @@ sub getWordMappings
          scissors   => 'scissors', 
          binoculars => 'binoculars',
          i          => 'I',
-         thermos    => 'thermos'
+         thermos    => 'thermos',
+	 English    => 'English',
+	 physics    => 'physics',
+         economics  => 'economics',
+	 selfishness => 'selfishness',
+         blues       => 'blues'
       );	
  
       $mappings = ohash(

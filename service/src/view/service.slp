@@ -6,7 +6,7 @@
        ($rule, $text, $path, $context, @suggestions, $unk, $tags) = $error;
        if ($rule !is $null)
        {
-          display("view/error.slp", $text, $rule, $context, @suggestions, $tags);
+          display("service/src/view/error.slp", $text, $rule, $context, @suggestions, $tags);
        }
     }
 ?></results>
