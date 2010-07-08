@@ -253,3 +253,30 @@ they're|there own::word=their \1::pivots=\0,their::options=they're,there,their
 .*/VBG they're::word=\0 their::pivots=they're,their::options=they're,their
 .*/VBG you're::word=\0 your::pivots=you're,your::options=you're,your
 
+
+that's|it's|who's|he's|she's|there's you're::word=\0 your::pivots=your,you're::options=your,you're
+That's|It's|Who's|He's|She's|There's you're::word=\0 your::pivots=you're,your::options=your,you're
+that's|it's|who's|he's|she's|there's they're::word=\0 their::pivots=they're,their::options=their,they're
+That's|It's|Who's|He's|She's|There's they're::word=\0 their::pivots=they're,their::options=their,they're
+that's|it's|who's|he's|she's|there's it's::word=\0 its::pivots=it's,its::options=it's,its
+That's|It's|Who's|He's|She's|There's it's::word=\0 its::pivots=it's,its::options=it's,its
+you're .*/JJS .*/NN::word=your \1 \2::pivots=you're,your::options=your,you're
+they're .*/JJS .*/NN::word=their \1 \2::pivots=they're,their::options=their,they're
+it's .*/JJS .*/NN::word=its \1 \2::pivots=it's,its::options=it's,its
+You're .*/JJS .*/NN::word=Your \1 \2::pivots=You're,Your::options=your,you're
+They're .*/JJS .*/NN::word=Their \1 \2::pivots=They're,Their::options=their,they're
+It's .*/JJS .*/NN::word=Its \1 \2::pivots=It's,Its::options=it's,its
+
+who's .*/NNS|NN::word=whose \1::pivots=who's,whose::options=who's,whose
+who's .*/JJ .*/NNS|NN::word=whose \1 \2::pivots=who's,whose::options=who's,whose
+
+#
+# these examples have 0-hits in my test corpus so people don't make this mistake,
+# however the smart people out there come up with this form to "test" AtD.
+#
+.*/VBZ .*/IN|DT you're .*/NNP|NN|NNS::word=\0 \1 your \3::pivots=you're,your::options=you're,your
+.*/VBZ .*/IN|DT they're .*/NNP|NN|NNS::word=\0 \1 their \3::pivots=they're,their::options=they're,their
+.*/IN .*/VBZ you're .*/NNP|NN|NNS::word=\0 \1 your \3::pivots=you're,your::options=you're,your
+.*/IN .*/VBZ they're .*/NNP|NN|NNS::word=\0 \1 their \3::pivots=they're,their::options=they're,their
+.*/DT .*/VBZ you're .*/NNP|NN|NNS::word=\0 \1 your \3::pivots=you're,your::options=you're,your
+.*/DT .*/VBZ they're .*/NNP|NN|NNS::word=\0 \1 their \3::pivots=they're,their::options=they're,their

@@ -460,6 +460,8 @@ some time to come	to come
 somewhat unique	somewhat
 specific details	specific
 spell out in detail	in detail
+spiked upward		upward
+spiked upwards		upwards
 spliced together	together
 spring season	season
 stacked together	together

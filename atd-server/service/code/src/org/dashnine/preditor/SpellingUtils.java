@@ -11,6 +11,7 @@ import java.util.*;
 public class SpellingUtils implements Loadable, Function
 {
    private static Map patterns = Collections.synchronizedMap(new HashMap());
+   public static boolean noWordSeparation = false;
 
    private static Pattern getPattern(String pattern)
    {
@@ -133,7 +134,7 @@ public class SpellingUtils implements Loadable, Function
       return buffer.toString().substring(0, 4);
    }
 
-   public List filterByDictionary(String word, Map dictionary)
+   public List filterByDictionary(LanguageModel model, String word, Map dictionary)
    {
       List results;
 
@@ -175,11 +176,41 @@ public class SpellingUtils implements Loadable, Function
          } 
       }
 
+      /* add any legitimate sounding split of the misspelled words */
+      addSuggestionsWithSpaces(model, results, dictionary, word);
+
 //      start = System.currentTimeMillis() - start;
 //      System.err.println("[filter]: '" + word + "' took " + start + "ms for " + results.size() + " entries");
 //      System.err.println("           " + results);
 
       return results;
+   }
+
+   public void addSuggestionsWithSpaces(LanguageModel model, Object results, Map dictionary, String text)
+   {
+      if (noWordSeparation)
+         return;
+
+      for (int x = 1; x < text.length(); x++)
+      {
+         String word1 = text.substring(0, x);
+         String word2 = text.substring(x);
+
+         if (dictionary.containsKey(word1) && dictionary.containsKey(word2))
+         {
+            if (model.Pword(word1 + " " + word2) > 0.0)
+            {
+               if (results instanceof Set)
+               {
+                  ((Set)results).add(word1 + " " + word2);
+               }
+               else if (results instanceof List) 
+               {
+                  ((List)results).add(word1 + " " + word2);
+               }
+            }
+         }
+      }
    }
 
    public Set editst(LanguageModel model, Map dictionary, Map trie, String text)
@@ -192,20 +223,7 @@ public class SpellingUtils implements Loadable, Function
       editsTrie(trie, text, results, 2);
 
       /* add any legitimate sounding split of the misspelled words */
-
-      for (int x = 1; x < text.length(); x++)
-      {
-         String word1 = text.substring(0, x);
-         String word2 = text.substring(x);
-
-         if (dictionary.containsKey(word1) && dictionary.containsKey(word2))
-         {
-            if (model.Pword(word1 + " " + word2) > 0.0)
-            {
-               results.add(word1 + " " + word2);
-            }
-         }
-      }
+      addSuggestionsWithSpaces(model, results, dictionary, text);
 
       /* no results, still? wow--they can't spel! Try going out more edits (up to 3) */
 
@@ -518,7 +536,8 @@ public class SpellingUtils implements Loadable, Function
       }
       else if (name.equals("&filterByDictionary"))
       {
-         return SleepUtils.getArrayWrapper(filterByDictionary(BridgeUtilities.getString(args, ""), BridgeUtilities.getHash(args).getData()));
+         LanguageModel model = (LanguageModel)(script.getScriptVariables().getScalar("$model").objectValue());
+         return SleepUtils.getArrayWrapper(filterByDictionary(model, BridgeUtilities.getString(args, ""), BridgeUtilities.getHash(args).getData()));
       }
       else if (name.equals("&editst"))
       {

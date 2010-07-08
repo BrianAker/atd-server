@@ -26,3 +26,10 @@ Your not::word=You're not::pivots=Your,You're
 your not::word=you're not::pivots=your,you're
 your in|at::word=you're \1::filter=none
 Your in|at::word=You're \1::filter=none
+
+has|is you're::word=\0 your::pivots=you're,your::options=you're,your
+your so|as|gonna::word=you're \1::pivots=your,you're::options=your,you're
+Your so|as|gonna::word=You're \1::pivots=Your,You're::options=Your,You're
+
+as you're .*/NN::word=\0 your \2::pivots=you're,your::options=you're,your
+As you're .*/NN::word=\0 your \2::pivots=you're,your::options=you're,your

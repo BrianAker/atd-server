@@ -138,6 +138,8 @@ alma matter::word=alma mater::pivots=matter,mater
 when into::word=went into::pivots=when,went::options=when,went
 when on to::word=went on to::pivots=when,went::options=when,went
 
+arms-length::word=arm's-length::filter=none
+
 #
 # dominate is a verb, dominant is an adjective
 #
@@ -169,3 +171,6 @@ stock and trade::word=stock in trade::filter=none
 
 # common typo
 your have|are::word=you \1::pivots=your,you
+
+#
+homo sapiens::word=Homo sapiens::filter=none

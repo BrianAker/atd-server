@@ -39,8 +39,21 @@ Wales	SW Great Britain
 Wayne	male name
 a	the first letter of the alphabet
 accept	to approve
+access	a privilege to retrieve something
+accessed	to retrieve using a privilege 
+assay	to examine
+assess	to estimate the value of something
+assessed	to estimate the value of something
 acts	How someone does something as in "He acts crazy"
 ad	advertisement
+adapt	to suit to a situation
+adopt	to take ownership of
+adapted	changed to suit a situation
+adopted	took ownership of
+adapter	a converter from one form to another (e.g., power adapter)
+adopter	someone who takes ownership of something (e.g., early adopter)
+adapting	to change to suit a situation
+adopting	to take ownership of something (e.g., adopting a child)
 ads	advertisements
 add	to combine two things together
 adds	increases in numbers
@@ -74,6 +87,7 @@ antidote	a medicine that counteracts a poison or disease
 ant	small bug
 ante	poker bet
 anti	person opposed to a policy etc.
+apposition	being side by side
 appraise	to estimate the value of
 apprise		to inform or advise
 arc	curved line
@@ -233,6 +247,7 @@ brews	makes a drink, often alcoholic but also tea or coffee
 bridal	for or relating to a bride or wedding
 bridle	equid's vesture
 broach	to bring up a topic of conversation
+broad	wide
 brooch	A lady's large decorative pin or clasp.
 brood	large amount of children born at one time
 brows	hair on top of eyes
@@ -291,10 +306,13 @@ caul	Amnionic membrane; a net cap or lining.
 cause	the reason or motive for some human action
 caws	a crow's call
 cay	a sandy small island forme on coral
+cease	to stop. For example, cease to live.
 cedar	a type of evergreen tree
 cede	formal give up one's rights to or possession of.
 ceding	to yield or surrender
 ceiling	top of a room
+celibate	to abstain from sex
+celebrate	to commemorate an event with a party	
 cell	small chamber
 cellar	Basement of the house, room or set of rooms under a house, usually for storing food, wines, fuel etc.
 censer	vessel for burning incense
@@ -332,6 +350,8 @@ clack	a rattle or bang, often used to describe the sound of a train on a track
 claque	A collection of persons employed to applaud at a theatrical exhibition
 clause	a part of a contract or legal agreement
 claws	a long, curved toenail of an animal
+clench	hold firmly
+clinch	to close the deal
 clew	the lower corner of a sail
 click	sharp sound
 climb	scale
@@ -420,9 +440,13 @@ darne	a thick cut of fish
 days	years
 daze	To stun temporarily
 dear	darling
+deducible	you can follow logic to arrive at the same conclusion
+deductible	an amount you remove from the total (e.g., a tax deduction)
 deer	an animal found in the forest; the males have long slender branched antlers
 defuse	the act of making something harmless
 defused	made harmless
+desert	an arid region, picture cacti and sand
+dessert	something delicious, think cake
 dew	moistness
 die	to be gone forever
 died	cease to live or function
@@ -437,6 +461,8 @@ discrete	individually distinct
 discussed	The past form for discuss which means to talk about.
 disgust	strong feelings of dislike
 disk	a flat round item
+disburse	make a payment
+disperse	scatter
 do	to act
 doc	short for document
 dock	a structure where access to a boat is gained
@@ -457,8 +483,10 @@ dues	monies due for being a member
 dun	plague or pester for payments
 dye	an ink or substance used to change the color of something
 dyed	colored
+dyeing	to color a fabric
 dyer	a person who dye.
 dyes	applies a color to, or, the colors available to apply to cloth or fabric
+dying	the opposite of living
 dyne	unit of force
 e'er	Contraction of ever
 earl	honorary rank of nobility
@@ -475,14 +503,19 @@ eminent	high in rank, lofty
 eminently notable, a great degree
 ensure	to guarantee
 ensured	to have guaranteed
+envelop	to cover
+envelope	used to mail a letter
 epic	an adventure
 epoch	era of time
 ere	before
 err	to mess up
+essay	a short focused document
 eunuchs	a man not considered a 'real man'
 ewe	the female counterpart of a sheep
 ewes	plural of ewe, the word for a female sheep or related animal
 except	to leave out
+extent	a range of something
+extant	continues to exist
 eye	body part
 eyelet	small enclosed circle to hold laces in place
 facts	things known to be true
@@ -523,11 +556,14 @@ fills	Plural form of the word 'fill'.
 fils	iraqi money
 filter	keep unwanted things from coming through
 find	discover
+fine	a monetary punishment
 fined	having to pay a monetary punishment
+fines	several monetary punishments
 finish	To complete something like project, task etc.
 fir	a pine tree with flat needles and upright cones
 fisher	A carnivorous mammal (Martes pennanti) of northern North America, having thick, dark-brown fur. Also called pekan, wejack
 fissure	a split or division
+fission	the process of splitting an atom
 flair	a talent
 flare	roadside emergency light
 flea	small wingless bloodsucking insects that feed on other animals
@@ -571,6 +607,7 @@ from	the starting point of something
 fryer	a chick
 fur	the thick hairy coat of an animal's skin
 furr	brace apart using wood
+fusion	the process of joining nuclei into a more massive nucleus
 gaff	a hook
 gaffe	an embarrassing social mistake
 gaffs	hooks
@@ -698,6 +735,8 @@ humerus	Bone in the upper arm of humans extending from the shoulder to the elbow
 hummock	an elevated area of land rising above a marsh or swamp
 humorous	causing laughter or amusement
 hymn	gospel song
+hypercritical	overly critical
+hypocritical	says one thing and does another
 idle	inactive
 idol	statue used for worshipping
 idyl	a poem
@@ -845,9 +884,13 @@ main	principal object
 maize	another name for Indian corn, a tall cereal plant
 male	masculine
 mall	shopping center
+manager	a supervisor
 mane	long coarse hair growing from the crest of the animal's neck
+manger	a trough for animal feed
 manner	A method of doing, being done, or happening.
 manor	A feudal estate; the main mansion or house of an estate.
+mantel	the shelf above the fireplace
+mantle	the layer between the core of the earth and its crust
 marc	the brandy distilled from this residue
 mark	a visible trace of something
 marque	a product model or type
@@ -902,6 +945,7 @@ moor	an open piece of boggy overgrown wasteland
 moose	a large animal in the deer family, with broad shoulders and antlers
 moot	debatable
 moral	a social expected norm
+morale	sense of well-being
 moray	tropical eels of the family Muraenidae
 more	additional , greater
 morel	an edible mushroom
@@ -963,6 +1007,7 @@ ohs	an expression in conversation
 one	single unit
 oohs	exclaim in wonder
 ooze	Muck
+opposition	the enemy
 or	Conjunction used to connect alternatives.
 oracle	An agent or medium who is considered to give wise, prophetic, or otherwise influential pronouncements.
 oral	spoken by mouth
@@ -974,6 +1019,8 @@ our	expressing a state of ownership
 ours	my possesion
 overdo	to take too far
 overdue	past a deadline, especially for payment
+overhead placed above one's head
+overheard obtained by listening to another conversation
 owe	obligation to pay
 owes	obliged to
 paced	walk back and forth
@@ -989,6 +1036,7 @@ pallet	a platform for transporting goods;  a makeshift bed
 pallette	many colors
 pane	an individual item of glass
 pare	to remove by cutting
+passable	good enough	
 passed	opposite of fail
 past	historic, already happened
 paste	an adhesive for joining items together
@@ -1000,6 +1048,7 @@ paws	animal foot
 pea	the round, edible seed of a widely cultivated plant, of the legume family.
 peace	a lack of war or conflict, or the existence of harmony and general goodwill
 peak	summit
+peaked	to arrive at the top
 peal	the sound of a ringing bell
 pealed	sounded a bell
 pear	edible fruit
@@ -1008,6 +1057,7 @@ pedal	a lever operated by the foot
 peddle	work as a street vendor
 pee	To urinate
 peek	a sneaked view
+peeked	to have snuck a view
 peel	to strip of fruit
 peeled	having had the skin or shell removed before eating
 peer	equal
@@ -1015,6 +1065,8 @@ pencil	an item made with lead for writing
 pensil	a small pennon, as at the head of a lance.
 per	for each, for every
 perl	a computer programming language destined for greatness
+pursue	chase
+peruse	examine thoroughly
 pharoah	title of ancient Egyptian kings of all periods
 phase	stage of time; period
 phased	sequenced
@@ -1035,6 +1087,7 @@ pincer	limb used to pinch
 pincher	a person who grabs another by connecting their index finger to their thumb and squeezing.
 pinscher	a certain breed of terrier
 pique	To cause to feel resentment or indignation
+piqued	to have felt a desire
 piste	ski trail over packed snow
 pistil	A pistil (from Latin pistillum "pestle") is made up of a carpel (if single) or carpels (if fused). A flower with two or more fused carpels (called a compound ovary or compound pistil) is termed syncarpous
 pistol	firearm
@@ -1067,8 +1120,11 @@ populace	the people who live here
 populous	many people live here
 pore	to look over carefully; a very small hole
 pored	to look over carefully
+portable	small enough to carry
 portrait	a picture
 portray	to make a likeness of
+possible	it could happen
+potable		safe to drink
 potpourri	collection of various unrelated items.
 pour	flowing or falling of any liquid
 poured	to serve a glass of lemonade (or something else)
@@ -1077,6 +1133,7 @@ pray	give praise to a deity
 prays	meditate to a higher power
 precedence	of high importance
 precedents	making history
+preposition	a word that connects an adjective to a noun (e.g., of, from, for)
 presence	attendance or state of existence
 presents	Gifts received or given
 presidents	the chief officer, usually elected, of a country or organization
@@ -1093,6 +1150,7 @@ prints	what a printer does
 prize	something won
 profit	To gain advantage; to make improvement; to improve; to gain; to advance.
 prophet	seer; one who predicts the future
+proposition	an idea or plan
 pros	professionals
 prose	everyday language, as opposed to poetry
 prostate	a male organ
@@ -1138,6 +1196,8 @@ reeding	a small circular molding
 reeds	types of water plants
 reek	To have a strong or unpleasant smell.
 reel	to bring in with a fishing line
+register	the record
+registrar	to record
 reign	a dominating power or influence
 reigns	to use sovereign power
 rein	a strap, usually leather, used to steer a horse
@@ -1239,7 +1299,7 @@ seer	A person who foresees events; a prophet
 sees	observes
 seine	a vertical fishing net or a river in France
 seiner	fisherman who use nets
-seize	to take someone`s possession`s by force
+seize	to take by force
 sell	exchanged for monetary gain
 seller	opposite of buyer
 semen	fluid coming from the man's reproductive organs
@@ -1333,6 +1393,10 @@ staid	settled
 stair	used to climb
 stake	a stick or post, pointed at one end
 stare	an intense gaze
+starring	to have the lead role in a movie or play
+staring		to gaze at
+stared		gazed at
+starred		held the lead role in a movie or play
 statice	a bitter tasting herb
 stationary	Someone or something that is not moving from one position.
 stationery	paper used to write, print or draw on
@@ -1351,6 +1415,10 @@ stoup	a basin that holds holly water in a church
 straight	one that is not bent
 strait	tight passage of water
 style	A certain type or way
+subside	to become less active
+subsided	became less active
+subsidize	to assist with the buying of something
+subsidized	the price is less due to someone else helping
 succor	rescue
 sucker	an extension of growth from a main plant
 sue	to bring legal action
@@ -1385,6 +1453,7 @@ taper	thinner towards one end
 tapir	a mountain pig
 tare	a cornfield weed or fodder
 taught	tight
+taunt	to tease
 taut	drawn tightly
 tax	charge against a citizen′s person or property or activity for the support of government
 tea	a drink
@@ -1434,6 +1503,7 @@ timber	standing lumber
 timbre	musical quality that distinguishes tone from similar sounds
 time	Represents the so called 4th dimension of the world, system of measuring past, present and future
 tire	to bore or make weary
+tired	a state of sleepiness
 titan	in mythology refers to any of the children of Uranus and Gaea
 to	toward
 toad	amphibian that lives on dry land and remembles a frog
@@ -1460,6 +1530,7 @@ tracked	followed footprints
 tract	an area of land
 tray	easily movable flat surface
 trey	a domino, playing card or die showing three spots
+tried	made an attempt
 troop	group of soldiers
 trooper	a police officer on horse back
 troopers	law enforcement group
@@ -1487,6 +1558,8 @@ versus	opposed
 very	especially
 vial	a small container
 vice	A bad action or conduct.  Also could mean a subordinate or second in command like Vice President.
+vicious	evil
+viscous	a thick and sticky consistency (e.g., motor oil)
 vile	wicked or morally bad
 viol	a bowed musical instrument that has more strings than a violin
 vise	a tool to squeeze with

@@ -15,8 +15,11 @@ include("lib/fsm.sl");
 #
 # create our FSM rule engine.
 #
-global('$rules $rcount');
-$rules = machine();
+global('$rules $homophones $agreement $voice $rcount');
+$rules      = machine();
+$homophones = machine();
+$agreement  = machine();
+$voice      = machine();
 
 #
 # load rules in general from a rules file (this thing handles POS tags as well)
@@ -132,6 +135,11 @@ sub uncountable
    return 'accommodation|advice|access|baggage|bread|equipment|garbage|luggage|money|cattle|knowledge|sand|furniture|meat|food|news|pasta|progress|research|water|freedom|maturity|intelligence|travel|pollution|traffic';
 }
 
+sub modal_verbs 
+{
+   return "can|could|may|must|should|will|would|can't|couldn't|mustn't|shouldn't|won't|wouldn't";
+}
+
 sub comparisons_base
 {
    return 'good|bad|hot|cold|lame|less|more|great|heavy|light|smart|dumb|cheap|sexy|tall|short|fast|slow|old|young|easy|hard|high|low|large|small|big|soon|late|strong|loud|quiet|dark|bright';
@@ -161,6 +169,11 @@ sub irregular_noun_plural
    return 'addenda|alumni|analyses|axes|bacilli|bacteria|bases|calves|crises|criteria|curricula|data|dice|diagnoses|elves|ellipses|emphases|errata|firemen|feet|genera|geese|halves|hypotheses|knives|leaves|lives|loaves|lice|men|matrices|media|memoranda|mice|neuroses|nuclei|oases|ova|paralyses|parentheses|people|phenomena|selves|shelves|stimuli|strata|syntheses|synopses|those|theses|thieves|these|teeth|wives|wolves|women';
 }
 
+sub irregular_verb_past_perfect
+{
+   return 'arisen|awoken|backbitten|been|beaten|befallen|begotten|begun|begirt|bespoken|bestridden|betaken|bidden|bided|bitten|blawn|blown|bowstrung|broken|chosen|cleeked|counterdrawn|cowritten|crash-dived|crib-bitten|cross-bitten|crowed|dared|deep-frozen|dived|done|drawn|drunk|driven|eaten|fallen|farebeaten|flash-frozen|flown|flyblown|forbidden|fordone|foregone|foreknown|foreseen|forespoken|forgotten|forgiven|forlorn|forsaken|forsworn|free-fallen|frozen|frostbitten|ghostwritten|given|gone|grown|hagridden|halterbroken|hand-ridden|handwritten|hewn|hidden|hoten|housebroken|interwoven|known|lain|mischosen|misdone|misfallen|misgiven|misknown|misspoken|missworn|mistaken|misworn|miswritten|mown|outdone|outdrawn|outdrunk|outdriven|outflown|outgrown|outridden|outseen|outsung|outspoken|outsprung|outsworn|outswum|outthrown|outworn|outwritten|overborne|overblown|overdone|overdrawn|overdrunk|overdriven|overeaten|overflown|overgrown|overlain|overridden|overseen|overspoken|oversprung|overstridden|overtaken|overthrown|overworn|overwritten|partaken|predone|preshrunk|quick-frozen|redone|redrawn|regrown|retaken|retorn|retrodden|reworn|rewritten|ridden|rung|risen|rough-hewn|seen|shaken|shown|shrunk|shriven|sightseen|sung|sunk|skywritten|slain|smitten|sown|spoken|spun|sprung|stolen|stunk|stridden|striven|sworn|swollen|swum|swonken|taken|torn|test-driven|test-flown|thrown|trodden|typewritten|underdone|undergone|underlain|undertaken|underwritten|undone|undrawn|undrawn|unfrozen|unhidden|unspoken|unsworn|untrodden|unwoven|unwritten|uprisen|upsprung|uptorn|woken|worn|woven|wiredrawn|withdrawn|written';
+}
+
 sub irregular_verb_past
 {
    return 'arose|ate|awoke|bade|beat|became|befell|began|begot|bespoke|bestrode|betook|bit|blew|bode|bore|broke|built|came|chose|cowrote|crew|did|dove|drank|drew|drove|fell|flew|forbade|forbore|foresaw|forewent|forgave|forgot|forsook|froze|gave|grew|hewed|hid|hight|knew|lay|misgave|misspoke|mistook|mowed|outdid|outgrew|outran|overbore|overcame|overlay|overran|overrode|oversaw|overthrew|overtook|partook|ran|rang|reawoke|redid|redrew|retook|rewrote|rived|rode|rose|sang|sank|saw|shook|shore|showed|shrank|slew|smote|sowed|span|spoke|sprang|stank|stole|strewed|strode|strove|swam|swelled|swore|threw|took|tore|trod|underlay|undertook|underwent|underwrote|undid|uprose|was|went|withdrew|woke|wore|wove|wrote';
@@ -169,6 +182,12 @@ sub irregular_verb_past
 sub irregular_verb_base
 {
    return 'abide|alight|arise|awake|backlight|be|bear|befall|beget|begin|behold|belay|bend|beseech|bespeak|betake|bethink|bid|bide|bind|bite|bleed|blend|bless|blow|bowstring|break|breed|bring|build|burn|buy|catch|chide|choose|clap|cleave|cling|clothe|creep|crossbreed|crow|dare|daydream|deal|dig|disprove|dive|do|dogfight|dow|draw|dream|drink|drive|dwell|eat|engrave|fall|feed|feel|fight|find|flee|fling|fly|forbear|forbid|forego|foresee|foretell|forget|forgive|forsake|forswear|freeze|frostbite|gainsay|gaslight|geld|get|gild|gin|gird|give|gnaw|go|grave|grind|grow|hamstring|hang|have|hear|heave|hew|hide|hoist|hold|inbreed|inlay|interbreed|interweave|keep|ken|kneel|know|lade|landslide|lay|lead|lean|leap|learn|leave|lend|lie|light|lose|make|mean|meet|melt|mislead|misspell|mistake|misunderstand|moonlight|mow|outdo|outgrow|outlay|outride|outshine|overdo|overeat|overhang|overhear|overlay|overleap|overlie|overpass|override|oversee|overshoot|overspill|overtake|overthrow|overwrite|partake|pay|pen|plead|prove|rap|rebuild|redo|redraw|reeve|regrow|relay|relight|remake|rend|repay|resell|retake|retell|rethink|retrofit|rewind|rewrite|ride|ring|rise|saw|say|see|seek|sell|send|sew|shake|shave|shear|shew|shine|shoe|shoot|show|shrink|sing|sink|sit|slay|sleep|slide|sling|slink|smell|smite|sneak|sow|speak|speed|spell|spend|spill|spin|spoil|spring|stand|stave|steal|stick|sting|stink|strew|stride|strike|string|strip|strive|sunburn|swear|sweep|swell|swim|swing|take|teach|tear|tell|think|thrive|throw|tine|tread|troubleshoot|typewrite|unbend|unbind|undergo|underlay|underlie|underpay|undersell|undershoot|understand|undertake|underwrite|undo|unlearn|unmake|unsay|unwind|uphold|uprise|vex|wake|waylay|wear|weave|wed|weep|wend|whipsaw|win|wind|wit|withdraw|withhold|withstand|work|wrap|wreak|wring|write|zinc';
+}
+
+# singular nouns that want a determiner
+sub determiner_wanted
+{
+    return "absence|adult|affair|agreement|airport|alliance|amount|angle|announcement|apartment|appearance|appointment|argument|arrangement|arrival|assertion|assumption|atmosphere|atom|attitude|aunt|author|automobile|bag|ballot|bar|barrel|beast|bird|birthday|bit|blade|boat|bottle|bottom|bow|breast|bridge|brother|bullet|bundle|burden|cabin|cabinet|canal|candle|car|career|carriage|case|castle|cat|cave|ceiling|centre|chamber|chapter|charm|chest|child|circumstance|citizen|clerk|clip|clock|coalition|colleague|collection|combination|companion|complaint|concept|conclusion|condition|constitution|continent|corner|coup|couple|cousin|cow|creator|creature|crew|crowd|crown|decade|default|defect|departure|description|desk|device|distance|dock|doctor|doctrine|document|dog|dome|dozen|draft|duration|ear|earthquake|edge|editorial|egg|election|employer|encyclopedia|endorsement|engagement|envelope|episode|equation|eruption|essay|establishment|estate|event|exception|expedition|explosion|extension|extent|fan|farmer|feast|fee|fence|field|finger|flood|floor|flower|fool|forehead|formation|fraction|framework|friend|frontier|future|gadget|gallon|gap|garden|gate|generation|gift|glance|glimpse|grandfather|group|guy|handful|harbour|hat|height|hero|hole|holiday|horizon|horse|hospital|hotel|hour|household|husband|iPhone|iPod|illustration|impression|impulse|institution|instrument|intention|interior|interval|interview|introduction|investigation|invitation|island|job|joke|journal|journey|kid|kitchen|knife|knight|lamp|laptop|lawsuit|lawyer|leg|legislature|lesson|lifetime|lion|lot|lover|manner|manuscript|margin|meal|message|method|mile|mill|mind|minimum|minute|mirror|mission|mixture|moment|monarch|monster|month|monument|moon|mouth|movie|museum|name|nation|needle|neighborhood|nest|nose|notebook|notion|nurse|oath|obligation|opinion|opponent|orchestra|organ|organism|ounce|outbreak|outcome|oven|pair|parent|partnership|path|patient|patron|pattern|peasant|pen|pencil|period|person|phenomenon|photo|photograph|phrase|picture|piece|pile|pilot|pint|pipe|plane|planet|plot|pocket|poem|portrait|pot|pound|presence|presentation|price|principle|prisoner|problem|product|profession|project|proposal|proposition|province|publication|pupil|puzzle|race|reader|realm|recession|redirect|refusal|regiment|region|reign|relationship|remainder|report|reporter|reputation|request|requirement|resolution|restaurant|ring|road|role|roof|rope|row|rumor|sake|scene|sea|seat|sentence|servant|shadow|shaft|ship|shore|signature|sister|situation|skin|slave|slope|smile|soldier|song|soul|speaker|sphere|stage|statement|statue|stomach|storm|stranger|street|student|successor|suggestion|sum|summit|sun|surface|sword|symbol|tail|tale|telescope|template|temple|term|theme|thing|threat|throat|throne|thumb|tide|tip|title|tomb|tongue|topic|transition|tree|trend|triangle|trick|trip|trunk|type|uncle|universe|verb|vessel|village|visitor|volcano|voyage|weapon|web|wedding|week|weekend|widow|window|winner|world|yard|effort|environment|genre|list|photo|picture|population|range|response|stake|suburb|thing|type|understanding|view|warning";
 }
 
 sub irregular_verb
@@ -180,45 +199,45 @@ sub irregular_verb
 
 sub loadPassiveRules
 {
-   addPath($rules, tense("simple present"), @("am", past()) );
-   addPath($rules, tense("simple present"), @("is", past()) );
-   addPath($rules, tense("simple present"), @("are", past()) );
-   addPath($rules, tense("simple present"), @("is", past(), "by", "the"));
-   addPath($rules, tense("simple present"), @("are", past(), "by", "the"));
-   addPath($rules, tense("simple past"), @("was", past(), "by", "the"));
-   addPath($rules, tense("simple past"), @("were", past(), "by", "the"));
-   addPath($rules, tense("simple past"), @("was", past()) );
-   addPath($rules, tense("simple past"), @("were", past()) );
-   addPath($rules, tense("present continuous"), @("am", "being", past()));
-   addPath($rules, tense("present continuous"), @("is", "being", past()));
-   addPath($rules, tense("present continuous"), @("are", "being", past()));
-   addPath($rules, tense("past continuous"), @("was", "being", past()));
-   addPath($rules, tense("past continuous"), @("were", "being", past()));
-   addPath($rules, tense("present perfect"), @("has", "been", past()));
-   addPath($rules, tense("present perfect"), @("have", "been", past()));
-   addPath($rules, tense("past perfect"), @("had", "been", past()));
-   addPath($rules, tense("future perfect"), @("will", "have", "been", past()));
-   addPath($rules, tense("future with will"), @("will", "be", past()));
-   addPath($rules, tense("future with will not"), @("will", "not", "be"));
-   addPath($rules, tense("future with won't"), @("won't", "be"));
-   addPath($rules, tense("future with going to"), @("is", "going", "to", "be"));
-   addPath($rules, tense("future with going to"), @("are", "going", "to", "be"));
-   addPath($rules, tense("future with can"), @("can", "be"));
-   addPath($rules, tense("future with can't"), @("can't", "be"));
-   addPath($rules, tense("future with can not"), @("can", "not", "be"));
-   addPath($rules, tense("future with may"), @("may", "be"));
-   addPath($rules, tense("future with may not"), @("may", "not", "be"));
-   addPath($rules, tense("future with might"), @("might", "not", "be"));
-   addPath($rules, tense("future with might not"), @("might", "not", "be"));
-   addPath($rules, tense("future with should"), @("should", "be"));
-   addPath($rules, tense("future with shouldn't"), @("shouldn't", "be"));
-   addPath($rules, tense("future with should not"), @("should", "not", "be"));
-   addPath($rules, tense("future with ought to"), @("ought", "to", "be"));
-   addPath($rules, tense("had better"), @("had", "better", "be"));
-   addPath($rules, tense("had better not"), @("had", "better", "not", "be"));
-   addPath($rules, tense("must"), @("must", "be"));
-   addPath($rules, tense("must not"), @("must",  "not", "be"));
-   addPath($rules, tense("to be"), @("to", "be"));
+   addPath($voice, tense("simple present"), @("am", past()) );
+   addPath($voice, tense("simple present"), @("is", past()) );
+   addPath($voice, tense("simple present"), @("are", past()) );
+   addPath($voice, tense("simple present"), @("is", past(), "by", "the"));
+   addPath($voice, tense("simple present"), @("are", past(), "by", "the"));
+   addPath($voice, tense("simple past"), @("was", past(), "by", "the"));
+   addPath($voice, tense("simple past"), @("were", past(), "by", "the"));
+   addPath($voice, tense("simple past"), @("was", past()) );
+   addPath($voice, tense("simple past"), @("were", past()) );
+   addPath($voice, tense("present continuous"), @("am", "being", past()));
+   addPath($voice, tense("present continuous"), @("is", "being", past()));
+   addPath($voice, tense("present continuous"), @("are", "being", past()));
+   addPath($voice, tense("past continuous"), @("was", "being", past()));
+   addPath($voice, tense("past continuous"), @("were", "being", past()));
+   addPath($voice, tense("present perfect"), @("has", "been", past()));
+   addPath($voice, tense("present perfect"), @("have", "been", past()));
+   addPath($voice, tense("past perfect"), @("had", "been", past()));
+   addPath($voice, tense("future perfect"), @("will", "have", "been", past()));
+   addPath($voice, tense("future with will"), @("will", "be", past()));
+   addPath($voice, tense("future with will not"), @("will", "not", "be"));
+   addPath($voice, tense("future with won't"), @("won't", "be"));
+   addPath($voice, tense("future with going to"), @("is", "going", "to", "be"));
+   addPath($voice, tense("future with going to"), @("are", "going", "to", "be"));
+   addPath($voice, tense("future with can"), @("can", "be"));
+   addPath($voice, tense("future with can't"), @("can't", "be"));
+   addPath($voice, tense("future with can not"), @("can", "not", "be"));
+   addPath($voice, tense("future with may"), @("may", "be"));
+   addPath($voice, tense("future with may not"), @("may", "not", "be"));
+   addPath($voice, tense("future with might"), @("might", "not", "be"));
+   addPath($voice, tense("future with might not"), @("might", "not", "be"));
+   addPath($voice, tense("future with should"), @("should", "be"));
+   addPath($voice, tense("future with shouldn't"), @("shouldn't", "be"));
+   addPath($voice, tense("future with should not"), @("should", "not", "be"));
+   addPath($voice, tense("future with ought to"), @("ought", "to", "be"));
+   addPath($voice, tense("had better"), @("had", "better", "be"));
+   addPath($voice, tense("had better not"), @("had", "better", "not", "be"));
+   addPath($voice, tense("must"), @("must", "be"));
+   addPath($voice, tense("must not"), @("must",  "not", "be"));
+   addPath($voice, tense("to be"), @("to", "be"));
 }
 
 #
@@ -259,10 +278,10 @@ sub loadNomRules
         }
       }
 
-      addPath($rules, nom($idx), copy(@t));
+      addPath($voice, nom($idx), copy(@t));
 
       @t[0] = uc(charAt(@t[0], 0)) . substr(@t[0], 1);
-      addPath($rules, nom($idx), @t);
+      addPath($voice, nom($idx), @t);
    }
 }
 
@@ -307,8 +326,12 @@ sub loadGrammarRules
    local('$template');
 
    # missing prepositions
-   $template = grammar("Missing Preposition", "", "A preposition indicates the relationship a noun has to another word. It's important that your writing has the right prepositions so your reader knows what you're talking about.");
+   $template = grammar("Missing Word", "", "A preposition indicates the relationship a noun has to another word. It's important that your writing has the right prepositions so your reader knows what you're talking about.");
    loadRules($rules, "data/rules/grammar/prepositions", $template);
+
+   # missing determiners
+   $template = grammar("Missing Word", "", "You're likely missing an article in this phrase. An article serves as a marker letting the reader know how many (or which) of the noun you're referring to.");
+   loadRules($rules, "data/rules/grammar/determiners", $template);
 
    # a vs. an
 
@@ -401,7 +424,8 @@ sub loadGrammarRules
 
    $template = grammar("Subject Verb Agreement", "", "In English, the subject has a count (singular, plural) and so does the verb.  These counts must agree for your sentence to be valid.");
    loadRules($rules, "data/rules/grammar/subject_verb_agreement", $template);
-  
+   loadRules($agreement, "data/rules/grammar/agreement", $template);
+
    # auxiliary verb agreement
 
    $template = grammar("Auxiliary Verb Agreement", "", "You need to use a past participle verb form after this auxiliary verb.  The words <b>has</b>, <b>had</b>, <b>have</b>, and <b>were</b> are auxiliary verbs that you should follow with a past participle.<br><br>Verbs that have the same simple past and past participle forms are known as regular verbs.  An irregular verb has different form for its past participle.  Apparently you encountered one of these.  Use the past participle form here and your sentence will make sense.");
@@ -512,7 +536,7 @@ sub loadHomophoneRules
 
          if ($word !in %donotuse)
          {
-            addPath($rules, homophone($word, $text), @($word));
+            addPath($homophones, homophone($word, $text), @($word));
          }
       }
    }
@@ -717,14 +741,14 @@ sub loadClicheRules
    $handle = openf("data/rules/clichedb.txt");
    while $text (readln($handle))
    {
-      addPath($rules, cliche($text), split('\s+', $text));
+      addPath($voice, cliche($text), split('\s+', $text));
    }   
 
    $handle = openf("data/rules/avoiddb.txt");
    while $text (readln($handle))
    {
       ($t, $trans) = split('\t+', $text);
-      addPath($rules, didYouMeanRule($trans), split('\s+', $t));
+      addPath($voice, didYouMeanRule($trans), split('\s+', $t));
    }
 }
 
@@ -807,12 +831,12 @@ sub loadDiacriticRules
    $template = diacritics();
    $template['description'] = 'Proper nouns keep their accents as they refer to specific people, places, or things.';
 
-   loadRules($rules, "data/rules/diacritic/propernouns", $template );
+   loadRules($voice, "data/rules/diacritic/propernouns", $template );
 
    $template = diacritics();
    $template['description'] = 'An old (and now uncommon) convention in English is to add a diaeresis to the second of two consecutive vowels in a word. This tells the reader to pronounce the second vowel separately as-in: coöperate, rëenter, etc.';
 
-   loadRules($rules, "data/rules/diacritic/diaeresis", $template );
+   loadRules($voice, "data/rules/diacritic/diaeresis", $template);
 }
 
 #
@@ -835,7 +859,7 @@ if (getFileName($__SCRIPT__) eq "rules.sl")
    loadComplexRules();
    loadHyphenRules();
 
-   $rcount = countRules($rules);
+   $rcount = countRules($rules) + countRules($homophones) + countRules($agreement) + countRules($voice);
    $rcount = substr($rcount, 0, -3) . ',' . right($rcount, 3);
 
    [{
@@ -843,10 +867,19 @@ if (getFileName($__SCRIPT__) eq "rules.sl")
 
       $handle = openf(">models/rules.bin");
       writeObject($handle, $rcount);
+
+      writeObject($handle, $homophones);
       writeObject($handle, $rules);
+      writeObject($handle, $agreement);
+      writeObject($handle, $voice);
+
       closef($handle);
    }];
 
+   println("--- Normal rules:    " . countRules($rules));
+   println("--- Homophone rules: " . countRules($homophones));
+   println("--- Agreement rules: " . countRules($agreement));
+   println("--- Voice  rules:    " . countRules($voice));
    println("Loaded $rcount rules... wheee");
 }
 

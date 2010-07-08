@@ -15,7 +15,9 @@ a large number of	many of
 a large part	many, most
 a lot of	many, much
 a majority of	most
-a number of	some
+a myriad of::word=many::filter=none
+a number of	several, some
+a number of::word=several  
 a positive identification	an identification
 a proportion of	some
 a small number of	a few
@@ -166,6 +168,7 @@ category	class, group
 causal factor	cause
 caveat	warning
 cease	stop, end, finish
+cease to::word=no longer
 centre around	centre in, at or on
 certain number of	amount of
 check on	check
@@ -267,8 +270,8 @@ encountered	met
 encountered frequently	common
 encourage	urge
 end result	result
-endeavor	try
-endeavour	try
+endeavor	attempt, try
+endeavour	attempt, try
 ensure	make sure
 enter into	enter, (omit)
 enter into a contract with	contract with
@@ -621,7 +624,7 @@ mental attitude	attitude
 mental patients	patients with mental disorders
 methodology	method
 militate against	prohibit
-minimize	decrease, method
+minimize	decrease, lower, reduce
 minimum	least, smallest
 mix together	mix
 modification	change
@@ -767,7 +770,6 @@ quite impossible	impossible
 quite obvious	obvious
 quite unique	unique
 rather interesting	interesting
-re	about
 real life	life
 real problems	problems
 real truth	truth
@@ -780,7 +782,6 @@ reconsider again	reconsider
 red in color	red
 reduce	cut
 refer back	refer
-reference	about, refer to, note, cite, consider, endorse
 referencing	referring to
 referred to as	called
 reflect	say, show
@@ -949,6 +950,7 @@ validate	confirm
 valuable asset	asset
 various different	various
 vast majority	majority, most
+velocity	speed
 verbatim	exact
 very necessary	necessary
 very relevant	relevant

@@ -94,3 +94,29 @@ can't|couldn't|shouldn't|wouldn't &irregular_verb_past::word=\0 \1:base::pivots=
 .*/MD not was|bore|span::filter=kill
 .*/MD &irregular_verb_past::word=\0 \1:base::pivots=\1,\1:base
 .*/MD not &irregular_verb_past::word=\0 not \2:base::pivots=\2,\2:base
+
+#
+# I can has rules
+#
+&modal_verbs is::filter=kill
+&modal_verbs needs::filter=kill
+&modal_verbs [a-z].*/VBZ::word=\0 \1:base::filter=none
+0BEGIN.0 .*/MD [a-z].*/VBZ::word=\0 \1:base::filter=none
+.*/DT can|will [a-z].*/VBZ::filter=die
+.*/DT .*/NN|JJ can|will [a-z].*/VBZ::filter=die
+free|of|human|good|animal|natural|last will [a-z].*/VBZ::filter=die
+Their|Your|His|Her|My will [a-z].*/VBZ::filter=die
+
+#
+# more tense rules: 
+# see - http://www.brighthub.com/education/languages/articles/37641.aspx
+#
+&modal_verbs be .*/VBZ::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
+&modal_verbs be built|showed|erect|means|has|drank|hid::filter=die
+&modal_verbs be &irregular_verb_past::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
+&modal_verbs be .*/VB::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
+&modal_verbs been .*/VBZ::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
+&modal_verbs been .*/VBN::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
+&modal_verbs been .*/VB::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
+
+

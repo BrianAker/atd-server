@@ -15,13 +15,17 @@ include("lib/neural.sl");
 #include("tests/includes/utils.sl");
 include("lib/tagger.sl");
 
-global('$__SCRIPT__ $model $rules $dictionary $dsize $trie');          
+global('$__SCRIPT__ $model $rules $dictionary $dsize $trie %edits');          
 $model      = get_language_model();
 $rules      = get_rules();
 $dictionary = dictionary();
 $trie       = trie($dictionary);
 $dsize      = size($dictionary);
 initTaggerModels();
+%edits      = initEdits(ohasha());
+
+import org.dashnine.preditor.SpellingUtils from: lib/spellutils.jar;
+setField(^SpellingUtils, noWordSeparation => 1);
 
 sub trainNetwork
 {

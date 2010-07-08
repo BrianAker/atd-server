@@ -1,4 +1,5 @@
 their is|are|a|an::word=there \1::pivots=their,there
+there to::filter=kill
 there .*/JJ.* .*/NN::word=their \1 \2::pivots=there,their
 there .*ing/NN::word=their \1, they're \1::pivots=there,their,they're
 there .*/NN::word=their \1::pivots=there,their
@@ -24,4 +25,8 @@ They're are::word=There are, They are::pivots=They're,There,They
 .*/VB there .*/JJ .*/NNS::word=\0 their \2 \3::pivots=\1,their
 .*/IN there .*/NNS::word=\0 their \2::pivots=\1,their
 .*/IN there .*/JJ .*/NNS::word=\0 their \2 3::pivots=\1,their
+
+has|is they're::word=\0 their::pivots=they're,their::options=they're,their
+their so|as|gonna::word=they're \1::pivots=their,they're::options=their,They're
+Their so|as|gonna::word=They're \1::pivots=Their,They're::options=Their,They're
 

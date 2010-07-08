@@ -14,6 +14,7 @@ wouldnt::word=wouldn't
 doesnt::word=doesn't
 hasnt::word=hasn't
 couldnt::word=couldn't
+hadnt::word=hadn't
 
 Arent::word=Aren't
 Didnt::word=Didn't
@@ -25,6 +26,7 @@ Wouldnt::word=Wouldn't
 Doesnt::word=Doesn't
 Hasnt::word=Hasn't
 Couldnt::word=Couldn't
+Hadnt::word=Hadn't
 
 # Pronouns with will
 
@@ -51,7 +53,7 @@ shes::word=she's
 #its::word=it's
 #were::word=we're
 theyre::word=they're
-thats::word=that's
+thats::word=that's::filter=none
 
 Youre::word=You're
 Whos::word=Who's

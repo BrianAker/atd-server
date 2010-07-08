@@ -91,3 +91,15 @@ free lancing::word=freelancing
 
 # awhile is an adverb, should be used after a verb
 .*/VB a while::word=\0 awhile::pivots=a while,awhile
+
+# join web site into website
+web site::word=website
+Web Site|site::word=Website
+
+head scarf::word=headscarf
+head scarves::word=headscarves
+
+key words::word=keywords
+crowd sourcing::word=crowdsourcing
+meta data::word=metadata
+mis .*::word=\0\1::filter=sane

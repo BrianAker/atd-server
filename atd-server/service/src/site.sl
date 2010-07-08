@@ -3,10 +3,10 @@ debug(7 | 34);
 include("lib/quality.sl");
 include("lib/engine.sl");
 
-if (-exists "local.sl")
+sub service_init { }
+if (-exists "service/src/local.sl")
 {
-   sub service_init { }
-   include("local.sl");
+   include("service/src/local.sl");
 }
 
 global('$lang');
@@ -117,7 +117,15 @@ release([$session getSiteLock]);
 {
    local('$data');
    $data = stripHTML(%parms["data"]);
-   display("view/service.slp", processDocument($data));
+   display("service/src/view/service.slp", processDocument($data));
+   return %(Content-type => "text/xml");
+}];
+
+[$session addHook: "/checkGrammar", 
+{
+   local('$data');
+   $data = stripHTML(%parms["data"]);
+   display("service/src/view/service.slp", processDocument($data, 'nospell'));
    return %(Content-type => "text/xml");
 }];
 
@@ -126,7 +134,7 @@ release([$session getSiteLock]);
    local('$data');
 
    $data = stripHTML(%parms['data']);
-   display("view/quality.slp", processDocumentQuality($data));
+   display("service/src/view/quality.slp", processDocumentQuality($data));
 
    return %(Content-type => "text/xml");     
 }]; 
@@ -151,15 +159,15 @@ release([$session getSiteLock]);
 
    if (%parms["theme"] eq "wordpress")
    {
-      display("view/wordpress_gen.slp", $rule, %parms["text"]);
+      display("service/src/view/wordpress_gen.slp", $rule, %parms["text"]);
    }
    else if (%parms["theme"] eq "tinymce")
    {
-      display("view/wordpress_gen.slp", $rule, %parms["text"]);
+      display("service/src/view/wordpress_gen.slp", $rule, %parms["text"]);
    }
    else
    {
-      display("view/rule.slp", $rule, %parms["text"]);
+      display("service/src/view/rule.slp", $rule, %parms["text"]);
    }
 }];
 

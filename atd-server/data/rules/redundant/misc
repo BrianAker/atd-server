@@ -121,3 +121,4 @@ my personal opinion::word=my opinion::filter=none
 ATM machine::word=\0::filter=none
 ATM Machine::word=\0::filter=none
 
+oscillate|oscillates back and forth::word=\0::filter=none

@@ -152,7 +152,7 @@
 
 <div id="flipper" class="wrap">
   <div id="content1">
-     <?sleep display("view/rule.slp", $1, $2); ?>
+     <?sleep display("service/src/view/rule.slp", $1, $2); ?>
   </div>
 <!--  <div id="content2" style="display: none">
      <h1>About</h1>

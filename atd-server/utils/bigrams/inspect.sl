@@ -2,6 +2,8 @@
 # a tool to inspect the language model
 #
 
+debug(7 | 34);
+
 import org.dashnine.preditor.* from: lib/spellutils.jar;
 use(^SpellingUtils);
 

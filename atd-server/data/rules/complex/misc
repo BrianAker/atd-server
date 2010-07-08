@@ -92,3 +92,8 @@ provide .*/PRP with::word=give \1, offer \1::pivots=provide,give,offer
 
 nowadays::word=today
 Nowadays::word=Today
+
+.*/MD reference::word=\0 refer to::pivots=reference,refer to
+.*/JJ reference::word=\0 note::pivots=reference,note
+.*/VB reference::word=\0 cite, \0 consider, \0 endorse::pivots=\1,cite,consider,endorse
+

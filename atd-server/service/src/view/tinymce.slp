@@ -14,7 +14,7 @@
   </div>
   <div class="panel_wrapper">
     <div id="general_panel" class="panel current">
-      <?sleep display("view/rule.slp", $1, $2); ?>
+      <?sleep display("service/src/view/rule.slp", $1, $2); ?>
     </div>
   </div>
 

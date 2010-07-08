@@ -6,7 +6,7 @@ include("lib/wordforms.sl");
 
 sub initAllModels
 {
-   global('$model $rules $dictionary $trie $network $hnetwork %edits $dsize $verbs $endings');
+   global('$model $rules $dictionary $trie $network $hnetwork %edits $dsize $verbs $endings $homophones $agreement');
 
    $model      = get_language_model();
    $dictionary = dictionary();
@@ -29,10 +29,14 @@ sub get_rules
   if ($r is $null)
   {
      $r = [{
-        local('$handle $rules $rcount');
+        local('$handle $rules $rcount $rule');
+        $rules = @();
         $handle = openf("models/rules.bin");
         $rcount = readObject($handle);
-        $rules = readObject($handle);
+        while $rule (readObject($handle)) 
+        {
+           push($rules, $rule);
+        }
         closef($handle);
         warn("Rules loaded: $rcount rules");
         return $rules;
@@ -40,6 +44,20 @@ sub get_rules
   }
 
   return $r;
+}
+
+sub checkAll
+{
+   local('$engine @r');
+
+   foreach $engine ($rules) 
+   {
+      @r = check($engine, $1);
+      if (@r !is $null)
+      {
+         return @r;    
+      }
+   }
 }
 
 sub processSingle
@@ -56,22 +74,22 @@ sub processSingle
       @tags = taggerWithTrigrams(@list);
    }
 
-   @result = check($rules, @tags);
+   @result = checkAll(@tags);
    if (@result is $null)
    {
       add(@tags, @('0BEGIN.0', 'UNK'));
-      @result = check($rules, @tags);
+      @result = checkAll(@tags);
 
       if (@result is $null)
       {
          @tags = sublist(@tags, 1);
          push(@tags, @('0END.0', 'UNK'));
-         @result = check($rules, @tags);
+         @result = checkAll(@tags);
 
          if (@result is $null)
          {
             add(@tags, @('0BEGIN.0', 'UNK'));
-            @result = check($rules, @tags);
+            @result = checkAll(@tags);
          }
       }
    }
@@ -111,6 +129,44 @@ sub suggestions
              if ([$1 endsWith: ":singular"])
              {
                 return pluralToSingular(left($1, -9));      
+             }
+             else if ([$1 endsWith: ":lower"])
+             {
+                local('$w');
+                $w = left($1, -6);
+                if (lc($w) in $dictionary) { return lc($w); }
+                return $w;
+             }
+             else if ([$1 endsWith: ":upper"])
+             {
+                local('$w');
+                $w = left($1, -6);
+                if (lc($w) in $dictionary) { return uc(charAt($w, 0)) . substr($w, 1); }
+                return $w;
+             }
+             else if ([$1 endsWith: ":determiner"])
+             {
+                return determiner(left($1, -11), 0);
+             }
+             else if ([$1 endsWith: ":determiner-u"])
+             {
+                return determiner-u(left($1, -13), 0);
+             }
+             else if ([$1 endsWith: ":determiner2"])
+             {
+                return determiner(left($1, -12), 1);
+             }
+             else if ([$1 endsWith: ":determiner2-u"])
+             {
+                return determiner-u(left($1, -14), 1);
+             }
+             else if ([$1 endsWith: ":determiner3"])
+             {
+                return determiner(left($1, -12), 2);
+             }
+             else if ([$1 endsWith: ":determiner3-u"])
+             {
+                return determiner-u(left($1, -14), 2);
              }
              else if ([$1 endsWith: ":possessive"])
              {
@@ -178,9 +234,41 @@ sub filterSuggestion
       }
       $error[4] = @();
    }
+   else if ($rule["filter"] eq "sane") 
+   {
+      if ($rule["avoid"] ne "") {
+         local('@w @avoid $a');
+         @w = split(' ', lc($path));
+         @avoid = split(',\s+', $rule['avoid']);
+         foreach $a (@avoid) 
+         {
+            if ($a in @w)
+            {
+               return;
+            }
+         }
+      }
+
+      $error[4] = filter(lambda({ return iff(scoreSane($1) > 0.0, $1); }, \@tagsn), suggestions(split(', ', $rule["word"]), @tagsn));
+      if (size($error[4]) == 0) { return; }
+
+      local('$suggestion $start');
+
+      foreach $suggestion ($error[4]) 
+      {
+         if ($suggestion eq $path) 
+         {
+            return;
+         }
+      }
+   }
    else if ($rule["filter"] eq "none")
    {
       $error[4] = suggestions(split(', ', $rule["word"]), @tagsn);
+   }
+   else if ($rule["filter"] eq "die")
+   {
+      $error[4] = @();
    }
    else if ($rule["filter"] eq "homophone")
    {
@@ -310,6 +398,17 @@ sub filterSuggestion
    return $error;
 }
 
+sub scoreSane {
+	local('$word');
+	foreach $word (split('\s+', $1)) {
+		if (count($word) == 0) {
+			return 0.0;
+		}
+	}
+
+	return 1.0;
+}
+
 sub scorer
 {
    local('@words');
@@ -365,18 +464,12 @@ sub fixWord
 
 sub processSentence
 {
-   local('$from $x $previous $next @words @list @tags @backtags $rule $index $path @result $t $u $suggestion')
+   local('@list @words @tags $engine $nospell');
 
-   $from = 0;
-   $x = size(@results);
-
-   #
-   # check spelling.
-   #
+   # tag the sentence
    @list = splitIntoWords($sentence);
    @words = copy(@list);
    @tags = taggerWithTrigrams(@list);       
-   @backtags = @();
 
    # push the end of the sentence onto the tags so the rule engine can find it.
    push(@tags, @('0END.0', 'UNK'));
@@ -385,7 +478,30 @@ sub processSentence
    add(@list, '0BEGIN.0');
    add(@tags, @('0BEGIN.0', 'UNK'));
 
-   checkSentenceSpelling(@words, \@results);
+   # check spelling
+   if ($nospell is $null) 
+   {
+      checkSentenceSpelling(@words, \@results);
+   }
+   else
+   {
+      checkRepeatedWords(@words, \@results);
+   }
+
+   # run the various checkers against the sentence
+   foreach $engine ($rules) 
+   {
+      processSentenceWithRules(@list, @tags, $engine, \@results, \$sentence);
+   }
+}
+
+sub processSentenceWithRules 
+{
+   local('$from $previous $next @words @list @tags @backtags $rule $index $path @result $t $u $suggestion $rules');
+   (@list, @tags, $rules) = @_;
+   @backtags = @();
+
+   $from = 0;
 
    $previous = '0BEGIN.0';
    $next     = '0END.0';
@@ -405,9 +521,9 @@ sub processSentence
           {
               local('$start $end @l');
               @l     = sublist(@list, 0, $index);
-              $end   = indexOf($sentence, @l[-1], $from) + strlen(@l[-1]);
+              $end   = indexOf($sentence, " " . @l[-1], $from) + 1 + strlen(@l[-1]);
               $start = lindexOf($sentence, @l[0], $end);
-
+		
               $u = substr($sentence, $start, $end);
            }
            else
@@ -441,7 +557,10 @@ sub processSentence
               @tags = sublist(@tags, $index);
               $from += strlen($u);
 
-              push(@results, $suggestion);
+              if ($rule['filter'] ne "die") 
+              {
+                 push(@results, $suggestion);
+              }
            }
            else
            {
@@ -465,7 +584,7 @@ sub processSentence
 
 sub processDocument
 {
-  local('@paragraphs $paragraph $sentence @results @list $t $u $x $r @result $from $count $previous $next   $rule $index $path   $word @words  $dsize $dprob  @tags @backtags');
+  local('@paragraphs $paragraph $sentence @results @list $t $u $x $r @result $from $count $previous $next   $rule $index $path   $word @words  $dsize $dprob  @tags @backtags $2');
 
   @paragraphs = splitByParagraph($1);
 
@@ -478,7 +597,7 @@ sub processDocument
            continue;
         }
 
-        processSentence(\$sentence, \@results);
+        processSentence(\$sentence, \@results, $nospell => $2);
 #        print(strrep($sentence, "\xA0", '&nbsp;', "\xA1", '&iexcl;', "\xA2", '&cent;', "\xA3", '&pound;', "\xA4", '&curren;', "\xA5", '&yen;', "\xA6", '&brvbar;', "\xA7", '&sect;', "\xA8", '&uml;', "\xA9", '&copy;', "\xAA", '&ordf;', "\xAB", '&laquo;', "\xAC", '&not;', "\xAD", '&shy;', "\xAE", '&reg;', "\xAF", '&macr;', "\xB0", '&deg;', "\xB1", '&plusmn;', "\xB2", '&sup2;', "\xB3", '&sup3;', "\xB4", '&acute;', "\xB5", '&micro;', "\xB6", '&para;', "\xB7", '&middot;', "\xB8", '&cedil;', "\xB9", '&sup1;', "\xBA", '&ordm;', "\xBB", '&raquo;', "\xBC", '&frac14;', "\xBD", '&frac12;', "\xBE", '&frac34;', "\xBF", '&iquest;', "\xC0", '&Agrave;', "\xC1", '&Aacute;', "\xC2", '&Acirc;', "\xC3", '&Atilde;', "\xC4", '&Auml;', "\xC5", '&Aring;', "\xC6", '&AElig;', "\xC7", '&Ccedil;', "\xC8", '&Egrave;', "\xC9", '&Eacute;', "\xCA", '&Ecirc;', "\xCB", '&Euml;', "\xCC", '&Igrave;', "\xCD", '&Iacute;', "\xCE", '&Icirc;', "\xCF", '&Iuml;', "\xD0", '&ETH;', "\xD1", '&Ntilde;', "\xD2", '&Ograve;', "\xD3", '&Oacute;', "\xD4", '&Ocirc;', "\xD5", '&Otilde;', "\xD6", '&Ouml;', "\xD7", '&times;', "\xD8", '&Oslash;', "\xD9", '&Ugrave;', "\xDA", '&Uacute;', "\xDB", '&Ucirc;', "\xDC", '&Uuml;', "\xDD", '&Yacute;', "\xDE", '&THORN;', "\xDF", '&szlig;', "\xE0", '&agrave;', "\xE1", '&aacute;', "\xE2", '&acirc;', "\xE3", '&atilde;', "\xE4", '&auml;', "\xE5", '&aring;', "\xE6", '&aelig;', "\xE7", '&ccedil;', "\xE8", '&egrave;', "\xE9", '&eacute;', "\xEA", '&ecirc;', "\xEB", '&euml;', "\xEC", '&igrave;', "\xED", '&iacute;', "\xEE", '&icirc;', "\xEF", '&iuml;', "\xF0", '&eth;', "\xF1", '&ntilde;', "\xF2", '&ograve;', "\xF3", '&oacute;', "\xF4", '&ocirc;', "\xF5", '&otilde;', "\xF6", '&ouml;', "\xF7", '&divide;', "\xF8", '&oslash;', "\xF9", '&ugrave;', "\xFA", '&uacute;', "\xFB", '&ucirc;', "\xFC", '&uuml;', "\xFD", '&yacute;', "\xFE", '&thorn;', "\xFF", '&yuml;'));
      }
 

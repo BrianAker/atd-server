@@ -5,7 +5,7 @@
 <?sleep 
        if (size($4) > 0)
        {
-          display("view/suggestions.slp", $4);
+          display("service/src/view/suggestions.slp", $4);
        }
 ?>
     <type><?sleep

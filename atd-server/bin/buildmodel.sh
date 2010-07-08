@@ -17,3 +17,6 @@ java -Dfile.encoding=UTF-8 -Xmx2536M -XX:NewSize=512M -jar lib/sleep.jar utils/b
 # create the not misspelled dictionary...
 
 cp data/wordlists/accented.txt models/not_misspelled.txt
+
+# create LM for low-memory AtD
+./bin/smallmodel.sh

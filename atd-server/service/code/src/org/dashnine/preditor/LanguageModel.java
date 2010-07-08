@@ -10,6 +10,20 @@ public class LanguageModel implements Serializable
    protected int string_count = 1;
    protected Map string_pool;
    protected Map model;
+
+   /*
+    * these functions make it possible to harvest a low-memory language model from this
+    * large one.
+    */
+   public Map getStringPool() 
+   {
+      return string_pool;
+   }
+
+   public Map getLanguageModel() 
+   {
+      return model;
+   }
    
    /* harvest a dictionary from the language model */
    public List harvest(int threshold)
@@ -32,7 +46,7 @@ public class LanguageModel implements Serializable
       return results;
    }
 
-   private static class Value implements Serializable
+   protected static final class Value implements Serializable
    {
       public Map next = null;
       public int count = 0;
@@ -40,7 +54,7 @@ public class LanguageModel implements Serializable
 
    /* we associate an integer object with each string to save space in the language model,
       normally this would be such a trivial savings but we're dealing with so much data */
-   private Object getStringId(String word, boolean makeAsNecessary)
+   protected Object getStringId(String word, boolean makeAsNecessary)
    {
       Object sid = string_pool.get(word);
 
@@ -61,7 +75,7 @@ public class LanguageModel implements Serializable
    }
 
    /* read a string value from the specified map... adds the string if it doesn't exist */
-   private Value getStringValue(Map map, String word, boolean makeAsNecessary)
+   protected Value getStringValue(Map map, String word, boolean makeAsNecessary)
    {
       Object sid = getStringId(word, makeAsNecessary);
       if (sid != null)

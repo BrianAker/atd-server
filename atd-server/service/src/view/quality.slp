@@ -30,7 +30,7 @@
        if ($data > 0.0)
        {
           ($type, $name) = split('\.', $metric);
-          display("view/metric.slp", $type, $name, $data);
+          display("service/src/view/metric.slp", $type, $name, $data);
        }
     }
 ?></scores>
