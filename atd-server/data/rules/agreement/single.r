@@ -1,4 +1,5 @@
 *prefix* are::word=*text* is, *transform*::avoid=police, sheep, will, cannot, i, read, majority, half, might, let, let's::filter=sane
+*prefix* were::word=*text* was, *transform*::avoid=police, sheep, will, cannot, i, read, majority, half, might, let, let's::filter=sane
 *prefix* don't::word=*text* doesn't, *transform*::avoid=police, sheep, will, cannot, i, read, majority, half, might, let, let's::filter=sane
 *prefix* [a-z]+/VBP::word=*text* \X:plural, *transform*::avoid=police, sheep, will, cannot, i, read, majority, half, might, let::filter=sane
 *prefix* be::filter=kill

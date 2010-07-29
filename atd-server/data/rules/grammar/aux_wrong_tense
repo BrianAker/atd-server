@@ -19,6 +19,9 @@ Are|are we|they|you &irregular_verb_past::word=\0 \1 \2:base::pivots=\2,\2:base
 # had I know => had I known, had I knew
 Had|had we|I|you|they &irregular_verb_base::word=\0 \1 \2:participle, \0 \1 \2:past::pivots=\2,\2:participle,\2:past
 
+have .*/RB &irregular_verb_base .*/DT::word=\0 \1 \2:past \3::pivots=\2,\2:past
+have &irregular_verb_base .*/DT::word=\0 \1:past \2::pivots=\1,\1:past
+
 #
 # wrong tense (past) used with not form... expects base form
 #
@@ -114,9 +117,10 @@ Their|Your|His|Her|My will [a-z].*/VBZ::filter=die
 &modal_verbs be .*/VBZ::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
 &modal_verbs be built|showed|erect|means|has|drank|hid::filter=die
 &modal_verbs be &irregular_verb_past::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
-&modal_verbs be .*/VB::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
 &modal_verbs been .*/VBZ::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
 &modal_verbs been .*/VBN::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
 &modal_verbs been .*/VB::word=\0 \1 \2:past, \0 \1 \2:present::pivots=\2,\2:past,\2:present
 
-
+# be doesn't need the modal verb attachment.
+be secure|cause::filter=kill
+be .*/VB::word=\0 \1:past, \0 \1:participle, \0 \1:present::pivots=\1,\1:past,\1:participle,\1:present

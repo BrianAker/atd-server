@@ -19,3 +19,10 @@
 .*/PRP .*/VBD &determiner_wanted 0END.0::word=\0 \1 \2:determiner \2, \0 \1 \2:determiner2 \2::pivots=\2,\2:determiner \2,\2:determiner2 \2
 .*/PRP .*/VBD .*/JJ &determiner_wanted for|of|in|to|so|from|with::word=\0 \1 \2:determiner \2 \3 \4, \0 \1 \2:determiner2 \2 \3 \4::pivots=\2,\2:determiner \2,\2:determiner2 \2
 .*/PRP .*/VBD .*/JJ &determiner_wanted 0END.0::word=\0 \1 \2:determiner \2 \3, \0 \1 \2:determiner2 \2 \3::pivots=\2,\2:determiner \2,\2:determiner2 \2
+
+.*/PRP be &determiner_wanted::filter=kill
+.*/PRP .*/VB &determiner_wanted for|of|in|to|so|from|with::word=\0 \1 \2:determiner \2 \3, \0 \1 \2:determiner2 \2 \3::pivots=\2,\2:determiner \2,\2:determiner2 \2
+.*/PRP .*/VB &determiner_wanted 0END.0::word=\0 \1 \2:determiner \2, \0 \1 \2:determiner2 \2::pivots=\2,\2:determiner \2,\2:determiner2 \2
+.*/PRP .*/VBP\,RB .*/VB &determiner_wanted for|of|in|to|so|from|with::word=\0 \1 \2 \3:determiner \3 \4, \0 \1 \2 \3:determiner2 \3 \4::pivots=\3,\3:determiner \3,\3:determiner2 \3
+.*/PRP .*/VBP\,RB .*/VB &determiner_wanted 0END.0::word=\0 \1 \2 \3:determiner \3, \0 \1 \2 \3:determiner2 \3::pivots=\3,\3:determiner \3,\3:determiner2 \3
+.*/PRP .*/VBP &determiner_wanted .*ing::word=\0 \1 \2:determiner \2 \3, \0 \1 \2:determiner2 \2 \3::pivots=\2,\2:determiner \2,\2:determiner2 \2

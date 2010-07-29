@@ -122,3 +122,6 @@ ATM machine::word=\0::filter=none
 ATM Machine::word=\0::filter=none
 
 oscillate|oscillates back and forth::word=\0::filter=none
+
+doctorate degree::word=\0::filter=none
+Doctorate [dD]egree::word=\0::filter=none

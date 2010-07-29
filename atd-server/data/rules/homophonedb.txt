@@ -403,6 +403,7 @@ leas, lees
 leased, least
 lends, lens
 lessen, lesson
+levy, levee
 liar, lyre
 liable, libel
 lichen, liken
@@ -586,6 +587,7 @@ role, roll
 rood, rude
 roomer, rumor
 root, route
+rooting, routing
 rose, rows
 rot, wrought
 rote, wrote
@@ -765,7 +767,9 @@ whit, wit, with
 whither, wither
 whoa, woe
 why, wye
+wonder, wander
 wondered, wandered
+wondering, wandering
 worst, wurst
 y'all, yawl
 yack, yak

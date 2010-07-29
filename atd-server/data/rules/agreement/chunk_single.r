@@ -1,11 +1,11 @@
-.*/NNP [a-z]+/NN or [a-z]+/PRP\$ [a-z]+/NN::\0 \1 and \3 \4
-.*/NNP [a-z]+/NNS or [a-z]+/PRP\$ [a-z]+/NN::\0 \1 and \3 \4
+.*/NNP [a-z]+/NN or [a-z]+/PRP.* [a-z]+/NN::\0 \1 and \3 \4
+.*/NNP [a-z]+/NNS or [a-z]+/PRP.* [a-z]+/NN::\0 \1 and \3 \4
 A [a-z]+/NN or [a-z]+/NN::\0 \1 and \3
 An [a-z]+/NN or [a-z]+/NN::\0 \1 and \3
 .*/NNP or [a-z]+/NNP::\0 and \2
 Every one of [a-z]+/DT [a-z]+/NNS::\3:upper \4
-One of [a-z]+/PRP\$ [a-z]+/NNS::\2:upper \3
-Each one of [a-z]+/PRP\$ [a-z]+/NNS::\3:upper \4
+One of [a-z]+/PRP.* [a-z]+/NNS::\2:upper \3
+Each one of [a-z]+/PRP.* [a-z]+/NNS::\3:upper \4
 The [a-z]+/NN [a-z]+/IN::\0 \1:plural \2
 The [a-z]+/NN::\0 \1:plural
 This [a-z]+/NN [a-z]+/IN::These \1:plural \2
@@ -44,4 +44,4 @@ The [a-z]+/NN [a-z]+/VB
 The [a-z]+/NN of [a-z]+/VB [a-z]+/NNS::\0 \1:plural of \3 \4
 Either [a-z]+/NN
 .*/NN::\0:plural
-Either [a-z]+/NNP [a-z]+/NNS or [a-z]+/PRP\$ [a-z]+/NN::\1:upper \2 and \4 \5
+Either [a-z]+/NNP [a-z]+/NNS or [a-z]+/PRP.* [a-z]+/NN::\1:upper \2 and \4 \5

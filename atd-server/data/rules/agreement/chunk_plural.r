@@ -1,9 +1,9 @@
 The [a-z]+/JJ two|three|four|five|six|seven|eight|nine|ten|hundred|thousand|million|billion|trillion
-.*/PRP\$ pants
-.*/NNP [a-z]+/NN and [a-z]+/PRP\$ [a-z]+/NN::\0 \1 or \3 \4
-.*/NNP [a-z]+/NNS and [a-z]+/PRP\$ [a-z]+/NN::\0 \1 or \3 \4
+My|Your|His|Her|Their pants
+.*/NNP [a-z]+/NN and [a-z]+/PRP.* [a-z]+/NN::\0 \1 or \3 \4
+.*/NNP [a-z]+/NNS and [a-z]+/PRP.* [a-z]+/NN::\0 \1 or \3 \4
 .*/NNP and [a-z]+/NNP::\0 or \2
-.*/NNP and [a-z]+/PRP\$ [a-z]+/NNS::\0 or \2 \3:singular
+.*/NNP and [a-z]+/PRP.* [a-z]+/NNS::\0 or \2 \3:singular
 The [a-z]+/NN and [a-z]+/DT [a-z]+/NNS::\0 \1 or \3 \4:singular 
 The [a-z]+/NN or [a-z]+/DT [a-z]+/NNS::\0 \1 \2 \3 \4:singular
 The [a-z]+/NN and [a-z]+/NN::The \1 or \3
@@ -39,3 +39,5 @@ His [a-z]+/NNS::\0 \1:singular
 Her [a-z]+/NNS::\0 \1:singular
 .*/JJ [a-z]+/NNS::\0 \1:singular
 The [a-z]+/NN [a-z]+/IN [a-z]+/VB [a-z]+/NNS
+My [a-z]+/NNS and I
+My [a-z]+/NN and I

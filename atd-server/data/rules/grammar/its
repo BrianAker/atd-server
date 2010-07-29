@@ -3,6 +3,7 @@ Its .*/JJ|JJS .*/NN .*/TO|PRP|NNP::word=It's \1 \2 \3::filter=none
 Its .*/JJ|JJS .*/TO|PRP|NNP::word=It's \1 \2::filter=none
 Its .*/JJ|JJS .*/NN a|an|that|because|as::word=It's \1 \2 \3::filter=none
 Its .*/JJ|JJS a|an|that|because|as::word=It's \1 \2::filter=none
+Its .*/JJ for::word=It's \1 \2::filter=none
 
 Its .*/RB|DT::word=It's \1::filter=none
 
