@@ -823,6 +823,8 @@ lens	a curved, bowl-shaped transparent item
 less	a smaller quantity, use with things you can't count
 lessen	to make less of
 lesson	experience that serves to warn or encourage (let that be a lesson)
+levy	to collect money that is due
+levee	used to hold back a flood
 let's	contraction of "let" and "us"
 lets	to do something
 li	a Chinese distance, equal to 1/3 of a mile
@@ -1238,12 +1240,14 @@ roomer	A tenant or lodger who lives in a rented room.
 roomie	colloquialism for roommate
 roomy	spacious
 root	the part of the plant that is underground
+rooting	to cheer for
 rose	pretty flower
 rot	decomposition
 rote	learn by heart
 rough	uneven or bumpy, not smooth, level, or polished. 2 shaggy or coarse-haired. 3 boisterous, coarse; violent, not mild, quiet
 rout	completely destroy or force out
 route	a path
+routing	sending in the right direction
 roux	flour and butter combined and cooked
 row	to pull oars to move a vessel
 rowed	the act of using ores
@@ -1575,7 +1579,9 @@ wale	welt; A raised mark on the skin like an ridge.
 wales	a european country
 walk	to move the body by ways of moving the feet and legs
 walks	journey on foot
-wandered	to travel
+wander	to travel
+wandered	to have traveled
+wandering	traveling
 wane	to shrink in size
 want	need for
 watt	a unit of power
@@ -1666,7 +1672,9 @@ woe	sorrow or grief
 wok	a pan used for cooking
 woks	cooking pan
 won	To achieve first place in a competitive situation.
-wondered	To ponder a question
+wonder	To ponder a question
+wondered	To have pondered a question
+wondering	pondering a question
 won't	Contraction for will not.
 wont	used to
 wood	tulipwood - the variegated or showily striped ornamental wood

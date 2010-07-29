@@ -631,6 +631,8 @@ modification	change
 modifications	changes
 modify	change
 moment in time	time
+monetization::word=revenue
+for monetization::word=to make money
 monitor	check, watch
 month of	(omit)
 more or less	about, (omit)

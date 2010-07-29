@@ -34,7 +34,7 @@
           }
 
     #      println('<url>http://service.afterthedeadline.com/info.slp?text='.[java.net.URLEncoder encode: $1].'</url>'); 
-          println('<url>http://'.iff($lang ne "", "$lang $+ .").'service.afterthedeadline.com/info.slp?text='.[java.net.URLEncoder encode: $1].'&amp;tags='.[java.net.URLEncoder encode: join('/', map({ return $1[1]; }, @tags))].'</url>'); 
+          println('<url>http://'.iff($lang ne "", "$lang $+ .").'service.afterthedeadline.com/info.slp?text='.[java.net.URLEncoder encode: $1].'&amp;tags='.[java.net.URLEncoder encode: join('/', map({ return $1[1]; }, @tags))].'&amp;engine='.$6.'</url>'); 
        }
    ?>
   </error>

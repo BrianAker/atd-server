@@ -59,30 +59,7 @@ sub data
    
             while (1)
             {
-               if ($0 eq "edits")
-#               if ($0 eq "context" || $0 eq "edits")
-               {
-                  $temp = ohasha();
-
-                  setRemovalPolicy($temp,
-                  lambda({
-                      return iff([[$1 getData] size] > 128);
-                  }));
-
-                  setMissPolicy($temp, lambda({
-                      local('$v');
-                      acquire($typel);
-                      $v = $source[$2];
-                      release($typel);
-                      return $v;
-                  }, $source => %shared[$0], $typel => %shared["locks"]));
-
-                  yield $temp;
-               }
-               else
-               {
-                  yield %shared[$0];
-               }
+               yield %shared[$0];
             }
          });
 
@@ -95,6 +72,35 @@ sub data
    return $data;
 }
 
+sub localProtect
+{
+   local('$temp');
+   $temp = ohasha();
+
+   setRemovalPolicy($temp, lambda({
+      return iff([[$1 getData] size] > 128);
+   }));
+
+   setMissPolicy($temp, lambda({ 
+      acquire($locks);
+      local('$v $exception');
+      try 
+      {
+         $v = $source[$2];
+      }
+      catch $exception 
+      {
+         warn("#Edits# $2 failed: $exception");
+         warn(getStackTrace());
+         $v = @();
+      }
+      release($locks);
+      return $v;
+   }, $source => $1));
+
+   return $temp;
+}
+
 acquire([$session getSiteLock]);
    global('$__SCRIPT__ $model $rules $dictionary $network $dsize %edits $hnetwork $usage $endings $lexdb $trigrams $verbs $locks $trie');
    $dictionary = [data() dictionary]; 
@@ -102,7 +108,7 @@ acquire([$session getSiteLock]);
    $rules      = [data() rules];
    $network    = [data() network];
    $hnetwork   = [data() hnetwork];
-   %edits      = [data() edits];
+   %edits      = localProtect([data() edits]);
    $dsize      = [data() size];
    $usage      = [data() usage];
    $endings    = [data() endings];
@@ -147,7 +153,7 @@ release([$session getSiteLock]);
 [$session addHook: "/info.slp",
 {
    local('$rule');
-   $rule = copy( processSingle(%parms["text"], iff("tags" in %parms, %parms["tags"], $null)) );
+   $rule = copy( processSingle(%parms["text"], iff("tags" in %parms, %parms["tags"], $null), iff("engine" in %parms, %parms["engine"], $null)) );
 
    if ($rule is $null)
    {

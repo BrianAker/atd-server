@@ -60,6 +60,18 @@ sub checkAll
    }
 }
 
+inline setResultsWithCorrectEngine
+{
+   if ($index !is $null && $index >= 0 && $index < size($rules))
+   {
+      @result = check($rules[$index], @tags)
+   }
+   else
+   {
+      @result = checkAll(@tags);
+   }
+}
+
 sub processSingle
 {
    local('@list @result $rule $index $path @tags');
@@ -74,11 +86,11 @@ sub processSingle
       @tags = taggerWithTrigrams(@list);
    }
 
-   @result = checkAll(@tags);
+   setResultsWithCorrectEngine($index => $3);
    if (@result is $null)
    {
       add(@tags, @('0BEGIN.0', 'UNK'));
-      @result = checkAll(@tags);
+      setResultsWithCorrectEngine($index => $3);
 
       if (@result is $null)
       {
@@ -401,7 +413,7 @@ sub filterSuggestion
 sub scoreSane {
 	local('$word');
 	foreach $word (split('\s+', $1)) {
-		if (count($word) == 0) {
+		if (count($word) == 0 && count(lc($word)) == 0) {
 			return 0.0;
 		}
 	}
@@ -464,7 +476,7 @@ sub fixWord
 
 sub processSentence
 {
-   local('@list @words @tags $engine $nospell');
+   local('@list @words @tags $engine $nospell $index');
 
    # tag the sentence
    @list = splitIntoWords($sentence);
@@ -489,9 +501,9 @@ sub processSentence
    }
 
    # run the various checkers against the sentence
-   foreach $engine ($rules) 
+   foreach $index => $engine ($rules) 
    {
-      processSentenceWithRules(@list, @tags, $engine, \@results, \$sentence);
+      processSentenceWithRules(@list, @tags, $engine, $index, \@results, \$sentence);
    }
 }
 
@@ -559,6 +571,7 @@ sub processSentenceWithRules
 
               if ($rule['filter'] ne "die") 
               {
+                 $suggestion[7] = $4;
                  push(@results, $suggestion);
               }
            }

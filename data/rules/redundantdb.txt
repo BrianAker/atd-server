@@ -227,6 +227,7 @@ future recurrence	future
 gather together	together
 gather up	up
 general public	general
+general consensus	general
 get up on his feet	on his feet
 get up on your feet	on your feet
 glowing ember	glowing

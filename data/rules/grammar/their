@@ -30,3 +30,11 @@ has|is they're::word=\0 their::pivots=they're,their::options=they're,their
 their so|as|gonna::word=they're \1::pivots=their,they're::options=their,They're
 Their so|as|gonna::word=They're \1::pivots=Their,They're::options=Their,They're
 
+#
+# some rules to map their|there -> they're
+#
+their doing so::filter=kill
+there being .*/IN|DT::filter=kill
+there|their .*/VBG .*/IN::word=they're \1 \2::pivots=\0,they're
+there|their .*/VBG .*/DT::word=they're \1 \2::pivots=\0,they're
+there|their .*/VBG 0END.0::word=they're \1 \2::pivots=\0,they're

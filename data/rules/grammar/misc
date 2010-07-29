@@ -174,3 +174,17 @@ your have|are::word=you \1::pivots=your,you
 
 #
 homo sapiens::word=Homo sapiens::filter=none
+
+# the lose of, a lose of...
+.*/DT lose of|for::word=\0 loss::pivots=lose,loss
+
+# I went to collage...
+.*/DT bachelors degree::word=\0 bachelor's degree::filter=none
+.*/DT masters degree::word=\0 master's degree::filter=none
+.*/DT associates|associate's degree::word=\0 associate degree::filter=none
+
+.*/DT Bachelors [dD]egree::word=\0 Bachelor's \2::filter=none
+.*/DT Masters [dD]egree::word=\0 Master's \2::filter=none
+.*/DT Associates|Associate's [dD]egree::word=\0 Associate \2::filter=none
+
+nerve-wracking::word=nerve-racking
