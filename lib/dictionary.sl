@@ -29,6 +29,17 @@ sub extendDictionary
    closef($handle);
 }
 
+sub fixDictionary
+{
+   local('$handle $word');
+   $handle = openf("data/misspelled.txt");
+   while $word (readln($handle))
+   { 
+      $1[$word] = $null;
+   }
+   size($1);
+}
+
 sub dictionary
 {
    this('$dictionary');
@@ -53,7 +64,7 @@ sub dictionary
       $dictionary['http://'] = 1;
       $dictionary['https://'] = 1;
 
-      warn("Dictionary loaded: " . [[$dictionary getData] size] . " words");
+      warn("Dictionary loaded: " . size($dictionary) . " words");
    }
    return $dictionary;
 }

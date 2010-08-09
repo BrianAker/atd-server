@@ -9,13 +9,16 @@ if (-exists "service/src/local.sl")
    include("service/src/local.sl");
 }
 
-global('$lang');
+global('$lang $INFOURL');
 
 $lang = systemProperties()["atd.lang"];
 if ($lang ne "" && -exists "lang/ $+ $lang $+ /load.sl")
 { 
    include("lang/ $+ $lang $+ /load.sl"); 
 }
+
+# this variable defines the host used to reference explanations
+$INFOURL = 'http://' . iff($lang ne "", "$lang $+ .") . 'service.afterthedeadline.com';
 
 sub data
 {
@@ -48,6 +51,9 @@ sub data
 
             $locks      = semaphore(1);
             initAllModels();
+
+            # fix the dictionary (remove known misspelled words)
+            fixDictionary($dictionary);
 
             $usage      = %(__last => ticks());
 

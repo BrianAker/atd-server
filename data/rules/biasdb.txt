@@ -48,9 +48,12 @@ mentally ill child|adult|person|boy|girl	person with mental illness, person with
 middleman	wholesaler, go-between, intermediary
 mistress of ceremonies	host, emcee
 newsman 	journalist, reporter
+niggard		miser
+niggardly	miserly, stingy
 non-whites 	people of colour
 old masters	classic art, artists
 one man show	one person show
+Oriental	Asian
 orientals 	Asian peoples, East Asian peoples, Southeast Asian peoples
 paraplegics		individuals with paraplegia
 physically challenged	physically disabled

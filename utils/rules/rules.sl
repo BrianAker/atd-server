@@ -420,11 +420,19 @@ sub loadGrammarRules
    # some misc rules
    loadRules($rules, "data/rules/grammar/misc", %(style => "green", rule => "Revise...", recommendation => { return "\"" . suggestions2($1["word"], $2) . "\""; }, category => "Grammar", info => "none", view => "view/rules/empty.slp"));
 
+   # misheard phrases
+   $template = grammar("Misheard Phrase", "", "Many typos come from writing phrases as we think we heard them, and not as they are.");
+   loadRules($rules, "data/rules/grammar/misheard", $template);
+
    # subject verb agreement
 
    $template = grammar("Subject Verb Agreement", "", "In English, the subject has a count (singular, plural) and so does the verb.  These counts must agree for your sentence to be valid.");
    loadRules($rules, "data/rules/grammar/subject_verb_agreement", $template);
    loadRules($agreement, "data/rules/grammar/agreement", $template);
+
+   # less vs. fewer
+   $template = grammar("Less vs. Fewer", "", "Use the word <b>fewer</b> with countable nouns. Use the word <b>less</b> with uncountable nouns. <p>A countable noun is a noun that you can count. An uncountable noun is a noun that you can not count.</p><p>For example, it makes sense to say I have three dollars. Three money makes no sense. The noun dollars is countable. The noun money is not.</p>");
+   loadRules($rules, "data/rules/grammar/count", $template); 
 
    # auxiliary verb agreement
 

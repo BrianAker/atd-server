@@ -103,3 +103,11 @@ key words::word=keywords
 crowd sourcing::word=crowdsourcing
 meta data::word=metadata
 mis .*::word=\0\1::filter=sane
+
+stand alone::word=standalone
+past time::word=pastime
+any where::word=anywhere
+some where::word=somewhere
+no where::word=nowhere
+.*/DT bail out::word=\0 bailout::pivots=bail out,bailout
+

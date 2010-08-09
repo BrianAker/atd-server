@@ -50,3 +50,7 @@ allot of::word=a lot of
 along time::word=a long time
 downpayment::word=down payment
 smartphone::word=smart phone
+ala mode::word=à la mode::filter=none
+afterall::word=after all
+to bailout::word=\0 bail out::pivots=bailout,bail out
+

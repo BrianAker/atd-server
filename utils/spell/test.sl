@@ -21,6 +21,7 @@ global('$__SCRIPT__ $model $rules $dictionary $dsize $biasdb $trie %edits');
 $model      = get_language_model();
 $rules      = get_rules();
 $dictionary = dictionary();
+fixDictionary($dictionary);
 $trie       = trie($dictionary);
 $dsize      = size($dictionary);
 #$biasdb     = [{ local('$handle $o'); $handle = openf("models/homobias.bin"); $o = readObject($handle); closef($handle); return $o; }];
