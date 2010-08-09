@@ -19,7 +19,7 @@ jar:
 all:
 
 BUILD SUCCESSFUL
-Total time: 1 second
+Total time: 2 seconds
 Buildfile: build.xml
 
 clean:
@@ -27,7 +27,7 @@ clean:
 
 BUILD SUCCESSFUL
 Total time: 0 seconds
-Warning: Dictionary loaded: 717340 words at buildcorpus.sl:66
+Warning: Dictionary loaded: 717330 words at buildcorpus.sl:66
 ready!
 ready!
 ready!
@@ -45,7 +45,7 @@ Warning: Agent 5 complete at buildcorpus.sl:221
 Warning: Agent 6 complete at buildcorpus.sl:221
 Warning: Agent 7 complete at buildcorpus.sl:221
 Done!
-Warning: Dictionary loaded: 717340 words at buildcorpus.sl:66
+Warning: Dictionary loaded: 717330 words at buildcorpus.sl:66
 ready!
 ready!
 ready!
@@ -63,7 +63,7 @@ Warning: Agent 5 complete at buildcorpus.sl:221
 Warning: Agent 6 complete at buildcorpus.sl:221
 Warning: Agent 7 complete at buildcorpus.sl:221
 Done!
-Warning: Dictionary loaded: 717340 words at buildcorpus.sl:66
+Warning: Dictionary loaded: 717330 words at buildcorpus.sl:66
 ready!
 ready!
 ready!
@@ -81,14 +81,14 @@ Warning: Agent 5 complete at buildcorpus.sl:221
 Warning: Agent 6 complete at buildcorpus.sl:221
 Warning: Agent 7 complete at buildcorpus.sl:221
 Done!
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
---- Normal rules:    66423
---- Homophone rules: 1657
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
+--- Normal rules:    66909
+--- Homophone rules: 1864
 --- Agreement rules: 1496
 --- Voice  rules:    4989
-Loaded 74,565 rules... wheee
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
-Warning: Rules loaded: 74,565 rules at engine.sl:41
+Loaded 75,258 rules... wheee
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
+Warning: Rules loaded: 75,258 rules at engine.sl:41
 Report for Suggestion score for data/tests/grammar_wikipedia.txt
 Correct:        95.17241379310344
 Suggestion Acc: 96.55172413793103
@@ -98,8 +98,8 @@ Correct:        54.761904761904766
 Suggestion Acc: 55.55555555555556
 --------------------
 False Negative: 42.55952380952381
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
-Warning: Rules loaded: 74,565 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
+Warning: Rules loaded: 75,258 rules at engine.sl:41
 Report for Suggestion score for data/tests/grammar_gutenberg.txt
 Correct:        93.46811819595645
 Suggestion Acc: 95.80093312597201
@@ -109,57 +109,57 @@ Correct:        52.170138888888886
 Suggestion Acc: 53.47222222222222
 --------------------
 False Negative: 44.27083333333333
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 Report for Word pool accuracy: sp_test_aspell_nocontext.txt
 Correct:        82.97455968688845
 Report for Word pool accuracy: sp_test_wpcm_nocontext.txt
 Correct:        98.19159335288367
 Edits flushed!
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 Warning: Iteration 0 complete at trainspell.sl:88
 Warning: Iteration 1 complete at trainspell.sl:88
 Warning: Iteration 2 complete at trainspell.sl:88
 Done? cnetwork.bin
 === CONTEXTUAL DATA ===========================================================================
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 ********** sp_test_wp_context1.txt **********
 Report for Dist/Pre/Post/FL
-Correct:        95.01915708812261
+Correct:        95.24904214559386
 Report for Random Guess
-Correct:        30.498084291187737
+Correct:        31.494252873563216
 Report for Combined Freq/Edit
-Correct:        82.91187739463601
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Correct:        87.43295019157088
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 ********** sp_test_wp_context2.txt **********
 Report for Dist/Pre/Post/FL
-Correct:        78.41726618705036
+Correct:        78.77697841726618
 Report for Random Guess
 Correct:        20.863309352517987
 Report for Combined Freq/Edit
-Correct:        58.992805755395686
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Correct:        64.74820143884892
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 ********** sp_test_gutenberg_context1.txt **********
 Report for Dist/Pre/Post/FL
-Correct:        94.48529411764706
+Correct:        94.55882352941177
 Report for Random Guess
-Correct:        30.73529411764706
+Correct:        31.985294117647058
 Report for Combined Freq/Edit
-Correct:        83.52941176470588
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Correct:        87.57352941176471
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 ********** sp_test_gutenberg_context2.txt **********
 Report for Dist/Pre/Post/FL
 Correct:        79.93630573248409
 Report for Random Guess
-Correct:        21.656050955414013
+Correct:        22.929936305732486
 Report for Combined Freq/Edit
-Correct:        59.23566878980891
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Correct:        65.92356687898089
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 Iteration 0 complete!
 Iteration 1 complete!
 Iteration 2 complete!
@@ -169,40 +169,40 @@ Iteration 1 complete!
 Iteration 2 complete!
 Networked trained!
 === NON-CONTEXTUAL DATA =======================================================================
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 ========== sp_test_aspell_nocontext.txt ==========
-Present words: 54
+Present words: 19
 Report for Test of Corrections w/o Context
-Correct:        78.9237668161435
-False Negative: 12.10762331838565
-False Positive: 2.4663677130044843
+Correct:        80.45738045738045
+False Negative: 3.9501039501039505
+False Positive: 2.2869022869022873
 Report for 3-factor
-Correct:        70.17045454545455
+Correct:        70.54263565891473
 Report for 3-factor w/ p
-Correct:        70.17045454545455
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Correct:        70.54263565891473
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 ========== sp_test_wpcm_nocontext.txt ==========
-Present words: 144
+Present words: 31
 Report for Test of Corrections w/o Context
-Correct:        98.26132771338251
-False Negative: 7.586933614330875
-False Positive: 0.21074815595363539
+Correct:        98.16011934361015
+False Negative: 1.5415216310293387
+False Positive: 0.19890601690701143
 Report for 3-factor
-Correct:        89.81233243967829
+Correct:        90.0709219858156
 Report for 3-factor w/ p
-Correct:        89.81233243967829
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Correct:        90.0709219858156
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 Iteration 0 complete
 Iteration 1 complete
 Done? hnetwork.bin
 Done? hnetwork2.bin
 Done? hnetwork3.bin
 Done? hnetwork4.bin
-Warning: Rules loaded: 74,565 rules at engine.sl:41
-Warning: Dictionary loaded: 126466 words at dictionary.sl:56
+Warning: Rules loaded: 75,258 rules at engine.sl:41
+Warning: Dictionary loaded: 126459 words at dictionary.sl:67
 Report for Correct   original (Gutenberg)
 Correct:        95.88647253962404
 False Positive: 4.113527460375967

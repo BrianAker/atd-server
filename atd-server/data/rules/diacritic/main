@@ -488,7 +488,7 @@ zoea::word=zoëa::filter=none
 #
 # words that need some help
 #
-.*/PRP\$ resume::word=\0 resumé::filter=none
-.*/DT resume::word=\0 resumé::filter=none
-My|Their|my|their resume::word=\0 resumé::filter=none
+.*/PRP\$ resume::word=\0 résumé::filter=none
+.*/DT resume::word=\0 résumé::filter=none
+My|Their|my|their resume::word=\0 résumé::filter=none
 

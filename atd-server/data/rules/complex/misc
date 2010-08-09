@@ -97,3 +97,12 @@ Nowadays::word=Today
 .*/JJ reference::word=\0 note::pivots=reference,note
 .*/VB reference::word=\0 cite, \0 consider, \0 endorse::pivots=\1,cite,consider,endorse
 
+# some more fun words...
+actionable::word=doable, feasible::filter=none
+in actual fact::word=actually::filter=none
+administrate::administer::filter=none
+second of all::word=second::filter=none
+
+.*/MD access::word=\0 use, \0 reach, \0 get access to::pivots=\1,use,reach,get access to
+to access::word=\0 use, \0 reach, \0 get access to::pivots=\1,use,reach,get access to
+

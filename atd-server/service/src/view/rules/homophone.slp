@@ -15,6 +15,6 @@
    <p>Review definitions:</p>
 
    <ul>
-   <?sleep map({ println('<li><b>'.$1.'</b><br>' . %homodict[$1] . '</li>'); }, split(', ', $1["word"])); ?>
+   <?sleep map({ println('<li><b>'.$1.'</b><br>' . %homodict[$1] . '</li>'); }, map({ return iff($1 in %homodict, $1, baseVerb($1)); }, split(', ', $1["word"]))); ?>
    </ul>
 

@@ -38,6 +38,7 @@ WACs	female soldiers
 Wales	SW Great Britain
 Wayne	male name
 a	the first letter of the alphabet
+accede	agree
 accept	to approve
 access	a privilege to retrieve something
 accessed	to retrieve using a privilege 
@@ -48,6 +49,8 @@ acts	How someone does something as in "He acts crazy"
 ad	advertisement
 adapt	to suit to a situation
 adopt	to take ownership of
+adapts	suits to a situation
+adopts	takes ownership of
 adapted	changed to suit a situation
 adopted	took ownership of
 adapter	a converter from one form to another (e.g., power adapter)
@@ -63,6 +66,7 @@ adverse	opposite, unfavorable
 adze	a tool used to dress timbers, with a curved head
 aerie	a large bird's home
 aero	pertaining to aircraft
+aesthetic	a sense of beautiful
 affect	to act on
 aid	to help
 aide	a helper
@@ -78,11 +82,14 @@ allowed	tolerate
 alluded	referred to indirectly
 allude	refer to indirectly
 allusion an indirect reference
+allusions indirect references
 aloud	high audible pitch
 altar	lords table
 alter	to make changes
 an	one
 anecdote	a short amusing story
+angle		the space between two connected pieces
+angel		being from heavan, a great harp player
 antidote	a medicine that counteracts a poison or disease
 ant	small bug
 ante	poker bet
@@ -96,6 +103,8 @@ ark	large boat
 arrow	a slender staff or stick with a wedge at the end, used to pierce
 ascent	the upward movement, the act of climbing or traveling up place
 assent	to come to the same conclusions
+ascetic	one who leads a simple life
+attain	to reach or achieve
 ate	consumed food
 auger	a drill used for making holes in the ground
 aught	any part
@@ -165,6 +174,7 @@ bawl	to weep or shed tears
 bawled	cried loudly
 bay	an indentation in the ocean, smaller than a gulf
 bays	A body of water in a lake or ocean surrounded mostly by land.
+bazaar	a market
 be	to be alive
 beach	The shore of the sea, or of a lake, which is washed by the waves; especially, a sandy or pebbly shore; the strand
 bean	an edible item from the legume family
@@ -196,6 +206,7 @@ birth	Method of offspring production in mammals.
 bit	to chew or gnaw in the past tense
 bite	what puppies do to shoes and hands
 bitt	used in the tying down of vessels
+bizarre	strange
 blew	missed an opportunity
 bloc	group of persons
 block	To prevent someone from passing through
@@ -208,6 +219,8 @@ bold	daring, courageous
 bolder	more brave
 bole	trunk of a tree
 boll	round seed vessel in center of certain plants like cotton
+bond	an IOU
+bonds	IOUs
 boor	a rude person
 boos	Disapproving jeers from an audience
 booze	alcoholic drink
@@ -219,6 +232,8 @@ borne	to hold up
 borough	A area of the city that is considered unicorperated i.e. various boroughs in New York City
 bough	pine branch
 boulder	huge stone
+bound	a limit
+bounds	limits
 bourn	a small boundary creek
 bouy	a float used for boats' navigation
 bow	incline the head or body, esp. in greeting or acknowledgement.
@@ -380,6 +395,8 @@ Collage	a collection of unlikely things (for art)
 College	a higher-learning institution
 collar	part of a shirt that covers the neckline
 colonel	A senior field grade military officer rank
+coma		a long and deep sleep
+comma		a punctuation mark
 complacence	serenity
 complacent	content, undisturbed
 complaisance	willingness to do what pleases others
@@ -431,6 +448,7 @@ cygnet	a swan before adult age
 cymbal	Percussive concave brass plate instrument played with a drumstick or in a pair.
 Cypress	an evergreen tree
 Cyprus	an island South of Turkey
+dairy	comes from cows
 dam	a barrier that blocks the flow of water
 dammed	a blocked flow of any liquid
 damn	to curse, a curse
@@ -447,7 +465,12 @@ defuse	the act of making something harmless
 defused	made harmless
 desert	an arid region, picture cacti and sand
 dessert	something delicious, think cake
+deviate	to move away from normal
+deviant	someone that ignores the rules
+device	a machine
+devise	scheme
 dew	moistness
+diary	where you keep your secrets about cows
 die	to be gone forever
 died	cease to live or function
 dies	A verb meaning to expire.
@@ -476,6 +499,8 @@ dose	one unit of medicine.
 doze	to sleep, to slumber
 draft	First written version of some document.
 draught	a flow of wind in an upward motion
+drier	a machine that dries
+dryer	less wet
 dual	two items together
 due	amount of money owed currently on a bill
 duel	a challenge usually involving honor
@@ -499,6 +524,7 @@ eight	numeral between seven and nine
 elicit	to evoke
 elude	to run away from
 eluded	ran away from
+em	the letter M, with a munchy mouth
 eminent	high in rank, lofty
 eminently notable, a great degree
 ensure	to guarantee
@@ -511,8 +537,13 @@ ere	before
 err	to mess up
 essay	a short focused document
 eunuchs	a man not considered a 'real man'
+evaporate	to change from liquid to a gas
+evacuate	get everyone out
 ewe	the female counterpart of a sheep
 ewes	plural of ewe, the word for a female sheep or related animal
+exact	precise
+extract	get
+exceed	go beyond
 except	to leave out
 extent	a range of something
 extant	continues to exist
@@ -531,6 +562,7 @@ fare	a price given to a person who hires a public vehicle to travel
 fared	to experience something
 faring	Art of progress
 farrow	To give birth to (a litter of pigs)
+fathom	to understand
 faux	not genuine or real; being an imitation of the genuine article; "it isn't fake anything
 fax	A transmitted facsimile
 fay	A fairy or an elf
@@ -561,6 +593,7 @@ fined	having to pay a monetary punishment
 fines	several monetary punishments
 finish	To complete something like project, task etc.
 fir	a pine tree with flat needles and upright cones
+fiscal	of financial matters
 fisher	A carnivorous mammal (Martes pennanti) of northern North America, having thick, dark-brown fur. Also called pekan, wejack
 fissure	a split or division
 fission	the process of splitting an atom
@@ -589,6 +622,8 @@ forego	to come before
 foreword	early section in book, usually describing the backstory of creating the story
 forgo	The act of giving up something
 form	shape
+formally	in a customary way
+formerly	before
 fort	a permanent post
 forte	a person's strength or special ability
 forth	bring out in the open in a certain way
@@ -635,6 +670,7 @@ gnu	Stocky, oxlike African antelope.
 gnus	a group of stocky antelope, native to Africa
 gored	To pierce or wound, as with a horn; to penetrate with a pointed instrument, as a spear; to stab
 gorilla	large ape with brown or black hair. Slang for a brutish man.
+gouge	take unfair advantage of
 gourd	a vegetable
 grade	the incline of a road or hill
 graft	to affix a small piece to a larger object
@@ -743,6 +779,7 @@ idyl	a poem
 illicit	Not permitted or allowed; prohibited; unlawful; as, illicit trade; illicit intercourse; illicit pleasure.
 illude	to trick
 illusion	a false appearance or trick
+illusions	false appearances or tricks
 in	a part of
 inc	the abbreviation used for incorporated
 incite	to lead to action
@@ -798,6 +835,7 @@ lane	a narrow, lightly travelled road
 ladder	a tool or structure to go up on
 laps	some number of complete circuits of a track or pool
 lapse	a trvial slip or error
+later	in the future
 latter	the second of two things
 lax	not strict or tight
 lay	to lie down
@@ -894,6 +932,7 @@ manor	A feudal estate; the main mansion or house of an estate.
 mantel	the shelf above the fireplace
 mantle	the layer between the core of the earth and its crust
 marc	the brandy distilled from this residue
+marital	of marriage
 mark	a visible trace of something
 marque	a product model or type
 marquee	a small cover in front of building or theatre
@@ -910,7 +949,9 @@ me	Refers to the first person.  Used in a sentence as the object.
 mean	the average of a group of numbers
 meat	the (usually) edible portion of an animal
 medal	piece of metal given to someone as a reward for an accomplishment
+median	the divider in the middle of the road
 meddle	to get involved
+medium	the middle; between large and small
 meet	to join together or connect in a common location
 mein	How someone acts.
 men's	belong to males
@@ -923,6 +964,7 @@ mewl	to cry softly
 mews	the tiny, high-pitched sound a cat or kitten makes.
 mi	third tone
 might	physical strength with which tasks may be accomplished;  also, used to indicate the possibility of an action
+militate	to have a strong effect
 mince	to cut into very small pieces
 mind	reasoning and thinking entity
 mined	extracted ore
@@ -935,6 +977,7 @@ misses	to fail to hit
 missile	an item that is thrown or shot as a weapon
 mist	Visible watery vapor suspended in the atmosphere, at or near the surface of the earth; fog.
 mite	microscopic arachnids
+mitigate	to reduce the risk of
 moan	a prolonged low sound indicating suffering
 moat	water-filled ditch, usually around a castle
 mock	to tease
@@ -1000,6 +1043,7 @@ not	A word used to express negation, prohibition, denial, or refusal.
 now	this moment in time
 nun	A female member of a religious order, usually bound by vows of chastity, poverty, etc.
 oar	a wooden paddle used to manually propel or steer a boat.
+obtain	to get or acquire
 odd	unordinary
 of	from something
 off	the opposite of on
@@ -1055,6 +1099,8 @@ peal	the sound of a ringing bell
 pealed	sounded a bell
 pear	edible fruit
 pearl	Irritant created by an oyster
+peasant	a common worker
+pheasant	a type of bird
 pedal	a lever operated by the foot
 peddle	work as a street vendor
 pee	To urinate
@@ -1069,6 +1115,7 @@ per	for each, for every
 perl	a computer programming language destined for greatness
 pursue	chase
 peruse	examine thoroughly
+phantom	a ghost
 pharoah	title of ancient Egyptian kings of all periods
 phase	stage of time; period
 phased	sequenced
@@ -1077,6 +1124,7 @@ phial	small bottle, often for medicine
 philter	a potion that is supposed to make the person taking it fall in love with a specific individual
 phlox	a type of plant
 phrase	a sequence of two or more words
+physical	of the body
 pi	A Greek letter ([Pi], [pi]) corresponding to the Roman letter
 picnic	involves baskets, bears, and ants
 pidgin	A rudimentary language made up to simplify communication, usually a mixture of two different languages.
@@ -1102,7 +1150,9 @@ plane	an area
 planer	the act of being buoyed by the wind
 plate	flat dish for serving food
 pleas	an answer to a court charge
+pleaded	begged
 please	To give pleasure,satisfaction,or enjoyment to.
+pleated	a feature to make slacks look dorky
 pleural	having to do with the lungs
 plum	purple fruit that when dried is called a prune
 plumb	is a precise straight vertical or horizontal line
@@ -1178,6 +1228,8 @@ racket	illegal scheme or loud din
 racquet	bat with woven netting used in tennis, squash, badminton etc. to hit the ball
 rain	The descent of such water
 raise	to move to a higher position; lift up; elevate: to raise one's hand; sleepy birds raising their heads and looking about
+rampant	widespread
+rampart	a fortification
 rap	a way to make noise fast.
 rapped	make a sound with fist
 rapt	engross
@@ -1218,6 +1270,8 @@ rheumy	watery eyes
 rho	a greek alphabet
 rhumb	point of a sea compass
 rhyme	An expression of thought in numbers, measure, or verse; a composition in verse; a rhymed tale; poetry; harmony of language. ``Railing rhymes.'' --Daniel
+ridged	a raised strip on a surface
+rigid	stiff
 rigger	someone who rigs ships
 right	accurate
 righting	to make correct
@@ -1231,6 +1285,7 @@ road	a course with a smooth or paved surface, used for travel
 roam	to be free to go about as you please
 rode	past tense of ride:  to sit on or in something and travel, as in a bike, car, or train
 roe	edible fish eggs
+rogue	a scoundrel
 roil	to make unclear
 role	a function; a character in a play
 roll	turn over
@@ -1244,6 +1299,7 @@ rooting	to cheer for
 rose	pretty flower
 rot	decomposition
 rote	learn by heart
+rouge	cosmetics with a reddish tint
 rough	uneven or bumpy, not smooth, level, or polished. 2 shaggy or coarse-haired. 3 boisterous, coarse; violent, not mild, quiet
 rout	completely destroy or force out
 route	a path
@@ -1263,6 +1319,7 @@ rye	cereal grass
 ryes	grass grown for grains
 sachet	a small bag of powder
 sacks	to fire someone
+sacred	holy
 said	To utter or pronounce in words (past participle form).
 sail	fabric used on watercraft to catch the wind; to travel over water in wind-powered vessel
 sails	multiple bits of fabric used to propel a wind powered vessel
@@ -1277,6 +1334,7 @@ sawed	to make back-and-forth motion
 sax	a musical instrument
 say	to express in words (follow with what is said)
 says	to express in words (follow with what is said)
+scared	afraid
 scene	the place where some action is performed either in a stage or in a film or in some shows.
 scent	a distinctive pleasing smell
 scents	smells
@@ -1317,15 +1375,19 @@ serf	a person in servitude
 serge	a type of fabric
 serial	sequential; in a series
 series	a group of related, sequential events
-session	a
+servant	a domestic worker
+serpent	a snake
+session	a single period of a meeting
 sew	to sew cloth together
 sewer	The pipes and drains that convey waste water from a home or other building.
 sex	the category by which organisms are classified on the basis of their reproductive organs and functions
 shake	agitate
 shall	will
 she'll	she will
+sheaf	a bundle of stuff
 shear	to slice off
 shears	cuts or trims
+sheath	a knife case
 sheave	to gather
 sheer	transparent
 sheers	to turn away swiftly
@@ -1335,10 +1397,12 @@ shill	A person who poses as an enthusiastic participant for personal gain or pro
 shiv	a bladed instrument
 shoe	covered footwear
 shoes	The plural form of shoe.  The shoe is worn for covering on the foot.
+shone	the past tense of shine
 shoo	to chase away
 shoos	to scare or drive away
 shoot	To send with force
 shore	the the line between dry land and water
+shown	the past tense of show
 sic	incite to attack
 sick	When someone is not feeling good, has a cold or more serious illness
 sics	tells to attack
@@ -1404,7 +1468,9 @@ starred		held the lead role in a movie or play
 statice	a bitter tasting herb
 stationary	Someone or something that is not moving from one position.
 stationery	paper used to write, print or draw on
+statue	a 3D work of art (e.g., the Statue of Liberty)
 status	distinction according to law
+statute	a rule
 stayed	remain in a place, or to cease
 steak	thick slice of meat (esp. beef) or fish, usu. grilled or fried
 steal	to take something illegally that is not yours
@@ -1445,8 +1511,9 @@ sword	a hilted weapon with a long blade
 symbol	thing regarded as typifying or representing something (white is a symbol of purity)
 sync	in harmony
 tach	an informal way to refer to a tachometer
-tack	means or procedure
+tack	a small nail
 tacks	nails
+tact	social judgement
 tail	hindmost part
 tails	multiple hindmost parts
 tailer	one who comes behind
@@ -1471,6 +1538,8 @@ teem	to be prolific
 teeming	large gathering
 tees	football tee, golf tee
 tell	to express in words (follow with who it is said to)
+tenant	a renter
+tenet	a belief
 tenner	Common way to describe an English ten pound note.
 tenor	continuous
 tense	mental strain
@@ -1484,6 +1553,8 @@ their	something that belongs to them
 then	used to express a time
 there	not here
 they're	combination of they and are
+therefor	for
+therefore	as a consequence of
 threw	to hurl an item from your hand
 throe	wracking pain
 throes	violent pang, esp. of childbirth or death
@@ -1554,6 +1625,7 @@ use	to consume or otherwise expend energy
 vain	proud
 vale	a low place, valley
 vane	implement for wind watching
+vantage	a position of advantage
 vary	to make a change in many things.
 veil	a transparent or opaque fabric worn to disguise or cover
 vein	lines or streaks through things
@@ -1565,6 +1637,7 @@ vice	A bad action or conduct.  Also could mean a subordinate or second in comman
 vicious	evil
 viscous	a thick and sticky consistency (e.g., motor oil)
 vile	wicked or morally bad
+vintage	old
 viol	a bowed musical instrument that has more strings than a violin
 vise	a tool to squeeze with
 wade	walk in shallow water or proceed laboriously
@@ -1587,6 +1660,7 @@ want	need for
 watt	a unit of power
 war	Agressive armed conflict between large number of people.
 ware	things
+wary	cautious
 warn	to caution
 warrantee	to whom a warrant is given
 warranty	long term security
@@ -1608,6 +1682,7 @@ weak	lacking in strength
 weal	an itching or burning swollen place on the skin
 weald	A wood or forest; a wooded land or region; also, an open country; -- often used in place names
 wear	clothed
+weary	tired
 weather	climate
 weave	wind together threads or strips of fabric to produce cloth
 wee	tiny

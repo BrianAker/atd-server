@@ -214,6 +214,10 @@ different tact::word=different tack::pivots=tact,tack::options=tact,tack
 
 # then vs. than
 
+.*/IN .*/PRP then .*/IN .*/PRP::word=\0 \1 than \3 \4::pivots=then,than::options=then,than
+.*/IN .*/PRP then .*/IN 0END.0::word=\0 \1 than \3::pivots=then,than::options=then,than
+.*/IN .*/NN then .*/IN .*/NN::word=\0 \1 than \3 \4::pivots=then,than::options=then,than
+.*/IN .*/NN then .*/IN 0END.0::word=\0 \1 than \3::pivots=then,than::options=then,than
 were|was|are|is .*/er then::word=\0 \1 than::pivots=then,than::options=then,than
 &comparisons then 0END.0::filter=kill
 &comparisons then::word=\0 than::pivots=then,than::options=then,than

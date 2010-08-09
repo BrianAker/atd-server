@@ -598,6 +598,7 @@ legislative	law
 liaise with	meet with, work with, discuss with
 liaison	discussion
 liase with	coordinate with
+likelier	more likely
 locate	find
 location	place, scene, site
 made a count	counted
@@ -906,6 +907,7 @@ there is a chance that	may, might, could
 there is a need	(omit)
 there is a reason to believe	I think
 thereafter	then, afterwards
+therefor	for
 therein	there
 thereof	its, their
 they are in fact	they are

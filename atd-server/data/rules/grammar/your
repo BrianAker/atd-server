@@ -17,7 +17,7 @@ to you're::word=to your::pivots=you're, your
 
 your welcome::word=you're welcome::pivots=your,you're
 Your welcome::word=You're welcome::pivots=Your,You're::options=your,you're
-Your welcome 0END.0::word=Your welcome::filter=none
+Your welcome 0END.0::word=You're welcome::filter=none
 
 you're are::word=you are::filter=none
 your are::word=you're::filter=none           

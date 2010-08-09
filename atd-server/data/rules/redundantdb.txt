@@ -16,9 +16,13 @@ ISBN number	number
 It is what it is	what it is
 LCD display	display
 Milky Way galaxy	galaxy
+Mount Fujiyama	Mount
+PC computer	computer
 PIN number	number
 Please RSVP	Please
 RAM memory	memory
+Rio Grande River	River
+Rio Grande river	river
 SAT test	test
 State of New Mexico	State of
 State of New York	State of
@@ -274,6 +278,7 @@ joint collaboration	joint
 just recently	just
 kneel down	down
 knowledgeable experts	knowledgeable
+knots per hour	per hour
 lag behind	behind
 last of all	of all
 later time	time

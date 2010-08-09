@@ -85,48 +85,6 @@ afraid of .*/NN::word=afraid of \2:plural::pivots=\2,\2:plural
 afraid of .*/JJ .*/NN::word=afraid of \2 \3:plural::pivots=\3,\3:plural
 afraid of dark|wind|rain::word=afraid of the \3::filter=none
 
-# Revise... (phrases/names heard wrong)
-
-Jimmy Buffet::word=Jimmy Buffett::pivots=Buffet,Buffett
-Jimmy Hendrix::word=Jimi Hendrix::pivots=Jimmy,Jimi
-Phillips Arena::word=Philips Arena::pivots=Phillips,Philips::options=Phillips,Philips
-
-jive with::word=jibe with::pivots=jive,jibe
-mash potatoes::word=mashed potatoes::pivots=mash,mashed::options=mash,mashed
-is renown for::word=is renowned for::pivots=renown,renowned::options=renown,renowned
-
-another words::word=in other words, other words
-
-chalk full::word=chock-full
-brew haha::word=brouhaha
-for all intensive purposes::word=for all intents and purposes
-working progress::word=work in progress
-
-historic record::word=historical record::pivots=historic,historical
-guest stared::word=guest-starred
-in titled::word=entitled
-law suite::word=lawsuit
-is contained of::word=contains
-Straight of [A-Z].*::word=Strait of \2
-after been::word=after being::pivots=been,being
-all for not::word=all for naught::pivots=not,naught
-back in forth::word=back and forth::pivots=in,and
-one in the same::word=one and the same::pivots=in,and
-barb wire::word=barbed wire::pivots=barb,barbed
-imminent domain::word=eminent domain::pivots=imminent,eminent
-chomping at the bit::word=champing at the bit::pivots=chomping,champing
-constellation prize::word=consolation prize::pivots=constellation,consolation
-constitutes of::word=consists of::pivots=constitutes,consists
-could care less::word=couldn't care less::pivots=could,couldn't
-daily regiment::word=daily regimen::pivots=regiment,regimen
-de factor::word=de facto::pivots=factor,facto
-worse-case scenario::word=worst-case scenario::pivots=worse-case,worst-case
-worst comes to worst::word=worse comes to worst::pivots=worse-case,worst-case
-to bath::word=to bathe::pivots=bath,bathe
-treasure trough::word=treasure trove::pivots=trough,trove
-
-# ...
-
 was|is suppose to::word=\0 supposed to::filter=none
 was|is based off::word=\0 based on::filter=none
 alma matter::word=alma mater::pivots=matter,mater
@@ -188,3 +146,11 @@ homo sapiens::word=Homo sapiens::filter=none
 .*/DT Associates|Associate's [dD]egree::word=\0 Associate \2::filter=none
 
 nerve-wracking::word=nerve-racking
+
+Being that::word=Because
+
+expresses that::word=says that::pivots=expresses,says
+hadn't have::word=hadn't::filter=none
+had ought::word=ought::filter=none
+
+somebody's else::word=somebody else's::filter=none

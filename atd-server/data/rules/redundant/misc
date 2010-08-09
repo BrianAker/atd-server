@@ -102,7 +102,7 @@ way way::word=way::filter=none
 years of \d\d\d\d \w+ \d\d\d\d::word=\2 \3 \4::filter=none
 you yourself|yourselves::word=\1::filter=none
 young boy|girl|lad|lass|foal|colt|fawn::word=\1::filter=none
-comfortable with .*/VBG::word=\0 \1::pivots=\1 \2,\1
+comfortable with .*/VBG::word=\0 \2::pivots=\1 \2,\2
 currently .*/VBG::word=\1
 much \w+er::word=\1
 separate \w+ out::word=\0 \1::filter=none
@@ -125,3 +125,18 @@ oscillate|oscillates back and forth::word=\0::filter=none
 
 doctorate degree::word=\0::filter=none
 Doctorate [dD]egree::word=\0::filter=none
+
+# more redundant expressions...
+koala|Koala bear::word=\0::filter=none
+panda|Panda bear::word=\0::filter=none
+salsa sauce::word=salsa::filter=none
+over-exaggerated::word=exaggerated::filter=none
+over exaggerated::word=exaggerated::filter=none
+fellow .*mate::word=\1::filter=none
+fellow colleague|comrade|coworker|co-worker::word=\1::filter=none
+equally as::word=equally, as::pivots=\0,equally,as
+irregardless::word=regardless::filter=none
+and also::word=and
+as best as::word=as best::filter=none
+point being is that::word=point is that::filter=none
+RPMs::word=RPM::filter=none
