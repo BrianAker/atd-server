@@ -141,6 +141,8 @@ baler	one who bales
 baling	the action of tying up hay or straw into bales or bundles
 ball	Any round or roundish body or mass; a sphere or globe; as, a ball of twine; a ball of snow
 balled	animal instincts
+ballet	a dance
+ballot	a place to record a vote
 band	a group, usually musical
 banned	No longer welcome or allowed in a given area
 bard	musical poet
@@ -269,6 +271,7 @@ brows	hair on top of eyes
 browse	peruse or scan material
 bruise	discolouration of the skin caused esp. by a blow
 build	to develop
+bullet	ammunition
 bundt	Roasted Bread
 bunt	(in baseball) to bat a pitched ball by tapping it lightly so that it rolls slowly into the infield
 burger	meat patty
@@ -309,7 +312,9 @@ caret	proofreader's insertion mark. also used for exponents in math
 carol	hymn or song that is sung during Christmas time
 carpal	a bone located on the hand
 carpel	female reproductive organ of a flower.
+career	your job record
 carrel	A small enclosure for individual study in a public area.
+carrier	someone who carries something (e.g., an aircraft carrier)
 carrot	edible parsley family plant
 cash	money
 cashed	converted to a ready money
@@ -362,6 +367,8 @@ cite	to quote an authority
 cited	to quote
 cites	past
 clack	a rattle or bang, often used to describe the sound of a train on a track
+clamber	to climb with a lot of effort
+clamor	to loudy demand
 claque	A collection of persons employed to applaud at a theatrical exhibition
 clause	a part of a contract or legal agreement
 claws	a long, curved toenail of an animal
@@ -426,6 +433,7 @@ cougher	an individual with a cough
 council	a group of advisory or leading members of a group
 counsel	one who shows the way
 coup	a triumph
+courier	someone who delivers something
 course	itinerary; lesson
 cox	a steersman
 craft	a ship or other vessel
@@ -542,6 +550,8 @@ evacuate	get everyone out
 ewe	the female counterpart of a sheep
 ewes	plural of ewe, the word for a female sheep or related animal
 exact	precise
+expend	to use
+expand	to grow
 extract	get
 exceed	go beyond
 except	to leave out
@@ -780,6 +790,8 @@ illicit	Not permitted or allowed; prohibited; unlawful; as, illicit trade; illic
 illude	to trick
 illusion	a false appearance or trick
 illusions	false appearances or tricks
+improve	to make better
+improvise	come up with on the fly
 in	a part of
 inc	the abbreviation used for incorporated
 incite	to lead to action
@@ -941,6 +953,7 @@ married	a union between two people
 marry	to join with your life partner
 marshal	to bring together
 martial	Inclined, disposed to, suitable for, or characteristic of, war.
+massage	to rub and squeeze
 massed	grouped
 mast	boat pole
 maul	chew up
@@ -957,6 +970,7 @@ mein	How someone acts.
 men's	belong to males
 mends	to fix
 merry	happy, pleased, expressing and evincing enjoyment with conditions
+message	something communicated
 metal	ore
 mete	literary apportion or allot (punishment or reward)
 mettle	courage
@@ -1109,6 +1123,7 @@ peeked	to have snuck a view
 peel	to strip of fruit
 peeled	having had the skin or shell removed before eating
 peer	equal
+pierce	poke through
 pencil	an item made with lead for writing
 pensil	a small pennon, as at the head of a lance.
 per	for each, for every
@@ -1203,6 +1218,8 @@ prize	something won
 profit	To gain advantage; to make improvement; to improve; to gain; to advance.
 prophet	seer; one who predicts the future
 proposition	an idea or plan
+precede	come before
+proceed	continue as planned
 pros	professionals
 prose	everyday language, as opposed to poetry
 prostate	a male organ

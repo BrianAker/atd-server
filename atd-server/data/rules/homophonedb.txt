@@ -62,6 +62,7 @@ baiting, bating
 baize, bays, beys
 bald, balled, bawled
 ball, bawl
+ballet, ballot, bullet
 band, banned
 bard, barred
 bare, bear
@@ -141,6 +142,8 @@ cannon, canon
 canter, cantor
 canvas, canvass
 capital, capitol
+career, courier, carrier
+careers, couriers, carriers
 carat, caret, carrot, karat
 carol, carrel
 carpal, carpel
@@ -278,6 +281,10 @@ evaporate, evacuate
 ewe, yew, you
 ewes, use, yews
 exact, extract
+expend, expand
+expends, expands
+expended, expanded
+expending, expanding
 extent, extant
 eyelet, islet
 facts, fax
@@ -401,6 +408,10 @@ hypercritical, hypocritical
 idle, idol, idyl
 imminent, eminent
 imminently, eminently
+improve, improvise
+improves, improvises
+improved, improvised
+improving, improvising
 in, inn
 inc, ink
 incite, insight
@@ -482,6 +493,8 @@ meat, meet, mete
 medal, meddle
 medium, median
 men's, mends
+message, massage
+messages, massages
 metal, mettle
 mewl, mule
 mews, muse
@@ -597,6 +610,10 @@ pries, prize
 prince, prints
 principal, principle
 principals, principles
+proceed, precede
+proceeds, precedes
+proceeded, preceded
+proceeding, preceding
 profit, prophet
 profits, prophets
 pros, prose
