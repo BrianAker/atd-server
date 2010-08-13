@@ -111,3 +111,5 @@ some where::word=somewhere
 no where::word=nowhere
 .*/DT bail out::word=\0 bailout::pivots=bail out,bailout
 
+out come::word=outcome
+

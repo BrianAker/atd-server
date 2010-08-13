@@ -31,6 +31,7 @@ chomping at the bit::word=champing at the bit::pivots=chomping,champing
 constellation prize::word=consolation prize::pivots=constellation,consolation
 constitutes of::word=consists of::pivots=constitutes,consists
 could care less::word=couldn't care less::pivots=could,couldn't
+could give a damn::word=couldn't give a damn::filter=none
 daily regiment::word=daily regimen::pivots=regiment,regimen
 de factor::word=de facto::pivots=factor,facto
 worse-case scenario::word=worst-case scenario::pivots=worse-case,worst-case
@@ -100,3 +101,17 @@ grill cheese::word=grilled cheese::filter=none
 might has well::word=might as well::filter=none
 on the contraire::word=au contraire, on the contrary::filter=none
 once and a while::word=once in a while::filter=none
+damp squid::word=damp squib::filter=none
+cursing through veins::word=coursing through veins::filter=none
+daring-do::word=derring-do::filter=none
+death nail::word=death knell::filter=none
+doesn't supposed to::word=isn't supposed to::filter=none
+reap what you sew::word=reap what you sow::filter=none
+spare of the moment::word=spur of the moment::filter=none
+tongue and cheek::word=tongue in cheek::filter=none
+urine analysis::word=urinalysis::filter=none
+wet your appetite::word=whet your appetite::filter=none
+tattle-tail::word=tattle-tale::filter=none
+old wise tail|tale::word=old wives' tale::filter=none
+on the lamb::word=on the lam::filter=none
+far be it for me::word=far be it from me::filter=none
