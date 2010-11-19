@@ -55,33 +55,3 @@ sub loopHomophones
 
    [$2 finish];
 }
-
-sub loopHomophonesPOS
-{
-   local('$entry $sentence $correct $wrongs $pre2 $pre1 $next $object $wrong');
-
-   while $entry (sentences($1))
-   {
-      ($sentence, $correct, $wrongs) = $entry;
-      ($pre2, $pre1, $null, $next) = toTaggerForm(split(' ', $sentence));
-
-      if ($pre2[1] eq "UNK") { $pre2[1] = ""; }
-      if ($pre1[1] eq "UNK") { $pre1[1] = ""; }
-
-      $correct = split('/', $correct)[0];
-
-      push($wrongs, $correct);
-
-      foreach $wrong ($wrongs)           
-      {
-         [$2 process: $correct, $wrong, $wrongs, $pre2, $pre1, $next];
-      }
-
-#      [$2 process: $correct, $correct, $wrongs, $pre2, $pre1, $next];
-   }
-
-   [$2 finish];
-}
-
-
-
